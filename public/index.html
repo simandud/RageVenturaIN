@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<!-- ══════════════════════════════════════════════════════════════════════════════
+     HEAD - Meta Tags, SEO, Fonts & Styles
+     ══════════════════════════════════════════════════════════════════════════════ -->
 <head>
+  <!-- ═══ Character Set & Viewport ═══ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- ═══ Primary Meta Tags ═══ -->
   <meta name="description" content="RAGE VENTURE - Portal inmersivo de música, producción y experiencias visuales. Clases, label de música, alquiler de equipos y tienda oficial." />
   <meta name="keywords" content="música, producción, DJ, síntesis, electrónica, clases, portal 3D" />
   <meta name="theme-color" content="#030109" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  
+
+  <!-- ═══ Open Graph / Facebook ═══ -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="RAGE VENTURE – Portal Inmersivo" />
   <meta property="og:description" content="Explora la música, la producción y el mundo digital" />
@@ -19,25 +27,30 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="RAGE VENTURE - Portal Inmersivo de Música y Producción" />
 
+  <!-- ═══ Twitter Card ═══ -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RAGE VENTURE – Portal Inmersivo" />
   <meta name="twitter:description" content="Explora la música, la producción y el mundo digital" />
   <meta name="twitter:image" content="https://rageventure.com/assets/twitter-card.jpg" />
   <meta name="twitter:image:alt" content="RAGE VENTURE logo y visualización del portal" />
-  
+
+  <!-- ═══ Canonical & Favicons ═══ -->
   <link rel="canonical" href="https://rageventure.com/" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.json" />
-  
+
+  <!-- ═══ Fonts Preconnect ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
+  <!-- ═══ Stylesheets ═══ -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="paginas.css" />
-  
+
+  <!-- ═══ Structured Data - Schema.org ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -87,58 +100,80 @@
     ]
   }
   </script>
-  
+
   <title>RAGE VENTURE – Electronic Music</title>
 </head>
 
+<!-- ══════════════════════════════════════════════════════════════════════════════
+     BODY - Main Content Structure
+     ══════════════════════════════════════════════════════════════════════════════ -->
 <body>
+
+  <!-- ═══ Accessibility Skip Link ═══ -->
   <a href="#content" class="skip-link">Saltar a contenido principal</a>
 
-  <!-- Header -->
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       HEADER - Navigation & Branding
+       ══════════════════════════════════════════════════════════════════════════ -->
   <header id="main-header" role="banner">
     <div class="header-content">
+
+      <!-- Brand Logo -->
       <div class="brand">
         <a href="#intro" aria-label="RAGE VENTURE - Inicio" class="brand-text">
           <span class="rage-logo-text">RAGE VENTURE</span>
         </a>
       </div>
-      
+
+      <!-- Main Navigation -->
       <nav class="header-nav" role="navigation" aria-label="Navegación principal">
         <a href="eventos.html" class="nav-link">EVENTOS</a>
         <a href="musica.html" class="nav-link">MÚSICA</a>
         <a href="revista.html" class="nav-link">REVISTA</a>
         <a href="store.html" class="nav-link">STORE</a>
       </nav>
-      
+
       <div class="header-spacer"></div>
-      
+
+      <!-- Header Actions -->
       <div class="header-right">
+
+        <!-- Search Button -->
         <button class="search-btn" aria-label="Buscar">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
             <path d="m21 21-4.35-4.35"></path>
           </svg>
         </button>
-        
+
+        <!-- Account Link -->
         <a href="mi-cuenta.html" class="account-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
           </svg>
           Mi cuenta
         </a>
-        
+
+        <!-- Pro Link -->
         <a href="pro.html" class="pro-link">PRO</a>
       </div>
-      
+
+      <!-- Mobile Menu Toggle -->
       <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <!-- Side Menu -->
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SIDE MENU - Mobile Navigation
+       ══════════════════════════════════════════════════════════════════════════ -->
   <aside id="side-menu" role="navigation" aria-label="Menú lateral">
+
+    <!-- Menu Header -->
     <div class="side-menu-header">
       <button id="menu-close-btn" class="menu-toggle-btn" aria-label="Cerrar menú">×</button>
     </div>
+
+    <!-- Menu Navigation Links -->
     <nav>
       <a href="#intro" data-go>Inicio</a>
       <a href="#about" data-go>Sobre Nosotros</a>
@@ -149,18 +184,25 @@
       <a href="#eventos" data-go>Eventos</a>
       <a href="#contacto" data-go>Contacto</a>
     </nav>
+
+    <!-- Menu Footer -->
     <div class="side-menu-footer">
       <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="#" id="toggleFx">FX: ON</a>
     </div>
   </aside>
 
-  <!-- Background Canvas -->
+  <!-- ═══ 3D Background Canvas ═══ -->
   <canvas id="bg" aria-hidden="true"></canvas>
 
-  <!-- Content -->
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       MAIN CONTENT - All Sections
+       ══════════════════════════════════════════════════════════════════════════ -->
   <main id="content" role="main">
-    <!-- Intro -->
+
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 01 - INTRO / HERO
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="intro" class="panel hero snap" aria-label="Sección de presentación">
       <header class="hero-content-centered">
         <h1 class="visually-hidden">RAGE VENTURE - Portal Inmersivo de Música y Producción</h1>
@@ -168,24 +210,31 @@
         <p class="hero-tagline">Crea sin límites. Tu sonido. Tu mundo.</p>
         <button class="cta" data-go="#clases">Despegar</button>
       </header>
+
+      <!-- Animated Marquee -->
       <div class="marquee" aria-hidden="true">
         <span>RAGE VENTURE • PORTAL 3D • CLASES • LABEL • ALQUILER • TIENDA • EVENTOS • </span>
         <span>RAGE VENTURE • PORTAL 3D • CLASES • LABEL • ALQUILER • TIENDA • EVENTOS • </span>
       </div>
     </section>
 
-    <!-- About Us Section -->
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 02 - ABOUT US
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="about" class="panel about-section snap" aria-label="Acerca de nosotros">
       <div class="about-container">
+
+        <!-- About Title -->
         <div class="about-title">
           <h2>Sobre nosotros</h2>
         </div>
-        
+
+        <!-- About Content -->
         <div class="about-content">
           <p class="about-text">
             Potenciamos artistas y productores para lograr más creando experiencias inmersivas en cada punto de contacto: en el metaverso, en eventos presenciales y en línea. Con una mezcla única de estrategia, creatividad, habilidad técnica y servicio dedicado, entregamos soluciones digitales y físicas que logran un éxito comercial excepcional.
           </p>
-          
+
           <button class="learn-more-btn">
             APRENDER MÁS
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -196,35 +245,48 @@
       </div>
     </section>
 
-    <!-- Clases -->
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 03 - CLASES / PROGRAMAS FORMATIVOS
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="clases" class="panel snap" aria-label="Programas formativos">
       <div class="panel-content">
+
+        <!-- Section Meta -->
         <div class="section-meta">Sección 1 / Clases</div>
+
+        <!-- Section Header -->
         <header class="section-header">
           <h2>Programas Formativos</h2>
           <p>Desde los fundamentos hasta técnicas avanzadas de producción y performance, empieza tu viaje sónico aquí.</p>
         </header>
+
+        <!-- Classes Grid -->
         <div class="cards class-grid">
           <article class="card tilt" data-hue="210">
             <h3>Clases iniciales de bajo</h3>
             <p>Groove, técnica y exploración de frecuencias graves.</p>
           </article>
+
           <article class="card tilt" data-hue="220">
             <h3>Clases iniciales de piano</h3>
             <p>Digitación, armonía básica y lectura aplicada a sintetizadores.</p>
           </article>
+
           <article class="card tilt" data-hue="180">
             <h3>Clases de intro a la tecnología</h3>
             <p>Configuración de DAW, interfaces, ruteo de señal y workflow 3D.</p>
           </article>
+
           <article class="card tilt" data-hue="200">
             <h3>Clases de producción musical</h3>
             <p>Sound design, sampling creativo y mezcla orientada al club.</p>
           </article>
+
           <article class="card tilt" data-hue="210">
             <h3>Clases de armonía 1</h3>
             <p>Construcción de acordes, progresiones y escucha entrenada.</p>
           </article>
+
           <article class="card tilt" data-hue="215">
             <h3>Clases de DJ</h3>
             <p>Beatmatching híbrido, FX performativos y narrativa de set.</p>
@@ -233,23 +295,33 @@
       </div>
     </section>
 
-    <!-- Label -->
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 04 - LABEL / RAGE VENTURE MUSIC
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="label" class="panel snap" aria-label="Rage Venture Label">
       <div class="panel-content">
+
+        <!-- Section Meta -->
         <div class="section-meta">Sección 2 / Label</div>
+
+        <!-- Section Header -->
         <header class="section-header">
           <h2>Rage Venture Label</h2>
           <p>Un roster curado de artistas que definen el sonido del futuro. Explora nuestros lanzamientos y artistas.</p>
         </header>
+
+        <!-- Label Grid -->
         <div class="label-board">
           <article class="label-card tilt" data-hue="210">
             <h3>Roster en Expansión</h3>
             <p>Perfiles dedicados para nuestros productores, vocalistas y DJs residentes.</p>
           </article>
+
           <article class="label-card tilt" data-hue="220">
             <h3>Lanzamientos Exclusivos</h3>
             <p>Integra trailers, visualizers y previews de vinilos o EPs en este espacio.</p>
           </article>
+
           <article class="label-card tilt" data-hue="200">
             <h3>Submit de Artistas</h3>
             <p>Habilita formularios o enlaces para que nuevos talentos envíen demos.</p>
@@ -258,14 +330,22 @@
       </div>
     </section>
 
-    <!-- Alquiler -->
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 05 - ALQUILER / RENTALS
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="alquiler" class="panel snap" aria-label="Alquiler de recursos">
       <div class="panel-content">
+
+        <!-- Section Meta -->
         <div class="section-meta">Sección 3 / Alquiler</div>
+
+        <!-- Section Header -->
         <header class="section-header">
           <h2>Alquiler de Recursos</h2>
           <p>Accede a equipos y servicios de producción musical con soporte especializado.</p>
         </header>
+
+        <!-- Rentals Grid -->
         <div class="rentals-grid">
           <article class="rental-card tilt" data-hue="210">
             <div class="media-frame">
@@ -274,6 +354,7 @@
             <h3>Alquiler de máquinas de producción</h3>
             <p>Sintetizadores, drum machines y samplers (Moog, Elektron, Roland) para tu estudio.</p>
           </article>
+
           <article class="rental-card tilt" data-hue="220">
             <div class="media-frame">
               <img src="https://images.unsplash.com/photo-1590602848163-0b0b83c58b3c?auto=format&fit=crop&w=900&q=80" alt="Cabina profesional con tornamesas Technics" loading="lazy" decoding="async" />
@@ -281,6 +362,7 @@
             <h3>Grabación de set de vinilos</h3>
             <p>Cabina completa con Technics 1200, mixer Allen & Heath y grabación multi-track.</p>
           </article>
+
           <article class="rental-card tilt" data-hue="200">
             <div class="media-frame">
               <img src="https://images.unsplash.com/photo-1598488035139-BFFB86624a14?auto=format&fit=crop&w=900&q=80" alt="Ingeniero de producción musical en estudio" loading="lazy" decoding="async" />
@@ -292,14 +374,22 @@
       </div>
     </section>
 
-    <!-- Tienda -->
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 06 - TIENDA / STORE
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="tienda" class="panel snap hwrap" aria-label="Tienda Rage Venture">
       <div class="panel-content">
+
+        <!-- Section Meta -->
         <div class="section-meta">Sección 4 / Tienda</div>
+
+        <!-- Section Header -->
         <header class="section-header">
           <h2>Tienda Rage Venture</h2>
           <p>Venta de vinilos, merch oficial, repuestos y accesorios para extender la experiencia.</p>
         </header>
+
+        <!-- Horizontal Scroll Products -->
         <div class="hscroll" id="vinylScroll" role="region" aria-label="Productos disponibles (scroll horizontal)">
           <article class="vcard tilt" data-hue="210">
             <div class="disc"></div>
@@ -307,18 +397,21 @@
             <p>Ediciones limitadas, prensados exclusivos y arte holográfico.</p>
             <button class="ghost" aria-label="Comprar vinilos">Comprar</button>
           </article>
+
           <article class="vcard tilt" data-hue="220">
             <img class="vinyl-img" src="https://images.unsplash.com/photo-1502773860571-211a597d6e4b?auto=format&fit=crop&w=600&q=80" alt="Colección de vinilos exclusivos" loading="lazy" decoding="async" />
             <h3>Selección RAGE</h3>
             <p>Vinilos curados por el label y sesiones en vivo remasterizadas.</p>
             <button class="ghost" aria-label="Explorar selección">Explorar</button>
           </article>
+
           <article class="vcard tilt" data-hue="200">
             <img class="vinyl-img" src="https://images.unsplash.com/photo-1576757606014-a16fdefa6b41?auto=format&fit=crop&w=600&q=80" alt="Merchandising oficial RAGE VENTURE" loading="lazy" decoding="async" />
             <h3>Merch Oficial</h3>
             <p>Stickers, llaveros, abanicos y apparel exclusivo del sello.</p>
             <button class="ghost" aria-label="Añadir merchandising al carrito">Añadir</button>
           </article>
+
           <article class="vcard tilt" data-hue="215">
             <img class="vinyl-img" src="https://images.unsplash.com/photo-1547926856-02682f23d420?auto=format&fit=crop&w=600&q=80" alt="Accesorios y cables de audio profesionales" loading="lazy" decoding="async" />
             <h3>Repuestos & Cables</h3>
@@ -326,35 +419,49 @@
             <button class="ghost" aria-label="Añadir accesorios al carrito">Añadir</button>
           </article>
         </div>
+
+        <!-- Scroll Hint -->
         <p class="hint">Usa la rueda del mouse para desplazarte <strong>horizontalmente</strong>.</p>
       </div>
     </section>
 
-    <!-- Eventos -->
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 07 - EVENTOS / EVENTS & BOOKING
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="eventos" class="panel snap" aria-label="Eventos y booking">
       <div class="panel-content">
+
+        <!-- Section Meta -->
         <div class="section-meta">Sección 5 / Eventos</div>
+
+        <!-- Section Header -->
         <header class="section-header">
           <h2>Eventos & Booking</h2>
           <p>Agenda de showcases, festivales y experiencias inmersivas conectadas al portal.</p>
         </header>
+
+        <!-- Events Grid -->
         <div class="cards">
           <article class="card tilt" data-hue="210">
             <h3>Neon Rave – Quito</h3>
             <p>Viernes 31 • Warehouse 12 • Line-up: KØRA, MxR, TÊL.</p>
             <button class="ghost" aria-label="Comprar tickets para Neon Rave Quito">Tickets</button>
           </article>
+
           <article class="card tilt" data-hue="220">
             <h3>Afterglow – Cuenca</h3>
             <p>Sábado 08 • Fábrica 88 • Vinyl set: LUX, NVM, Cian.</p>
             <button class="ghost" aria-label="Comprar tickets para Afterglow Cuenca">Tickets</button>
           </article>
+
           <article class="card tilt" data-hue="200">
             <h3>Midnight Pulse – Guayaquil</h3>
             <p>Viernes 21 • Docks • Live modular: VEX, OXI, Rho.</p>
             <button class="ghost" aria-label="Comprar tickets para Midnight Pulse Guayaquil">Tickets</button>
           </article>
         </div>
+
+        <!-- Booking Callout -->
         <div class="booking-callout tilt" data-hue="210">
           <div>
             <h3>Booking Management</h3>
@@ -365,17 +472,23 @@
       </div>
     </section>
 
-    <!-- Contacto -->
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 08 - CONTACTO / CONTACT FORM & FOOTER
+         ───────────────────────────────────────────────────────────────────── -->
     <section id="contacto" class="panel snap" aria-label="Contacto y formulario">
       <div class="panel-content">
+
+        <!-- Section Header -->
         <header class="section-header">
           <h2>Contacto</h2>
           <p>Conecta con nosotros para bookings, demos o colaboraciones.</p>
         </header>
-        
+
+        <!-- Contact Form -->
         <form class="form" method="POST" action="/api/contact" novalidate>
           <input type="hidden" name="csrf_token" value="token_placeholder" />
-          
+
+          <!-- Name Field -->
           <label for="name">Nombre <span aria-label="requerido">*</span></label>
           <input
             type="text"
@@ -390,6 +503,7 @@
             aria-describedby="name-error" />
           <span id="name-error" class="error-message" role="alert"></span>
 
+          <!-- Email Field -->
           <label for="email">Email <span aria-label="requerido">*</span></label>
           <input
             type="email"
@@ -402,6 +516,7 @@
             aria-describedby="email-error" />
           <span id="email-error" class="error-message" role="alert"></span>
 
+          <!-- Message Field -->
           <label for="message">Mensaje <span aria-label="requerido">*</span></label>
           <textarea
             id="message"
@@ -415,16 +530,25 @@
             aria-invalid="false"
             aria-describedby="message-error"></textarea>
           <span id="message-error" class="error-message" role="alert"></span>
-          
+
+          <!-- Submit Button -->
           <button class="cta" type="submit">Enviar Mensaje</button>
         </form>
 
+        <!-- ═══════════════════════════════════════════════════════════════
+             FOOTER - Site Navigation & Legal
+             ═══════════════════════════════════════════════════════════════ -->
         <footer class="site-footer" role="contentinfo">
+
+          <!-- Footer Grid -->
           <div class="footer-grid">
+
+            <!-- Column 1: Logo & Navigation -->
             <div class="footer-column">
               <div class="brand footer-brand">
                 <img src="assets/logorageve_!.png" alt="RAGE VENTURE - Portal de música electrónica y producción" class="footer-logo" loading="lazy" />
               </div>
+
               <nav class="footer-nav" aria-label="Navegación rápida">
                 <a href="#intro" data-go>Intro</a>
                 <a href="#about" data-go>Sobre Nosotros</a>
@@ -436,6 +560,7 @@
               </nav>
             </div>
 
+            <!-- Column 2: Social Links -->
             <div class="footer-column">
               <h3>Conecta</h3>
               <div class="social-links" role="navigation" aria-label="Redes sociales">
@@ -448,6 +573,7 @@
               </div>
             </div>
 
+            <!-- Column 3: Newsletter -->
             <div class="footer-column">
               <h3>Newsletter</h3>
               <p class="newsletter-text">Recibe updates exclusivos y lanzamientos.</p>
@@ -458,6 +584,7 @@
             </div>
           </div>
 
+          <!-- Footer Bottom -->
           <div class="footer-bottom">
             <div class="footer-links-legal">
               <a href="/terminos">Términos de Servicio</a>
@@ -468,24 +595,34 @@
             </div>
           </div>
         </footer>
+
       </div>
     </section>
+
   </main>
 
-  <!-- Scripts -->
-  <!-- Polyfills for browser compatibility (loaded first, no defer) -->
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SCRIPTS - JavaScript Libraries & Custom Code
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- Browser Compatibility Polyfills (no defer - loads first) -->
   <script src="polyfills.js"></script>
 
+  <!-- Three.js Library (3D Graphics) -->
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
     integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     defer></script>
+
+  <!-- Three.js GLTF Loader -->
   <script
     src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"
     crossorigin="anonymous"
     defer></script>
+
+  <!-- Custom Scripts -->
   <script src="animations.js" defer></script>
   <script src="script.js" defer></script>
   <script src="menu-toggle.js" defer></script>
