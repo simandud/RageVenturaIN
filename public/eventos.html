@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Eventos RAGE VENTURE - Showcases, festivales y experiencias inmersivas de música electrónica" />
+  <meta name="theme-color" content="#030109" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  
+  <title>Eventos - RAGE VENTURE</title>
+</head>
+
+<body>
+  <a href="#content" class="skip-link">Saltar a contenido principal</a>
+
+  <!-- Header -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
+          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        </a>
+      </div>
+      
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+<a href="index.html">Inicio</a>
+<a href="eventos.html">Eventos</a>
+<a href="label.html">Roaster</a>
+<a href="alquiler.html">Alquiler</a>
+<a href="clases.html">Clases</a>
+<a href="tienda.html">Tienda</a>
+<a href="contacto.html">Contacto</a>
+        
+      </nav>
+      
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación">Menú</button>
+    </div>
+  </header>
+
+  <!-- Side Menu -->
+  <!-- Side Menu con Desplegables -->
+<aside id="side-menu" role="navigation" aria-label="Menú lateral">
+  <div class="side-menu-header">
+    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
+      <span class="close-icon"></span>
+    </button>
+  </div>
+  
+  <nav class="side-menu-nav">
+    <!-- Link simple -->
+    <a href="index.html" class="menu-link">
+      <span>Inicio</span>
+    </a>
+    
+    <!-- Sección desplegable: Eventos -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Eventos</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="eventos.html">Todos los Eventos</a>
+        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
+        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
+        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Tienda -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Tienda</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="tienda.html">Catálogo Completo</a>
+        <a href="tienda.html#vinilos">Vinilos</a>
+        <a href="tienda.html#merch">Merchandising</a>
+        <a href="tienda.html#accesorios">Accesorios</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Clases -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Clases</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="clases.html">Programas Formativos</a>
+        <a href="clases.html#bajo">Clases de Bajo</a>
+        <a href="clases.html#piano">Clases de Piano</a>
+        <a href="clases.html#produccion">Producción Musical</a>
+        <a href="clases.html#dj">Clases de DJ</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="label.html" class="menu-link">
+      <span>Roaster</span>
+    </a>
+    
+    <!-- Sección desplegable: Alquiler -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Alquiler</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="alquiler.html">Servicios</a>
+        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
+        <a href="alquiler.html#grabacion">Grabación de Sets</a>
+        <a href="alquiler.html#produccion">Servicio de Producción</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="contacto.html" class="menu-link">
+      <span>Contacto</span>
+    </a>
+  </nav>
+  
+  <div class="side-menu-footer">
+    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="#" id="toggleFx">FX: ON</a>
+  </div>
+</aside>
+
+  <!-- Canvas -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Content -->
+  <main id="content" role="main">
+    <!-- Eventos Header -->
+    <section class="panel hero snap" aria-label="Encabezado de Eventos">
+      <div class="hero-content-centered">
+        <h1 class="hero-title" data-animate="char">Eventos & Booking</h1>
+        <p class="hero-subtitle" data-animate="word">Agenda de showcases, festivales y experiencias inmersivas</p>
+      </div>
+    </section>
+
+    <!-- Eventos Contenido -->
+    <section class="panel snap" aria-label="Calendario de eventos">
+      <div class="panel-content">
+        <div class="section-meta">Próximos Eventos</div>
+        <header class="section-header">
+          <h2 data-animate="char">Agenda 2025</h2>
+          <p data-animate="word">Eventos curados por RAGE VENTURE. Desde showcases íntimos hasta festivales de gran escala.</p>
+        </header>
+
+        <!-- Filtros -->
+        <div class="event-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="showcase">Showcase</button>
+          <button class="filter-btn" data-filter="festival">Festival</button>
+          <button class="filter-btn" data-filter="workshop">Workshop</button>
+        </div>
+
+        <!-- Eventos Grid -->
+        <div class="events-grid">
+          <!-- Evento 1 -->
+          <article class="event-card tilt" data-hue="210" data-filter="showcase" data-animate="scale-in">
+            <div class="event-badge">Showcase</div>
+            <div class="event-header">
+              <h3>Neon Rave 2025</h3>
+              <p class="event-date">📅 Viernes 31 de Enero</p>
+              <p class="event-location">📍 Warehouse 12, Quito</p>
+            </div>
+            <div class="event-content">
+              <p>Noche de techno puro. Line-up: KØRA, MxR, TÊL. Sonido de 6000W en vivo.</p>
+              <div class="event-details">
+                <span class="capacity">Capacidad: 800 personas</span>
+                <span class="doors">Puertas: 22:00</span>
+              </div>
+            </div>
+            <div class="event-price">Entrada: $25 USD</div>
+            <button class="cta" aria-label="Comprar tickets para Neon Rave">Tickets</button>
+          </article>
+
+          <!-- Evento 2 -->
+          <article class="event-card tilt" data-hue="220" data-filter="festival" data-animate="scale-in">
+            <div class="event-badge">Festival</div>
+            <div class="event-header">
+              <h3>Afterglow Festival</h3>
+              <p class="event-date">📅 Sábado 8 de Febrero</p>
+              <p class="event-location">📍 Fábrica 88, Cuenca</p>
+            </div>
+            <div class="event-content">
+              <p>Festival al aire libre de 10 horas. Experimento vinilo retro + DJ sets modernos.</p>
+              <div class="event-details">
+                <span class="capacity">Capacidad: 1200 personas</span>
+                <span class="doors">Puertas: 14:00</span>
+              </div>
+            </div>
+            <div class="event-price">Early Bird: $40 USD</div>
+            <button class="cta" aria-label="Comprar tickets para Afterglow">Tickets</button>
+          </article>
+
+          <!-- Evento 3 -->
+          <article class="event-card tilt" data-hue="200" data-filter="showcase" data-animate="scale-in">
+            <div class="event-badge">Showcase</div>
+            <div class="event-header">
+              <h3>Midnight Pulse</h3>
+              <p class="event-date">📅 Viernes 21 de Febrero</p>
+              <p class="event-location">📍 The Docks, Guayaquil</p>
+            </div>
+            <div class="event-content">
+              <p>Live modular de VEX, OXI y Rho. Síntesis en vivo. Experiencia hipnótica.</p>
+              <div class="event-details">
+                <span class="capacity">Capacidad: 600 personas</span>
+                <span class="doors">Puertas: 23:00</span>
+              </div>
+            </div>
+            <div class="event-price">Entrada: $30 USD</div>
+            <button class="cta" aria-label="Comprar tickets para Midnight Pulse">Tickets</button>
+          </article>
+
+          <!-- Evento 4 -->
+          <article class="event-card tilt" data-hue="215" data-filter="workshop" data-animate="scale-in">
+            <div class="event-badge">Workshop</div>
+            <div class="event-header">
+              <h3>Síntesis Modular Masterclass</h3>
+              <p class="event-date">📅 Sábado 1 de Marzo</p>
+              <p class="event-location">📍 RAGE Studio, Cuenca</p>
+            </div>
+            <div class="event-content">
+              <p>Taller intensivo con KØRA. Aprende sintetización modular desde cero. Máx 20 personas.</p>
+              <div class="event-details">
+                <span class="capacity">Capacidad: 20 personas</span>
+                <span class="doors">Horario: 10:00-14:00</span>
+              </div>
+            </div>
+            <div class="event-price">Inscripción: $80 USD</div>
+            <button class="cta" aria-label="Inscribirse al workshop">Inscribirse</button>
+          </article>
+
+          <!-- Evento 5 -->
+          <article class="event-card tilt" data-hue="210" data-filter="festival" data-animate="scale-in">
+            <div class="event-badge">Festival</div>
+            <div class="event-header">
+              <h3>Techno Summit 2025</h3>
+              <p class="event-date">📅 Viernes-Domingo 14-16 Marzo</p>
+              <p class="event-location">📍 Multiple Venues, Ecuador</p>
+            </div>
+            <div class="event-content">
+              <p>3 días de conferencias, workshops y 50+ artistas. Evento más grande del año.</p>
+              <div class="event-details">
+                <span class="capacity">5000+ asistentes esperados</span>
+                <span class="doors">Pases 3 días disponibles</span>
+              </div>
+            </div>
+            <div class="event-price">Pass 3 días: $120 USD</div>
+            <button class="cta" aria-label="Comprar pase para Techno Summit">Pases</button>
+          </article>
+
+          <!-- Evento 6 -->
+          <article class="event-card tilt" data-hue="225" data-filter="showcase" data-animate="scale-in">
+            <div class="event-badge">Showcase</div>
+            <div class="event-header">
+              <h3>Label Night - MxR Album Release</h3>
+              <p class="event-date">📅 Viernes 28 de Marzo</p>
+              <p class="event-location">📍 Centro Cultural, Cuenca</p>
+            </div>
+            <div class="event-content">
+              <p>Presentación exclusiva del nuevo álbum de MxR. Sets de artistas del label.</p>
+              <div class="event-details">
+                <span class="capacity">Capacidad: 700 personas</span>
+                <span class="doors">Puertas: 21:00</span>
+              </div>
+            </div>
+            <div class="event-price">Entrada: $20 USD</div>
+            <button class="cta" aria-label="Comprar tickets para Label Night">Tickets</button>
+          </article>
+        </div>
+
+        <!-- Booking Section -->
+        <section class="booking-section">
+          <h2 class="section-title" data-animate="char">Booking Management</h2>
+          <div class="booking-content">
+            <p>¿Tienes un venue o festival? Gestionamos giras completas, riders técnicos y experiencias personalizadas para los artistas de RAGE VENTURE.</p>
+            <div class="booking-features">
+              <div class="feature-item">
+                <h4>🎤 Artistas de Calidad</h4>
+                <p>Roster curado de productores, DJs y performers confirmados</p>
+              </div>
+              <div class="feature-item">
+                <h4>🛠️ Soporte Técnico</h4>
+                <p>Asesoramiento completo en setup y requisitos técnicos</p>
+              </div>
+              <div class="feature-item">
+                <h4>📋 Gestión Profesional</h4>
+                <p>Manejo de contratos, seguros y logística completa</p>
+              </div>
+              <div class="feature-item">
+                <h4>🌍 Cobertura Nacional</h4>
+                <p>Actuaciones en Quito, Cuenca, Guayaquil y más ciudades</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Past Events -->
+        <section class="past-events-section">
+          <h2 class="section-title" data-animate="char">Eventos Pasados</h2>
+          <div class="past-events-list">
+            <div class="past-event">
+              <h4>Cyberdome 2024</h4>
+              <p>3000+ personas. Actuación en vivo con escenografía 3D inmersiva.</p>
+              <span class="past-date">Diciembre 2024</span>
+            </div>
+            <div class="past-event">
+              <h4>Summer Sonic #1</h4>
+              <p>Festival de verano con 20 artistas nacionales e internacionales.</p>
+              <span class="past-date">Agosto 2024</span>
+            </div>
+            <div class="past-event">
+              <h4>Genesis Launch Party</h4>
+              <p>Lanzamiento del primer EP del label con KØRA en vivo.</p>
+              <span class="past-date">Julio 2024</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Final -->
+        <div class="booking-callout tilt" data-hue="210">
+          <div>
+            <h3>Solicitar Booking</h3>
+            <p>¿Interesado en llevar RAGE VENTURE a tu ciudad? Contáctanos para discutir posibilidades.</p>
+          </div>
+          <button class="cta">Formulario de Booking</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="brand footer-brand">
+            <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+          </div>
+          <nav class="footer-nav" aria-label="Navegación rápida">
+            <a href="index.html">Inicio</a>
+            <a href="clases.html">Clases</a>
+            <a href="label.html">Label</a>
+            <a href="alquiler.html">Alquiler</a>
+            <a href="tienda.html">Tienda</a>
+          </nav>
+        </div>
+
+        <div class="footer-column">
+          <h3>Conecta</h3>
+          <div class="social-links" role="navigation">
+            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p class="newsletter-text">Sé el primero en enterarte de nuevos eventos.</p>
+          <form class="newsletter-form" method="POST" action="/api/newsletter">
+            <input type="email" name="email" placeholder="tu@email.com" required />
+            <button type="submit" class="ghost">Suscribir</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-links-legal">
+          <a href="/terminos">Términos</a>
+          <a href="/privacidad">Privacidad</a>
+        </div>
+        <div class="footer-note">© 2025 RAGE VENTURE. Todos los derechos reservados.</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="menu-toggle.js" defer></script>
+  <script>
+    // Simple event filtering
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        document.querySelectorAll('.event-card').forEach(card => {
+          if (filter === 'all' || card.dataset.filter === filter) {
+            card.style.display = 'block';
+            card.style.animation = 'fade-in-up 0.6s ease-out';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

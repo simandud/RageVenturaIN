@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacto RAGE VENTURE - Bookings, demos, colaboraciones y soporte" />
+  <meta name="theme-color" content="#030109" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="paginas.css" />
+  
+  <title>Contacto - RAGE VENTURE</title>
+</head>
+
+<body>
+  <a href="#content" class="skip-link">Saltar a contenido principal</a>
+
+  <!-- Header -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
+          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        </a>
+      </div>
+      
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="clases.html">Eventos</a>
+        <a href="label.html">Roaster</a>
+        <a href="alquiler.html">Alquiler</a>
+        <a href="tienda.html">Clases</a>
+        <a href="eventos.html">Tienda</a>
+        <a href="contacto.html" aria-current="page">Contacto</a>
+      </nav>
+      
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="side-menu">Menú</button>
+    </div>
+  </header>
+
+ <!-- Side Menu -->
+  <!-- Side Menu con Desplegables -->
+<aside id="side-menu" role="navigation" aria-label="Menú lateral">
+  <div class="side-menu-header">
+    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
+      <span class="close-icon"></span>
+    </button>
+  </div>
+  
+  <nav class="side-menu-nav">
+    <!-- Link simple -->
+    <a href="index.html" class="menu-link">
+      <span>Inicio</span>
+    </a>
+    
+    <!-- Sección desplegable: Eventos -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Eventos</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="eventos.html">Todos los Eventos</a>
+        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
+        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
+        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Tienda -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Tienda</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="tienda.html">Catálogo Completo</a>
+        <a href="tienda.html#vinilos">Vinilos</a>
+        <a href="tienda.html#merch">Merchandising</a>
+        <a href="tienda.html#accesorios">Accesorios</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Clases -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Clases</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="clases.html">Programas Formativos</a>
+        <a href="clases.html#bajo">Clases de Bajo</a>
+        <a href="clases.html#piano">Clases de Piano</a>
+        <a href="clases.html#produccion">Producción Musical</a>
+        <a href="clases.html#dj">Clases de DJ</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="label.html" class="menu-link">
+      <span>Roaster</span>
+    </a>
+    
+    <!-- Sección desplegable: Alquiler -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Alquiler</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="alquiler.html">Servicios</a>
+        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
+        <a href="alquiler.html#grabacion">Grabación de Sets</a>
+        <a href="alquiler.html#produccion">Servicio de Producción</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="contacto.html" class="menu-link">
+      <span>Contacto</span>
+    </a>
+  </nav>
+  
+  <div class="side-menu-footer">
+    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="#" id="toggleFx">FX: ON</a>
+  </div>
+</aside>
+  <!-- Background Canvas 3D -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Content -->
+  <main id="content" role="main">
+    <!-- Contacto Header -->
+    <section class="panel hero snap" aria-label="Encabezado de Contacto">
+      <div class="hero-content-centered">
+        <h1 class="hero-title" data-animate="char">Conecta con RAGE</h1>
+        <p class="hero-subtitle" data-animate="word">Estamos aquí para responder tus preguntas y explorar nuevas oportunidades</p>
+      </div>
+    </section>
+
+    <!-- Contacto Contenido -->
+    <section class="panel snap" aria-label="Formulario y contacto">
+      <div class="panel-content">
+        <div class="contact-grid">
+          <!-- Columna 1: Información de Contacto -->
+          <aside class="contact-info">
+            <h2 class="section-title" data-animate="char">Información de Contacto</h2>
+            
+            <div class="contact-method">
+              <h3>📍 Ubicación</h3>
+              <p>RAGE VENTURE Studio<br>
+              Cuenca, Azuay<br>
+              Ecuador</p>
+            </div>
+
+            <div class="contact-method">
+              <h3>📧 Email</h3>
+              <p><a href="mailto:info@rageventure.com">info@rageventure.com</a><br>
+              <a href="mailto:booking@rageventure.com">booking@rageventure.com</a><br>
+              <a href="mailto:demos@rageventure.com">demos@rageventure.com</a></p>
+            </div>
+
+            <div class="contact-method">
+              <h3>💬 Redes Sociales</h3>
+              <div class="social-links-contact">
+                <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+                <a href="https://twitter.com/rageventure" target="_blank" rel="noopener noreferrer">Twitter/X</a>
+                <a href="https://tiktok.com/@rageventure" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a href="https://discord.gg/rageventure" target="_blank" rel="noopener noreferrer">Discord</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <h3>⏰ Horarios</h3>
+              <p>Lunes - Viernes: 10:00 - 18:00<br>
+              Sábado - Domingo: 15:00 - 22:00<br>
+              Respondemos en máx 24 horas</p>
+            </div>
+
+            <div class="contact-method faq-box">
+              <h3>❓ Preguntas Frecuentes</h3>
+              <details>
+                <summary>¿Cómo contacto para booking?</summary>
+                <p>Envía un email a booking@rageventure.com con fechas, ubicación y presupuesto. Normalmente respondemos en 48 horas.</p>
+              </details>
+              <details>
+                <summary>¿Aceptan demos?</summary>
+                <p>Sí. Envía mínimo 3 tracks de calidad a demos@rageventure.com. Revisamos todo lo que llega.</p>
+              </details>
+              <details>
+                <summary>¿Tienes clases online?</summary>
+                <p>Actualmente solo presencial. Contáctanos para futuras opciones de clases virtuales.</p>
+              </details>
+              <details>
+                <summary>¿Entregas a domicilio?</summary>
+                <p>Sí, en Cuenca en 24-48 horas. Para otras ciudades, consultamos según distancia.</p>
+              </details>
+            </div>
+          </aside>
+
+          <!-- Columna 2: Formulario de Contacto -->
+          <main class="contact-form-wrapper">
+            <h2 class="section-title" data-animate="char">Envíanos un Mensaje</h2>
+            
+            <form class="form contact-form" method="POST" action="/api/contact" novalidate>
+              <input type="hidden" name="csrf_token" value="token_placeholder" />
+              
+              <!-- Nombre -->
+              <div class="form-group">
+                <label for="name">Nombre <span aria-label="requerido">*</span></label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  placeholder="Tu nombre completo" 
+                  required 
+                  minlength="2" 
+                  maxlength="100"
+                  aria-required="true"
+                  aria-invalid="false" />
+                <span id="name-error" class="error-message" role="alert"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Email <span aria-label="requerido">*</span></label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="tu@email.com" 
+                  required 
+                  aria-required="true"
+                  aria-invalid="false" />
+                <span id="email-error" class="error-message" role="alert"></span>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="+593 9 9999 9999" />
+              </div>
+
+              <!-- Asunto -->
+              <div class="form-group">
+                <label for="subject">Asunto <span aria-label="requerido">*</span></label>
+                <select id="subject" name="subject" required aria-required="true">
+                  <option value="">Selecciona un asunto</option>
+                  <option value="booking">Solicitud de Booking</option>
+                  <option value="demo">Envío de Demo</option>
+                  <option value="classes">Consulta sobre Clases</option>
+                  <option value="rental">Alquiler de Equipos</option>
+                  <option value="collaboration">Colaboración</option>
+                  <option value="other">Otro</option>
+                </select>
+              </div>
+
+              <!-- Mensaje -->
+              <div class="form-group">
+                <label for="message">Mensaje <span aria-label="requerido">*</span></label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="6" 
+                  placeholder="Cuéntanos tu idea, pregunta o propuesta…" 
+                  required 
+                  minlength="10" 
+                  maxlength="5000"
+                  aria-required="true"
+                  aria-invalid="false"></textarea>
+                <span id="message-error" class="error-message" role="alert"></span>
+              </div>
+
+              <!-- Checkbox Privacidad -->
+              <div class="form-group checkbox">
+                <input 
+                  type="checkbox" 
+                  id="privacy" 
+                  name="privacy" 
+                  required 
+                  aria-required="true" />
+                <label for="privacy">Acepto la <a href="/privacidad" target="_blank">política de privacidad</a></label>
+              </div>
+
+              <!-- Botón Enviar -->
+              <button class="cta" type="submit" aria-label="Enviar mensaje">Enviar Mensaje</button>
+              
+              <p class="form-note">Nos comprometemos a responder en menos de 24 horas.</p>
+            </form>
+          </main>
+        </div>
+
+        <!-- Más Canales -->
+        <section class="more-channels-section">
+          <h2 class="section-title" data-animate="char">Otros Canales</h2>
+          <div class="channels-grid">
+            <div class="channel-card">
+              <h3>💼 WhatsApp Business</h3>
+              <p>Para consultas rápidas y soporte en tiempo real</p>
+              <a href="https://wa.me/5939999999999" class="cta ghost" target="_blank" rel="noopener noreferrer">Chatear</a>
+            </div>
+
+            <div class="channel-card">
+              <h3>🎤 Discord Community</h3>
+              <p>Únete a nuestra comunidad de productores y DJs</p>
+              <a href="https://discord.gg/rageventure" class="cta ghost" target="_blank" rel="noopener noreferrer">Entrar al Discord</a>
+            </div>
+
+            <div class="channel-card">
+              <h3>📱 Instagram Direct</h3>
+              <p>Síguenos y escríbenos por DM para consultas</p>
+              <a href="https://instagram.com/rageventure" class="cta ghost" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+
+            <div class="channel-card">
+              <h3>🎵 SoundCloud Messages</h3>
+              <p>Envía demos y mensajes a través de SoundCloud</p>
+              <a href="https://soundcloud.com/rageventure" class="cta ghost" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mapa (opcional, placeholder) -->
+        <section class="map-section">
+          <h2 class="section-title" data-animate="char">Ubicación</h2>
+          <div class="map-placeholder">
+            <p>🗺️ RAGE VENTURE Studio - Cuenca, Ecuador</p>
+            <p class="map-note">Estamos ubicados en el corazón de la escena musical local. Visítanos.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="site-footer" role="contentinfo">
+          <div class="footer-grid">
+            <div class="footer-column">
+              <div class="brand footer-brand">
+                <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+              </div>
+              <nav class="footer-nav" aria-label="Navegación rápida">
+                <a href="#intro" data-go>Intro</a>
+                <a href="#clases" data-go>Clases</a>
+                <a href="#label" data-go>Label</a>
+                <a href="#alquiler" data-go>Alquiler</a>
+                <a href="#tienda" data-go>Tienda</a>
+                <a href="#eventos" data-go>Eventos</a>
+              </nav>
+            </div>
+
+            <div class="footer-column">
+              <h3>Conecta</h3>
+              <div class="social-links" role="navigation" aria-label="Redes sociales">
+                <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+                <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+                <a href="https://youtube.com/@rageventure" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://twitter.com/rageventure" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://facebook.com/rageventure" target="_blank" rel="noopener noreferrer">Facebook</a>
+              </div>
+            </div>
+
+            <div class="footer-column">
+              <h3>Newsletter</h3>
+              <p class="newsletter-text">Recibe updates exclusivos y lanzamientos.</p>
+              <form class="newsletter-form" method="POST" action="/api/newsletter">
+                <input type="email" name="email" placeholder="tu@email.com" required aria-label="Email para newsletter" />
+                <button type="submit" class="ghost">Suscribir</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-links-legal">
+              <a href="/terminos">Términos de Servicio</a>
+              <a href="/privacidad">Política de Privacidad</a>
+            </div>
+            <div class="footer-note">
+              © 2025 RAGE VENTURE. Todos los derechos reservados.
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="menu-toggle.js" defer></script>
+  <script>
+    // Validación básica del formulario
+    const form = document.querySelector('.contact-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Animación visual de envío
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Enviando...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+          btn.textContent = '✓ ¡Enviado!';
+          btn.style.animation = 'pulse-border 0.6s ease-out';
+          
+          // Resetear después de 3 segundos
+          setTimeout(() => {
+            form.reset();
+            btn.textContent = originalText;
+            btn.disabled = false;
+            btn.style.animation = 'none';
+          }, 3000);
+        }, 800);
+      });
+    }
+
+    // Animación de detalles (FAQ)
+    document.querySelectorAll('details').forEach(detail => {
+      detail.addEventListener('toggle', (e) => {
+        if (e.target.open) {
+          e.target.style.animation = 'slide-up 0.3s ease-out';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

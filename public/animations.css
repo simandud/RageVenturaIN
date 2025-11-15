@@ -1,0 +1,524 @@
+/* ═══════════════════════════════════════════════════════════════════════════════ */
+/* 🎬 RAGE VENTURE - ANIMATIONS CSS */
+/* Sistema completo de animaciones minimalistas y profesionales */
+/* ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── ANIMACIONES DE ENTRADA ── */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scaleY(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ── ANIMACIONES DE CARACTERES ── */
+
+@keyframes char-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotateX(90deg);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0);
+  }
+}
+
+@keyframes char-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes char-float {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── ANIMACIONES DE PALABRAS ── */
+
+@keyframes word-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes word-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── ANIMACIONES DE MARQUEE ── */
+
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-slide {
+  animation: marquee-slide 20s linear infinite;
+}
+
+/* ── ANIMACIONES DE BOTONES ── */
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(93, 180, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(93, 180, 255, 0);
+  }
+}
+
+@keyframes button-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(93, 180, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px 10px rgba(93, 180, 255, 0.3),
+                inset 0 0 15px rgba(93, 180, 255, 0.2);
+  }
+}
+
+@keyframes button-lift {
+  to {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(93, 180, 255, 0.4);
+  }
+}
+
+/* ── ANIMACIONES DE LINKS ── */
+
+@keyframes link-underline {
+  to {
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+}
+
+/* ── ANIMACIONES AVANZADAS ── */
+
+@keyframes glitch-text {
+  0% {
+    text-shadow: -2px 0 #ff0066, 2px 0 #00ffff;
+  }
+  20% {
+    text-shadow: 2px 0 #ff0066, -2px 0 #00ffff;
+  }
+  40% {
+    text-shadow: -2px 0 #00ffff, 2px 0 #ff0066;
+  }
+  60% {
+    text-shadow: 2px 0 #00ffff, -2px 0 #ff0066;
+  }
+  80% {
+    text-shadow: -2px 0 #ff0066, 2px 0 #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 transparent;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* ── CLASES DE ANIMACIÓN APLICABLES ── */
+
+/* Fade Animations */
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.6s ease-out forwards;
+}
+
+/* Scale Animations */
+.animate-scale-in {
+  animation: scale-in 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-rotate-in {
+  animation: rotate-in 0.8s ease-out forwards;
+}
+
+/* Slide Animations */
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+/* Bounce & Pop Animations */
+.animate-bounce-in {
+  animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-char-pop {
+  animation: char-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-char-slide {
+  animation: char-slide 0.5s ease-out forwards;
+}
+
+.animate-char-float {
+  animation: char-float 0.6s ease-out forwards;
+}
+
+/* Word Animations */
+.animate-word-slide {
+  animation: word-slide 0.6s ease-out forwards;
+}
+
+.animate-word-fade {
+  animation: word-fade 0.5s ease-out forwards;
+}
+
+/* Button Animations */
+.animate-pulse-border {
+  animation: pulse-border 2s infinite;
+}
+
+.animate-button-glow {
+  animation: button-glow 0.4s ease-out forwards;
+}
+
+.animate-button-lift {
+  animation: button-lift 0.3s ease-out forwards;
+}
+
+/* Link Animations */
+.animate-link-underline {
+  animation: link-underline 0.3s ease-out forwards;
+}
+
+/* Special Effects */
+.animate-glitch {
+  animation: glitch-text 0.4s infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-float {
+  animation: float-up 3s ease-in-out infinite;
+}
+
+/* ── STAGGER DELAYS PARA SECUENCIAS ── */
+
+/* Retrasos para efectos escalonados */
+.stagger-1 {
+  animation-delay: 0s;
+}
+
+.stagger-2 {
+  animation-delay: 0.1s;
+}
+
+.stagger-3 {
+  animation-delay: 0.2s;
+}
+
+.stagger-4 {
+  animation-delay: 0.3s;
+}
+
+.stagger-5 {
+  animation-delay: 0.4s;
+}
+
+.stagger-6 {
+  animation-delay: 0.5s;
+}
+
+/* ── MEDIA QUERIES PARA MOVIMIENTO REDUCIDO ── */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-scale-in,
+  .animate-slide-up,
+  .animate-bounce-in,
+  .animate-char-pop,
+  .animate-word-slide,
+  .animate-pulse-border {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── EFECTOS EN ELEMENTOS ESPECÍFICOS ── */
+
+/* Hero Logo */
+#hero-logo-main {
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Tagline */
+.hero-tagline {
+  will-change: transform;
+  perspective: 1000px;
+}
+
+/* CTA Buttons */
+.cta {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease-out;
+}
+
+.cta:hover::before {
+  left: 100%;
+}
+
+/* Cards */
+.card,
+.label-card,
+.rental-card,
+.vcard {
+  will-change: transform, opacity;
+  transition: all 0.3s ease-out;
+}
+
+.card:hover,
+.label-card:hover,
+.rental-card:hover,
+.vcard:hover {
+  transform: translateY(-4px);
+}
+
+/* Section Headers */
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #007BFF, #00d4ff);
+  transition: width 0.6s ease-out;
+}
+
+.section-header h2:hover::after {
+  width: 100%;
+}
+
+/* ── OPTIMIZACIONES DE PERFORMANCE ── */
+
+.will-animate {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* GPU acceleration para animaciones */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ── ANIMACIONES DE PÁGINA COMPLETA ── */
+
+@keyframes page-transition-in {
+  from {
+    opacity: 0;
+    background: var(--bg);
+  }
+  to {
+    opacity: 1;
+    background: var(--bg);
+  }
+}
+
+main {
+  animation: page-transition-in 0.6s ease-out;
+}
+
+/* ── EFECTOS DE SCROLL ── */
+
+@keyframes scroll-indicator {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+.scroll-indicator {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}

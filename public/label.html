@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RAGE VENTURE Label - Catálogo de artistas, lanzamientos exclusivos y submit de demos" />
+  <meta name="theme-color" content="#030109" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  
+  <title>Label - RAGE VENTURE</title>
+</head>
+
+<body>
+  <a href="#content" class="skip-link">Saltar a contenido principal</a>
+
+  <!-- Header -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
+          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        </a>
+      </div>
+      
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+<a href="index.html">Inicio</a>
+<a href="eventos.html">Eventos</a>
+<a href="label.html">Roaster</a>
+<a href="alquiler.html">Alquiler</a>
+<a href="clases.html">Clases</a>
+<a href="tienda.html">Tienda</a>
+<a href="contacto.html">Contacto</a>
+      </nav>
+      
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación">Menú</button>
+    </div>
+  </header>
+
+ <!-- Side Menu -->
+  <!-- Side Menu con Desplegables -->
+<aside id="side-menu" role="navigation" aria-label="Menú lateral">
+  <div class="side-menu-header">
+    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
+      <span class="close-icon"></span>
+    </button>
+  </div>
+  
+  <nav class="side-menu-nav">
+    <!-- Link simple -->
+    <a href="index.html" class="menu-link">
+      <span>Inicio</span>
+    </a>
+    
+    <!-- Sección desplegable: Eventos -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Eventos</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="eventos.html">Todos los Eventos</a>
+        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
+        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
+        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Tienda -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Tienda</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="tienda.html">Catálogo Completo</a>
+        <a href="tienda.html#vinilos">Vinilos</a>
+        <a href="tienda.html#merch">Merchandising</a>
+        <a href="tienda.html#accesorios">Accesorios</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Clases -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Clases</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="clases.html">Programas Formativos</a>
+        <a href="clases.html#bajo">Clases de Bajo</a>
+        <a href="clases.html#piano">Clases de Piano</a>
+        <a href="clases.html#produccion">Producción Musical</a>
+        <a href="clases.html#dj">Clases de DJ</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="label.html" class="menu-link">
+      <span>Roaster</span>
+    </a>
+    
+    <!-- Sección desplegable: Alquiler -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Alquiler</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="alquiler.html">Servicios</a>
+        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
+        <a href="alquiler.html#grabacion">Grabación de Sets</a>
+        <a href="alquiler.html#produccion">Servicio de Producción</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="contacto.html" class="menu-link">
+      <span>Contacto</span>
+    </a>
+  </nav>
+  
+  <div class="side-menu-footer">
+    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="#" id="toggleFx">FX: ON</a>
+  </div>
+</aside>
+
+  <!-- Canvas -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Content -->
+  <main id="content" role="main">
+    <!-- Label Header -->
+    <section class="panel hero snap" aria-label="Encabezado de Label">
+      <div class="hero-content-centered">
+        <h1 class="hero-title" data-animate="char">RAGE VENTURE LABEL</h1>
+        <p class="hero-subtitle" data-animate="word">Un roster curado de artistas que definen el futuro del sonido electrónico</p>
+      </div>
+    </section>
+
+    <!-- Label Contenido -->
+    <section class="panel snap" aria-label="Información del Label">
+      <div class="panel-content">
+        <div class="section-meta">Roster & Releases</div>
+        <header class="section-header">
+          <h2 data-animate="char">Nuestros Artistas</h2>
+          <p data-animate="word">Descubre el talento que está redefiniendo la música electrónica moderna. Desde productores experimentales hasta DJs residentes, cada artista trae su propia visión.</p>
+        </header>
+
+        <!-- Artistas Grid -->
+        <div class="cards label-grid">
+          <article class="label-card tilt" data-hue="210" data-animate="scale-in">
+            <div class="artist-avatar" style="background: linear-gradient(135deg, #007BFF, #00d4ff);"></div>
+            <h3>KØRA</h3>
+            <p class="artist-genre">Techno Hipnotico</p>
+            <p>Minimalismo envolvente y sintetización modular en vivo. KØRA es la voz del movimiento techno underground de Ecuador.</p>
+            <div class="artist-links">
+              <a href="#" aria-label="Escuchar en SoundCloud">Escuchar</a>
+              <a href="#" aria-label="Seguir en Instagram">Seguir</a>
+            </div>
+          </article>
+
+          <article class="label-card tilt" data-hue="220" data-animate="scale-in">
+            <div class="artist-avatar" style="background: linear-gradient(135deg, #5db4ff, #0088ff);"></div>
+            <h3>MxR</h3>
+            <p class="artist-genre">Experimental Electrónico</p>
+            <p>Sound design de vanguardia y producción híbrida. MxR fusiona síntesis clásica con técnicas digitales cutting-edge.</p>
+            <div class="artist-links">
+              <a href="#" aria-label="Escuchar en SoundCloud">Escuchar</a>
+              <a href="#" aria-label="Seguir en Instagram">Seguir</a>
+            </div>
+          </article>
+
+          <article class="label-card tilt" data-hue="200" data-animate="scale-in">
+            <div class="artist-avatar" style="background: linear-gradient(135deg, #00d4ff, #0099cc);"></div>
+            <h3>TÊL</h3>
+            <p class="artist-genre">House / Acid</p>
+            <p>Grooves pegadizos y sintetización acid clásica. TÊL es especialista en pistas que trascienden dancefloors.</p>
+            <div class="artist-links">
+              <a href="#" aria-label="Escuchar en SoundCloud">Escuchar</a>
+              <a href="#" aria-label="Seguir en Instagram">Seguir</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Sección de Lanzamientos -->
+        <section class="releases-section">
+          <h2 class="section-title" data-animate="char">Lanzamientos Recientes</h2>
+          <div class="releases-grid">
+            <article class="release-card">
+              <div class="release-cover" style="background: linear-gradient(135deg, #ff0066, #007BFF);"></div>
+              <h3>Neon Genesis EP</h3>
+              <p class="release-artist">por KØRA</p>
+              <p class="release-desc">4 tracks de techno hipnótico. Masterizado en Berlín.</p>
+              <footer class="release-meta">Diciembre 2024</footer>
+            </article>
+
+            <article class="release-card">
+              <div class="release-cover" style="background: linear-gradient(135deg, #00ffff, #005544);"></div>
+              <h3>Digital Wilderness</h3>
+              <p class="release-artist">por MxR</p>
+              <p class="release-desc">Compilación de sound design experimental puro.</p>
+              <footer class="release-meta">Noviembre 2024</footer>
+            </article>
+
+            <article class="release-card">
+              <div class="release-cover" style="background: linear-gradient(135deg, #ffaa00, #ff5500);"></div>
+              <h3>Acid Revival Vol. 1</h3>
+              <p class="release-artist">por TÊL</p>
+              <p class="release-desc">Viaje al corazón del acid house de los 90s.</p>
+              <footer class="release-meta">Octubre 2024</footer>
+            </article>
+          </div>
+        </section>
+
+        <!-- Submit Section -->
+        <div class="submit-section">
+          <h2 class="section-title" data-animate="char">¿Eres Artista?</h2>
+          <div class="submit-content">
+            <p>Estamos buscando talento fresco y visión única. Si tu música resuena con la filosofía RAGE VENTURE, nos encantaría escucharla.</p>
+            <div class="submit-requirements">
+              <h3>Requisitos para Submit</h3>
+              <ul>
+                <li>Mínimo 3 tracks de calidad de mastering profesional</li>
+                <li>Bio actualizada y enlaces a redes sociales</li>
+                <li>Visión clara de tu sonido y dirección artística</li>
+                <li>Disponibilidad para giras y eventos</li>
+              </ul>
+            </div>
+            <button class="cta">Enviar Demo</button>
+          </div>
+        </div>
+
+        <!-- CTA Final -->
+        <div class="booking-callout tilt" data-hue="210">
+          <div>
+            <h3>Síguenos en Todas Partes</h3>
+            <p>Mantente atento a lanzamientos exclusivos, sesiones en vivo y anuncios de artistas.</p>
+          </div>
+          <div class="social-links">
+            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer" class="ghost">Instagram</a>
+            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer" class="ghost">SoundCloud</a>
+            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer" class="ghost">Bandcamp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="brand footer-brand">
+            <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+          </div>
+          <nav class="footer-nav" aria-label="Navegación rápida">
+            <a href="index.html">Inicio</a>
+            <a href="clases.html">Clases</a>
+            <a href="label.html">Label</a>
+            <a href="alquiler.html">Alquiler</a>
+            <a href="tienda.html">Tienda</a>
+          </nav>
+        </div>
+
+        <div class="footer-column">
+          <h3>Conecta</h3>
+          <div class="social-links" role="navigation">
+            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p class="newsletter-text">Recibe updates exclusivos de artistas.</p>
+          <form class="newsletter-form" method="POST" action="/api/newsletter">
+            <input type="email" name="email" placeholder="tu@email.com" required />
+            <button type="submit" class="ghost">Suscribir</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-links-legal">
+          <a href="/terminos">Términos</a>
+          <a href="/privacidad">Privacidad</a>
+        </div>
+        <div class="footer-note">© 2025 RAGE VENTURE. Todos los derechos reservados.</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="menu-toggle.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alquiler de equipos profesionales de audio, sintetizadores y equipamiento DJ - RAGE VENTURE" />
+  <meta name="theme-color" content="#030109" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  
+  <title>Alquiler - RAGE VENTURE</title>
+</head>
+
+<body>
+  <a href="#content" class="skip-link">Saltar a contenido principal</a>
+
+  <!-- Header -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
+          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        </a>
+      </div>
+      
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+<a href="index.html">Inicio</a>
+<a href="eventos.html">Eventos</a>
+<a href="label.html">Roaster</a>
+<a href="alquiler.html">Alquiler</a>
+<a href="clases.html">Clases</a>
+<a href="tienda.html">Tienda</a>
+<a href="contacto.html">Contacto</a>
+      </nav>
+      
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación">Menú</button>
+    </div>
+  </header>
+
+ <!-- Side Menu -->
+  <!-- Side Menu con Desplegables -->
+<aside id="side-menu" role="navigation" aria-label="Menú lateral">
+  <div class="side-menu-header">
+    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
+      <span class="close-icon"></span>
+    </button>
+  </div>
+  
+  <nav class="side-menu-nav">
+    <!-- Link simple -->
+    <a href="index.html" class="menu-link">
+      <span>Inicio</span>
+    </a>
+    
+    <!-- Sección desplegable: Eventos -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Eventos</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="eventos.html">Todos los Eventos</a>
+        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
+        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
+        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Tienda -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Tienda</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="tienda.html">Catálogo Completo</a>
+        <a href="tienda.html#vinilos">Vinilos</a>
+        <a href="tienda.html#merch">Merchandising</a>
+        <a href="tienda.html#accesorios">Accesorios</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Clases -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Clases</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="clases.html">Programas Formativos</a>
+        <a href="clases.html#bajo">Clases de Bajo</a>
+        <a href="clases.html#piano">Clases de Piano</a>
+        <a href="clases.html#produccion">Producción Musical</a>
+        <a href="clases.html#dj">Clases de DJ</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="label.html" class="menu-link">
+      <span>Roaster</span>
+    </a>
+    
+    <!-- Sección desplegable: Alquiler -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Alquiler</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="alquiler.html">Servicios</a>
+        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
+        <a href="alquiler.html#grabacion">Grabación de Sets</a>
+        <a href="alquiler.html#produccion">Servicio de Producción</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="contacto.html" class="menu-link">
+      <span>Contacto</span>
+    </a>
+  </nav>
+  
+  <div class="side-menu-footer">
+    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="#" id="toggleFx">FX: ON</a>
+  </div>
+</aside>
+  <!-- Canvas -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Content -->
+  <main id="content" role="main">
+    <!-- Alquiler Header -->
+    <section class="panel hero snap" aria-label="Encabezado de Alquiler">
+      <div class="hero-content-centered">
+        <h1 class="hero-title" data-animate="char">Equipamiento Profesional</h1>
+        <p class="hero-subtitle" data-animate="word">Acceso a los mejores equipos de audio, sintetizadores y sistemas DJ del mercado</p>
+      </div>
+    </section>
+
+    <!-- Alquiler Contenido -->
+    <section class="panel snap" aria-label="Catálogo de alquiler">
+      <div class="panel-content">
+        <div class="section-meta">Equipo Profesional</div>
+        <header class="section-header">
+          <h2 data-animate="char">Nuestro Catálogo</h2>
+          <p data-animate="word">Desde sintetizadores analógicos clásicos hasta sistemas digitales de última generación, tenemos lo que necesitas.</p>
+        </header>
+
+        <!-- Categorías de Equipos -->
+        <div class="rental-categories">
+          <!-- Categoría 1: Sintetizadores -->
+          <div class="category-section">
+            <h3 class="category-title" data-animate="word">Sintetizadores & Modulares</h3>
+            <div class="rental-grid">
+              <article class="rental-card tilt" data-hue="210" data-animate="scale-in">
+                <div class="equipment-icon">🎛️</div>
+                <h4>Moog Minimoog Model D</h4>
+                <p>Legendario sintetizador analógico. El sonido clásico de la electrónica.</p>
+                <div class="equipment-specs">
+                  <span>Analógico Puro</span>
+                  <span>3 Osciladores</span>
+                </div>
+                <div class="price-tag">$150/día</div>
+                <button class="ghost" aria-label="Alquilar Moog Minimoog">Alquilar</button>
+              </article>
+
+              <article class="rental-card tilt" data-hue="220" data-animate="scale-in">
+                <div class="equipment-icon">⚡</div>
+                <h4>Eurorack Modular System</h4>
+                <p>Sistema modular completo con 60+ módulos de síntesis creativa.</p>
+                <div class="equipment-specs">
+                  <span>84 HP Custom</span>
+                  <span>Con Secuenciador</span>
+                </div>
+                <div class="price-tag">$200/día</div>
+                <button class="ghost" aria-label="Alquilar Eurorack">Alquilar</button>
+              </article>
+
+              <article class="rental-card tilt" data-hue="200" data-animate="scale-in">
+                <div class="equipment-icon">🎹</div>
+                <h4>Teenage Engineering OP-1</h4>
+                <p>Sinte todo-en-uno portátil. Síntesis FM y grabación de audio.</p>
+                <div class="equipment-specs">
+                  <span>Portátil</span>
+                  <span>USB MIDI</span>
+                </div>
+                <div class="price-tag">$80/día</div>
+                <button class="ghost" aria-label="Alquilar OP-1">Alquilar</button>
+              </article>
+            </div>
+          </div>
+
+          <!-- Categoría 2: Audio Profesional -->
+          <div class="category-section">
+            <h3 class="category-title" data-animate="word">Audio Profesional & Interfaces</h3>
+            <div class="rental-grid">
+              <article class="rental-card tilt" data-hue="215" data-animate="scale-in">
+                <div class="equipment-icon">🔊</div>
+                <h4>Allen & Heath SQ-5</h4>
+                <p>Mezclador digital de 48 canales. Ideal para eventos profesionales.</p>
+                <div class="equipment-specs">
+                  <span>Digital de 48Ch</span>
+                  <span>Dante Network</span>
+                </div>
+                <div class="price-tag">$180/día</div>
+                <button class="ghost" aria-label="Alquilar Allen & Heath">Alquilar</button>
+              </article>
+
+              <article class="rental-card tilt" data-hue="210" data-animate="scale-in">
+                <div class="equipment-icon">🎧</div>
+                <h4>Neumann U 87 Ai</h4>
+                <p>Micrófono de condensador de referencia. Grabación de voz y acústica.</p>
+                <div class="equipment-specs">
+                  <span>Diafragma Grande</span>
+                  <span>48V Phantom</span>
+                </div>
+                <div class="price-tag">$60/día</div>
+                <button class="ghost" aria-label="Alquilar Neumann">Alquilar</button>
+              </article>
+
+              <article class="rental-card tilt" data-hue="225" data-animate="scale-in">
+                <div class="equipment-icon">⚙️</div>
+                <h4>Focusrite Dante Converter</h4>
+                <p>Interfaz Dante para conexión de redes de audio profesionales.</p>
+                <div class="equipment-specs">
+                  <span>16 In / 16 Out</span>
+                  <span>Redundancia</span>
+                </div>
+                <div class="price-tag">$100/día</div>
+                <button class="ghost" aria-label="Alquilar Focusrite">Alquilar</button>
+              </article>
+            </div>
+          </div>
+
+          <!-- Categoría 3: DJ Setup -->
+          <div class="category-section">
+            <h3 class="category-title" data-animate="word">Equipamiento DJ</h3>
+            <div class="rental-grid">
+              <article class="rental-card tilt" data-hue="205" data-animate="scale-in">
+                <div class="equipment-icon">🎚️</div>
+                <h4>Pioneer CDJ-3000 Par</h4>
+                <p>Par profesional de reproductores DJ estándar en clubs.</p>
+                <div class="equipment-specs">
+                  <span>Con DJM-900NXS2</span>
+                  <span>Sync Pro</span>
+                </div>
+                <div class="price-tag">$250/día</div>
+                <button class="ghost" aria-label="Alquilar Pioneer CDJ">Alquilar</button>
+              </article>
+
+              <article class="rental-card tilt" data-hue="218" data-animate="scale-in">
+                <div class="equipment-icon">💿</div>
+                <h4>Technics 1200 MK7 Tornamesa</h4>
+                <p>Tornamesa de vinilo clásica con sistema de dirección. Par profesional.</p>
+                <div class="equipment-specs">
+                  <span>Directa</span>
+                  <span>Par (2 Unidades)</span>
+                </div>
+                <div class="price-tag">$180/día</div>
+                <button class="ghost" aria-label="Alquilar Technics">Alquilar</button>
+              </article>
+
+              <article class="rental-card tilt" data-hue="212" data-animate="scale-in">
+                <div class="equipment-icon">🎵</div>
+                <h4>Rane Seventy-Two Mixer</h4>
+                <p>Mezclador DJ híbrido control de Serato y Pioneer.</p>
+                <div class="equipment-specs">
+                  <span>2-Channel</span>
+                  <span>USB Audio</span>
+                </div>
+                <div class="price-tag">$120/día</div>
+                <button class="ghost" aria-label="Alquilar Rane">Alquilar</button>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paquetes Especiales -->
+        <section class="packages-section">
+          <h2 class="section-title" data-animate="char">Paquetes Todo Incluido</h2>
+          <div class="packages-grid">
+            <div class="package-card">
+              <h3>Studio Setup</h3>
+              <p class="package-price">$400/día</p>
+              <ul class="package-items">
+                <li>Interfaz de Audio Profesional</li>
+                <li>Micrófono Neumann</li>
+                <li>Monitoreo Estéreo</li>
+                <li>Cables y Adaptadores</li>
+              </ul>
+              <button class="cta">Reservar</button>
+            </div>
+
+            <div class="package-card">
+              <h3>Live Performance</h3>
+              <p class="package-price">$600/día</p>
+              <ul class="package-items">
+                <li>Sintetizador Analógico</li>
+                <li>Secuenciador</li>
+                <li>Sistemas de Sonido</li>
+                <li>Soporte Técnico</li>
+              </ul>
+              <button class="cta">Reservar</button>
+            </div>
+
+            <div class="package-card">
+              <h3>Event Pro</h3>
+              <p class="package-price">$900/día</p>
+              <ul class="package-items">
+                <li>Mixer Profesional</li>
+                <li>Equipamiento DJ Completo</li>
+                <li>Sistema Sonido 4000W</li>
+                <li>Iluminación LED</li>
+              </ul>
+              <button class="cta">Reservar</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Términos -->
+        <div class="terms-section">
+          <h3>Términos de Alquiler</h3>
+          <p>Todos nuestros equipos incluyen seguro de daño accidental, soporte técnico 24/7 y entrega a domicilio en Cuenca. Depósito reembolsable de $200.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="booking-callout tilt" data-hue="210">
+          <div>
+            <h3>¿Necesitas Asesoramiento?</h3>
+            <p>Nuestro equipo técnico está disponible para ayudarte a elegir el equipamiento perfecto para tu proyecto.</p>
+          </div>
+          <button class="cta">Contactar Ahora</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="brand footer-brand">
+            <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+          </div>
+          <nav class="footer-nav" aria-label="Navegación rápida">
+            <a href="index.html">Inicio</a>
+            <a href="clases.html">Clases</a>
+            <a href="label.html">Label</a>
+            <a href="alquiler.html">Alquiler</a>
+            <a href="tienda.html">Tienda</a>
+          </nav>
+        </div>
+
+        <div class="footer-column">
+          <h3>Conecta</h3>
+          <div class="social-links" role="navigation">
+            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p class="newsletter-text">Recibe ofertas exclusivas de alquiler.</p>
+          <form class="newsletter-form" method="POST" action="/api/newsletter">
+            <input type="email" name="email" placeholder="tu@email.com" required />
+            <button type="submit" class="ghost">Suscribir</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-links-legal">
+          <a href="/terminos">Términos</a>
+          <a href="/privacidad">Privacidad</a>
+        </div>
+        <div class="footer-note">© 2025 RAGE VENTURE. Todos los derechos reservados.</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="menu-toggle.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tienda oficial RAGE VENTURE - Vinilos, merchandising, equipamiento y accesorios" />
+  <meta name="theme-color" content="#030109" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  
+  <title>Tienda - RAGE VENTURE</title>
+</head>
+
+<body>
+  <a href="#content" class="skip-link">Saltar a contenido principal</a>
+
+  <!-- Header -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
+          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        </a>
+      </div>
+      
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+<a href="index.html">Inicio</a>
+<a href="eventos.html">Eventos</a>
+<a href="label.html">Roaster</a>
+<a href="alquiler.html">Alquiler</a>
+<a href="clases.html">Clases</a>
+<a href="tienda.html">Tienda</a>
+<a href="contacto.html">Contacto</a>
+      </nav>
+      
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación">Menú</button>
+    </div>
+  </header>
+
+   <!-- Side Menu -->
+  <!-- Side Menu con Desplegables -->
+<aside id="side-menu" role="navigation" aria-label="Menú lateral">
+  <div class="side-menu-header">
+    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
+      <span class="close-icon"></span>
+    </button>
+  </div>
+  
+  <nav class="side-menu-nav">
+    <!-- Link simple -->
+    <a href="index.html" class="menu-link">
+      <span>Inicio</span>
+    </a>
+    
+    <!-- Sección desplegable: Eventos -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Eventos</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="eventos.html">Todos los Eventos</a>
+        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
+        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
+        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Tienda -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Tienda</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="tienda.html">Catálogo Completo</a>
+        <a href="tienda.html#vinilos">Vinilos</a>
+        <a href="tienda.html#merch">Merchandising</a>
+        <a href="tienda.html#accesorios">Accesorios</a>
+      </div>
+    </div>
+    
+    <!-- Sección desplegable: Clases -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Clases</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="clases.html">Programas Formativos</a>
+        <a href="clases.html#bajo">Clases de Bajo</a>
+        <a href="clases.html#piano">Clases de Piano</a>
+        <a href="clases.html#produccion">Producción Musical</a>
+        <a href="clases.html#dj">Clases de DJ</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="label.html" class="menu-link">
+      <span>Roaster</span>
+    </a>
+    
+    <!-- Sección desplegable: Alquiler -->
+    <div class="menu-section">
+      <button class="menu-section-btn" aria-expanded="false">
+        <span>Alquiler</span>
+        <span class="arrow">›</span>
+      </button>
+      <div class="menu-section-content">
+        <a href="alquiler.html">Servicios</a>
+        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
+        <a href="alquiler.html#grabacion">Grabación de Sets</a>
+        <a href="alquiler.html#produccion">Servicio de Producción</a>
+      </div>
+    </div>
+    
+    <!-- Link simple -->
+    <a href="contacto.html" class="menu-link">
+      <span>Contacto</span>
+    </a>
+  </nav>
+  
+  <div class="side-menu-footer">
+    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="#" id="toggleFx">FX: ON</a>
+  </div>
+</aside>
+  <!-- Canvas -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Content -->
+  <main id="content" role="main">
+    <!-- Tienda Header -->
+    <section class="panel hero snap" aria-label="Encabezado de Tienda">
+      <div class="hero-content-centered">
+        <h1 class="hero-title" data-animate="char">Tienda RAGE VENTURE</h1>
+        <p class="hero-subtitle" data-animate="word">Oficial merch, vinilos exclusivos y equipamiento seleccionado</p>
+      </div>
+    </section>
+
+    <!-- Tienda Contenido -->
+    <section class="panel snap" aria-label="Catálogo de productos">
+      <div class="panel-content">
+        <div class="section-meta">Compra Física & Digital</div>
+        <header class="section-header">
+          <h2 data-animate="char">Nuestros Productos</h2>
+          <p data-animate="word">Desde vinilos y merchandising oficial hasta equipamiento profesional seleccionado. Envíos a todo Ecuador.</p>
+        </header>
+
+        <!-- Categoría: Vinilos & Música -->
+        <div class="product-category">
+          <h3 class="category-title" data-animate="word">Vinilos Exclusivos</h3>
+          <div class="product-grid">
+            <article class="product-card tilt" data-hue="210" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #ff0066, #007BFF);">
+                <span class="vinyl-badge">Vinyl</span>
+              </div>
+              <h4>KØRA - Neon Genesis</h4>
+              <p class="product-desc">EP de techno hipnótico limited edition 300 copias</p>
+              <div class="product-specs">
+                <span>Vinilo 12"</span>
+                <span>Masterizado Berlín</span>
+              </div>
+              <div class="product-price">$45.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="220" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #00ffff, #005544);">
+                <span class="vinyl-badge">Vinyl</span>
+              </div>
+              <h4>MxR - Digital Wilderness</h4>
+              <p class="product-desc">Compilación de sound design experimental</p>
+              <div class="product-specs">
+                <span>Vinilo 2xLP</span>
+                <span>Gatefold Art</span>
+              </div>
+              <div class="product-price">$55.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="200" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #ffaa00, #ff5500);">
+                <span class="vinyl-badge">Vinyl</span>
+              </div>
+              <h4>TÊL - Acid Revival Vol. 1</h4>
+              <p class="product-desc">Viaje al corazón del acid house clásico</p>
+              <div class="product-specs">
+                <span>Vinilo 12"</span>
+                <span>Picture Disc</span>
+              </div>
+              <div class="product-price">$38.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Categoría: Merch Oficial -->
+        <div class="product-category">
+          <h3 class="category-title" data-animate="word">Merchandising Oficial</h3>
+          <div class="product-grid">
+            <article class="product-card tilt" data-hue="215" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #1a1a2e, #0f3460);">
+                <span class="merch-badge">Camiseta</span>
+              </div>
+              <h4>T-Shirt Logo Original</h4>
+              <p class="product-desc">Algodón 100% orgánico. Impresión serigrafía</p>
+              <div class="product-specs">
+                <span>Unisex</span>
+                <span>Premium Quality</span>
+              </div>
+              <div class="product-price">$25.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Seleccionar talla">Tallas</button>
+                <button class="ghost ghost-secondary" aria-label="Añadir al carrito">Carrito</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="210" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #2a0845, #5a189a);">
+                <span class="merch-badge">Hoodie</span>
+              </div>
+              <h4>Hoodie Raglan RAGE</h4>
+              <p class="product-desc">Sudadera con capucha, bolsillos laterales</p>
+              <div class="product-specs">
+                <span>Algodón/Poliester</span>
+                <span>Bordado Metalizado</span>
+              </div>
+              <div class="product-price">$60.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Seleccionar talla">Tallas</button>
+                <button class="ghost ghost-secondary" aria-label="Añadir al carrito">Carrito</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="225" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #ff006e, #fb5607);">
+                <span class="merch-badge">Accesorios</span>
+              </div>
+              <h4>Pack Stickers x10</h4>
+              <p class="product-desc">Pegatinas holográficas edición limitada</p>
+              <div class="product-specs">
+                <span>Diseños Variados</span>
+                <span>Resist. UV</span>
+              </div>
+              <div class="product-price">$12.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="205" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #003d5c, #0066cc);">
+                <span class="merch-badge">Accesorios</span>
+              </div>
+              <h4>Gorro Beanie</h4>
+              <p class="product-desc">Lana merino. Logo bordado frontal</p>
+              <div class="product-specs">
+                <span>One Size</span>
+                <span>Ajustable</span>
+              </div>
+              <div class="product-price">$28.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="218" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #8338ec, #ff006e);">
+                <span class="merch-badge">Accesorios</span>
+              </div>
+              <h4>Bolsa Tote Organiza</h4>
+              <p class="product-desc">Lona resistente. Compartimentos internos</p>
+              <div class="product-specs">
+                <span>Capacidad 15L</span>
+                <span>Asas Reforzadas</span>
+              </div>
+              <div class="product-price">$35.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="212" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #ffb703, #fb8500);">
+                <span class="merch-badge">Accesorios</span>
+              </div>
+              <h4>Llavero Acrílico</h4>
+              <p class="product-desc">Acrílico transparente con retroiluminación LED</p>
+              <div class="product-specs">
+                <span>USB Mini</span>
+                <span>3 Colores LED</span>
+              </div>
+              <div class="product-price">$18.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Categoría: Tech & Accesorios -->
+        <div class="product-category">
+          <h3 class="category-title" data-animate="word">Equipamiento & Accesorios Técnicos</h3>
+          <div class="product-grid">
+            <article class="product-card tilt" data-hue="220" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #222222, #444444);">
+                <span class="tech-badge">Cable</span>
+              </div>
+              <h4>Cables XLR Premium 10m</h4>
+              <p class="product-desc">Cobre OFC, blindaje doble. Conectores Neutrik</p>
+              <div class="product-specs">
+                <span>Profesional</span>
+                <span>10 Años Garantía</span>
+              </div>
+              <div class="product-price">$45.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="215" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #1a1a1a, #333333);">
+                <span class="tech-badge">Accesorios</span>
+              </div>
+              <h4>Adaptador USB-C MIDI</h4>
+              <p class="product-desc">Compatibilidad iOS/Android/Windows</p>
+              <div class="product-specs">
+                <span>Plug & Play</span>
+                <span>Latencia Ultra-Baja</span>
+              </div>
+              <div class="product-price">$32.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+
+            <article class="product-card tilt" data-hue="210" data-animate="scale-in">
+              <div class="product-image" style="background: linear-gradient(135deg, #2c2c2c, #555555);">
+                <span class="tech-badge">Protección</span>
+              </div>
+              <h4>Fundas Flight Case DJ</h4>
+              <p class="product-desc">Espuma EVA, ruedas profesionales</p>
+              <div class="product-specs">
+                <span>Para CDJ-3000</span>
+                <span>Armadura Reforzada</span>
+              </div>
+              <div class="product-price">$120.00</div>
+              <div class="product-actions">
+                <button class="ghost" aria-label="Añadir al carrito">Añadir</button>
+                <button class="ghost ghost-secondary" aria-label="Más información">Info</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Carrito & Checkout Info -->
+        <div class="checkout-info">
+          <h3>Compra Segura & Envío Rápido</h3>
+          <div class="checkout-features">
+            <div class="feature">
+              <span class="icon">🔒</span>
+              <p>Pago seguro con encriptación SSL</p>
+            </div>
+            <div class="feature">
+              <span class="icon">📦</span>
+              <p>Envío a Cuenca en 24-48 horas</p>
+            </div>
+            <div class="feature">
+              <span class="icon">↩️</span>
+              <p>Devolución fácil en 30 días</p>
+            </div>
+            <div class="feature">
+              <span class="icon">💬</span>
+              <p>Soporte 24/7 por WhatsApp</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="booking-callout tilt" data-hue="210">
+          <div>
+            <h3>Completa tu Experiencia RAGE</h3>
+            <p>Acceso VIP a pre-orders y ediciones limitadas para suscriptores del newsletter.</p>
+          </div>
+          <button class="cta">Suscribirse Ahora</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="brand footer-brand">
+            <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+          </div>
+          <nav class="footer-nav" aria-label="Navegación rápida">
+            <a href="index.html">Inicio</a>
+            <a href="clases.html">Clases</a>
+            <a href="label.html">Label</a>
+            <a href="alquiler.html">Alquiler</a>
+            <a href="tienda.html">Tienda</a>
+          </nav>
+        </div>
+
+        <div class="footer-column">
+          <h3>Conecta</h3>
+          <div class="social-links" role="navigation">
+            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p class="newsletter-text">Descuentos exclusivos y pre-orders.</p>
+          <form class="newsletter-form" method="POST" action="/api/newsletter">
+            <input type="email" name="email" placeholder="tu@email.com" required />
+            <button type="submit" class="ghost">Suscribir</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-links-legal">
+          <a href="/terminos">Términos</a>
+          <a href="/privacidad">Privacidad</a>
+        </div>
+        <div class="footer-note">© 2025 RAGE VENTURE. Todos los derechos reservados.</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="menu-toggle.js" defer></script>
+</body>
+</html>

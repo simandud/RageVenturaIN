@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="RAGE VENTURE - Portal inmersivo de música, producción y experiencias visuales. Clases, label de música, alquiler de equipos y tienda oficial." />
+  <meta name="keywords" content="música, producción, DJ, síntesis, electrónica, clases, portal 3D" />
+  <meta name="theme-color" content="#030109" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RAGE VENTURE – Portal Inmersivo" />
+  <meta property="og:description" content="Explora la música, la producción y el mundo digital" />
+  <meta property="og:locale" content="es_ES" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RAGE VENTURE – Portal Inmersivo" />
+  <meta name="twitter:description" content="Explora la música, la producción y el mundo digital" />
+  
+  <link rel="canonical" href="https://rageventure.com/" />
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="paginas.css" />
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "RAGE VENTURE",
+    "description": "Portal inmersivo de música, producción y experiencias digitales",
+    "url": "https://rageventure.com",
+    "addressCountry": "EC"
+  }
+  </script>
+  
+  <title>RAGE VENTURE – Electronic Music</title>
+</head>
+
+<body>
+  <a href="#content" class="skip-link">Saltar a contenido principal</a>
+
+  <!-- Header -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
+      <div class="brand">
+        <a href="#intro" aria-label="RAGE VENTURE - Inicio" class="brand-text">
+          <span class="rage-logo-text">RAGE VENTURE</span>
+        </a>
+      </div>
+      
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+        <a href="eventos.html" class="nav-link">EVENTOS</a>
+        <a href="musica.html" class="nav-link">MÚSICA</a>
+        <a href="revista.html" class="nav-link">REVISTA</a>
+        <a href="store.html" class="nav-link">STORE</a>
+      </nav>
+      
+      <div class="header-spacer"></div>
+      
+      <div class="header-right">
+        <button class="search-btn" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        
+        <a href="mi-cuenta.html" class="account-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+          </svg>
+          Mi cuenta
+        </a>
+        
+        <a href="pro.html" class="pro-link">PRO</a>
+      </div>
+      
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- Side Menu -->
+  <aside id="side-menu" role="navigation" aria-label="Menú lateral">
+    <div class="side-menu-header">
+      <button id="menu-close-btn" class="menu-toggle-btn" aria-label="Cerrar menú">×</button>
+    </div>
+    <nav>
+      <a href="#intro" data-go>Inicio</a>
+      <a href="#about" data-go>Sobre Nosotros</a>
+      <a href="#clases" data-go>Clases</a>
+      <a href="#label" data-go>Label</a>
+      <a href="#alquiler" data-go>Alquiler</a>
+      <a href="#tienda" data-go>Tienda</a>
+      <a href="#eventos" data-go>Eventos</a>
+      <a href="#contacto" data-go>Contacto</a>
+    </nav>
+    <div class="side-menu-footer">
+      <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" id="toggleFx">FX: ON</a>
+    </div>
+  </aside>
+
+  <!-- Background Canvas -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Content -->
+  <main id="content" role="main">
+    <!-- Intro -->
+    <section id="intro" class="panel hero snap" aria-label="Sección de presentación">
+      <header class="hero-content-centered">
+        <h1 class="visually-hidden">RAGE VENTURE - Portal Inmersivo de Música y Producción</h1>
+        <img src="assets/logorageve_!.png" alt="" id="hero-logo-main" aria-hidden="true" loading="eager" />
+        <p class="hero-tagline">Crea sin límites. Tu sonido. Tu mundo.</p>
+        <button class="cta" data-go="#clases">Despegar</button>
+      </header>
+      <div class="marquee" aria-hidden="true">
+        <span>RAGE VENTURE • PORTAL 3D • CLASES • LABEL • ALQUILER • TIENDA • EVENTOS • </span>
+        <span>RAGE VENTURE • PORTAL 3D • CLASES • LABEL • ALQUILER • TIENDA • EVENTOS • </span>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="panel about-section snap" aria-label="Acerca de nosotros">
+      <div class="about-container">
+        <div class="about-title">
+          <h2>Sobre nosotros</h2>
+        </div>
+        
+        <div class="about-content">
+          <p class="about-text">
+            Potenciamos artistas y productores para lograr más creando experiencias inmersivas en cada punto de contacto: en el metaverso, en eventos presenciales y en línea. Con una mezcla única de estrategia, creatividad, habilidad técnica y servicio dedicado, entregamos soluciones digitales y físicas que logran un éxito comercial excepcional.
+          </p>
+          
+          <button class="learn-more-btn">
+            APRENDER MÁS
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clases -->
+    <section id="clases" class="panel snap" aria-label="Programas formativos">
+      <div class="panel-content">
+        <div class="section-meta">Sección 1 / Clases</div>
+        <header class="section-header">
+          <h2>Programas Formativos</h2>
+          <p>Desde los fundamentos hasta técnicas avanzadas de producción y performance, empieza tu viaje sónico aquí.</p>
+        </header>
+        <div class="cards class-grid">
+          <article class="card tilt" data-hue="210">
+            <h3>Clases iniciales de bajo</h3>
+            <p>Groove, técnica y exploración de frecuencias graves.</p>
+          </article>
+          <article class="card tilt" data-hue="220">
+            <h3>Clases iniciales de piano</h3>
+            <p>Digitación, armonía básica y lectura aplicada a sintetizadores.</p>
+          </article>
+          <article class="card tilt" data-hue="180">
+            <h3>Clases de intro a la tecnología</h3>
+            <p>Configuración de DAW, interfaces, ruteo de señal y workflow 3D.</p>
+          </article>
+          <article class="card tilt" data-hue="200">
+            <h3>Clases de producción musical</h3>
+            <p>Sound design, sampling creativo y mezcla orientada al club.</p>
+          </article>
+          <article class="card tilt" data-hue="210">
+            <h3>Clases de armonía 1</h3>
+            <p>Construcción de acordes, progresiones y escucha entrenada.</p>
+          </article>
+          <article class="card tilt" data-hue="215">
+            <h3>Clases de DJ</h3>
+            <p>Beatmatching híbrido, FX performativos y narrativa de set.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Label -->
+    <section id="label" class="panel snap" aria-label="Rage Venture Label">
+      <div class="panel-content">
+        <div class="section-meta">Sección 2 / Label</div>
+        <header class="section-header">
+          <h2>Rage Venture Label</h2>
+          <p>Un roster curado de artistas que definen el sonido del futuro. Explora nuestros lanzamientos y artistas.</p>
+        </header>
+        <div class="label-board">
+          <article class="label-card tilt" data-hue="210">
+            <h3>Roster en Expansión</h3>
+            <p>Perfiles dedicados para nuestros productores, vocalistas y DJs residentes.</p>
+          </article>
+          <article class="label-card tilt" data-hue="220">
+            <h3>Lanzamientos Exclusivos</h3>
+            <p>Integra trailers, visualizers y previews de vinilos o EPs en este espacio.</p>
+          </article>
+          <article class="label-card tilt" data-hue="200">
+            <h3>Submit de Artistas</h3>
+            <p>Habilita formularios o enlaces para que nuevos talentos envíen demos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alquiler -->
+    <section id="alquiler" class="panel snap" aria-label="Alquiler de recursos">
+      <div class="panel-content">
+        <div class="section-meta">Sección 3 / Alquiler</div>
+        <header class="section-header">
+          <h2>Alquiler de Recursos</h2>
+          <p>Accede a equipos y servicios de producción musical con soporte especializado.</p>
+        </header>
+        <div class="rentals-grid">
+          <article class="rental-card tilt" data-hue="210">
+            <div class="media-frame">
+              <img src="https://images.unsplash.com/photo-1512403754473-27835f7b5795?auto=format&fit=crop&w=900&q=80" alt="Máquinas de producción musical profesionales" loading="lazy" decoding="async" />
+            </div>
+            <h3>Alquiler de máquinas de producción</h3>
+            <p>Sintetizadores, drum machines y samplers (Moog, Elektron, Roland) para tu estudio.</p>
+          </article>
+          <article class="rental-card tilt" data-hue="220">
+            <div class="media-frame">
+              <img src="https://images.unsplash.com/photo-1590602848163-0b0b83c58b3c?auto=format&fit=crop&w=900&q=80" alt="Cabina profesional con tornamesas Technics" loading="lazy" decoding="async" />
+            </div>
+            <h3>Grabación de set de vinilos</h3>
+            <p>Cabina completa con Technics 1200, mixer Allen & Heath y grabación multi-track.</p>
+          </article>
+          <article class="rental-card tilt" data-hue="200">
+            <div class="media-frame">
+              <img src="https://images.unsplash.com/photo-1598488035139-BFFB86624a14?auto=format&fit=crop&w=900&q=80" alt="Ingeniero de producción musical en estudio" loading="lazy" decoding="async" />
+            </div>
+            <h3>Servicio de producción</h3>
+            <p>Creación, mezcla y masterización de tracks en cualquier estilo con nuestros ingenieros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tienda -->
+    <section id="tienda" class="panel snap hwrap" aria-label="Tienda Rage Venture">
+      <div class="panel-content">
+        <div class="section-meta">Sección 4 / Tienda</div>
+        <header class="section-header">
+          <h2>Tienda Rage Venture</h2>
+          <p>Venta de vinilos, merch oficial, repuestos y accesorios para extender la experiencia.</p>
+        </header>
+        <div class="hscroll" id="vinylScroll" role="region" aria-label="Productos disponibles (scroll horizontal)">
+          <article class="vcard tilt" data-hue="210">
+            <div class="disc"></div>
+            <h3>Venta de Vinilos</h3>
+            <p>Ediciones limitadas, prensados exclusivos y arte holográfico.</p>
+            <button class="ghost" aria-label="Comprar vinilos">Comprar</button>
+          </article>
+          <article class="vcard tilt" data-hue="220">
+            <img class="vinyl-img" src="https://images.unsplash.com/photo-1502773860571-211a597d6e4b?auto=format&fit=crop&w=600&q=80" alt="Colección de vinilos exclusivos" loading="lazy" decoding="async" />
+            <h3>Selección RAGE</h3>
+            <p>Vinilos curados por el label y sesiones en vivo remasterizadas.</p>
+            <button class="ghost" aria-label="Explorar selección">Explorar</button>
+          </article>
+          <article class="vcard tilt" data-hue="200">
+            <img class="vinyl-img" src="https://images.unsplash.com/photo-1576757606014-a16fdefa6b41?auto=format&fit=crop&w=600&q=80" alt="Merchandising oficial RAGE VENTURE" loading="lazy" decoding="async" />
+            <h3>Merch Oficial</h3>
+            <p>Stickers, llaveros, abanicos y apparel exclusivo del sello.</p>
+            <button class="ghost" aria-label="Añadir merchandising al carrito">Añadir</button>
+          </article>
+          <article class="vcard tilt" data-hue="215">
+            <img class="vinyl-img" src="https://images.unsplash.com/photo-1547926856-02682f23d420?auto=format&fit=crop&w=600&q=80" alt="Accesorios y cables de audio profesionales" loading="lazy" decoding="async" />
+            <h3>Repuestos & Cables</h3>
+            <p>Piezas técnicas, cables premium y herramientas de mantenimiento.</p>
+            <button class="ghost" aria-label="Añadir accesorios al carrito">Añadir</button>
+          </article>
+        </div>
+        <p class="hint">Usa la rueda del mouse para desplazarte <strong>horizontalmente</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Eventos -->
+    <section id="eventos" class="panel snap" aria-label="Eventos y booking">
+      <div class="panel-content">
+        <div class="section-meta">Sección 5 / Eventos</div>
+        <header class="section-header">
+          <h2>Eventos & Booking</h2>
+          <p>Agenda de showcases, festivales y experiencias inmersivas conectadas al portal.</p>
+        </header>
+        <div class="cards">
+          <article class="card tilt" data-hue="210">
+            <h3>Neon Rave – Quito</h3>
+            <p>Viernes 31 • Warehouse 12 • Line-up: KØRA, MxR, TÊL.</p>
+            <button class="ghost" aria-label="Comprar tickets para Neon Rave Quito">Tickets</button>
+          </article>
+          <article class="card tilt" data-hue="220">
+            <h3>Afterglow – Cuenca</h3>
+            <p>Sábado 08 • Fábrica 88 • Vinyl set: LUX, NVM, Cian.</p>
+            <button class="ghost" aria-label="Comprar tickets para Afterglow Cuenca">Tickets</button>
+          </article>
+          <article class="card tilt" data-hue="200">
+            <h3>Midnight Pulse – Guayaquil</h3>
+            <p>Viernes 21 • Docks • Live modular: VEX, OXI, Rho.</p>
+            <button class="ghost" aria-label="Comprar tickets para Midnight Pulse Guayaquil">Tickets</button>
+          </article>
+        </div>
+        <div class="booking-callout tilt" data-hue="210">
+          <div>
+            <h3>Booking Management</h3>
+            <p>Gestionamos giras, riders técnicos y experiencias personalizadas para tu venue o festival.</p>
+          </div>
+          <button class="cta" data-go="#contacto">Solicitar Booking</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="panel snap" aria-label="Contacto y formulario">
+      <div class="panel-content">
+        <header class="section-header">
+          <h2>Contacto</h2>
+          <p>Conecta con nosotros para bookings, demos o colaboraciones.</p>
+        </header>
+        
+        <form class="form" method="POST" action="/api/contact" novalidate>
+          <input type="hidden" name="csrf_token" value="token_placeholder" />
+          
+          <label for="name">Nombre <span aria-label="requerido">*</span></label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Tu nombre" 
+            required 
+            minlength="2" 
+            maxlength="100"
+            aria-required="true"
+            aria-invalid="false" />
+          <span id="name-error" class="error-message" role="alert"></span>
+          
+          <label for="email">Email <span aria-label="requerido">*</span></label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="tucorreo@ejemplo.com" 
+            required 
+            aria-required="true"
+            aria-invalid="false" />
+          <span id="email-error" class="error-message" role="alert"></span>
+          
+          <label for="message">Mensaje <span aria-label="requerido">*</span></label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="4" 
+            placeholder="Cuéntanos tu idea…" 
+            required 
+            minlength="10" 
+            maxlength="5000"
+            aria-required="true"
+            aria-invalid="false"></textarea>
+          <span id="message-error" class="error-message" role="alert"></span>
+          
+          <button class="cta" type="submit">Enviar Mensaje</button>
+        </form>
+
+        <footer class="site-footer" role="contentinfo">
+          <div class="footer-grid">
+            <div class="footer-column">
+              <div class="brand footer-brand">
+                <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+              </div>
+              <nav class="footer-nav" aria-label="Navegación rápida">
+                <a href="#intro" data-go>Intro</a>
+                <a href="#about" data-go>Sobre Nosotros</a>
+                <a href="#clases" data-go>Clases</a>
+                <a href="#label" data-go>Label</a>
+                <a href="#alquiler" data-go>Alquiler</a>
+                <a href="#tienda" data-go>Tienda</a>
+                <a href="#eventos" data-go>Eventos</a>
+              </nav>
+            </div>
+
+            <div class="footer-column">
+              <h3>Conecta</h3>
+              <div class="social-links" role="navigation" aria-label="Redes sociales">
+                <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+                <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+                <a href="https://youtube.com/@rageventure" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://twitter.com/rageventure" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://facebook.com/rageventure" target="_blank" rel="noopener noreferrer">Facebook</a>
+              </div>
+            </div>
+
+            <div class="footer-column">
+              <h3>Newsletter</h3>
+              <p class="newsletter-text">Recibe updates exclusivos y lanzamientos.</p>
+              <form class="newsletter-form" method="POST" action="/api/newsletter">
+                <input type="email" name="email" placeholder="tu@email.com" required aria-label="Email para newsletter" />
+                <button type="submit" class="ghost">Suscribir</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-links-legal">
+              <a href="/terminos">Términos de Servicio</a>
+              <a href="/privacidad">Política de Privacidad</a>
+            </div>
+            <div class="footer-note">
+              © 2025 RAGE VENTURE. Todos los derechos reservados.
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="menu-toggle.js" defer></script>
+    <script src="scroll-paint-text.js" defer></script>  ← AGREGAR ESTA LÍNEA
+
+</body>
+</html>
