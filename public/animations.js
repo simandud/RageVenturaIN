@@ -214,17 +214,19 @@ class AnimationsEngine {
 
   // ═══ OBSERVAR CAMBIOS EN EL DOM ═══
   observeDOMChanges() {
+    let observerTimeout;
     const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'childList' || mutation.type === 'attributes') {
-          // Re-observar nuevos elementos
-          setTimeout(() => this.observeAnimatableElements(), 100);
-        }
-      });
+      // Throttle to avoid performance issues
+      clearTimeout(observerTimeout);
+      observerTimeout = setTimeout(() => {
+        this.observeAnimatableElements();
+      }, 200);
     });
 
-    const config = { childList: true, subtree: true, attributes: true };
-    observer.observe(document.body, config);
+    // Observe only content container, not entire body
+    const config = { childList: true, subtree: true, attributes: false };
+    const container = document.querySelector('#content') || document.body;
+    observer.observe(container, config);
   }
 
   // ═══ ANIMAR SECCIÓN COMPLETA ═══
@@ -378,8 +380,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Exponer globalmente para acceso desde otros scripts
   window.animationsEngine = animationsEngine;
-
-  console.log('✨ AnimationsEngine activado y listo');
 });
 
 // Esperar a que el DOM esté completamente cargado

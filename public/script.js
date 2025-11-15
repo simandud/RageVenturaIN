@@ -1,12 +1,49 @@
 // 🌌 THREE.js - Tu modelo 3D personalizado con estrellas
+// Wrapped in IIFE to avoid global namespace pollution
+(function() {
+  'use strict';
+
+  // Utility: Debounce function for performance
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Check WebGL support
+  function checkWebGLSupport() {
+    try {
+      const canvas = document.createElement('canvas');
+      return !!(
+        window.WebGLRenderingContext &&
+        (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+      );
+    } catch(e) {
+      return false;
+    }
+  }
+
+  // Exit early if WebGL not supported
+  if (!checkWebGLSupport()) {
+    console.warn('WebGL not supported, 3D scene disabled');
+    document.body.classList.add('no-webgl');
+    return;
+  }
+
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 0, 30);
 
-const renderer = new THREE.WebGLRenderer({ 
-  canvas: document.querySelector('#bg'), 
+const renderer = new THREE.WebGLRenderer({
+  canvas: document.querySelector('#bg'),
   antialias: true
 });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -63,9 +100,7 @@ loader.load(
     
     // Añadir al escenario
     scene.add(myModel);
-    
-    console.log('✅ Modelo cargado exitosamente!');
-    
+
     // Si el modelo tiene animaciones, puedes activarlas aquí
     if (gltf.animations && gltf.animations.length > 0) {
       const mixer = new THREE.AnimationMixer(myModel);
@@ -77,12 +112,15 @@ loader.load(
     }
   },
   (progress) => {
-    const percent = (progress.loaded / progress.total * 100).toFixed(2);
-    console.log(`📦 Cargando modelo: ${percent}%`);
+    // Progress tracking (removed console.log for production)
   },
   (error) => {
-    console.error('❌ Error cargando modelo:', error);
-    console.log('💡 Verifica que la ruta sea correcta: assets/nam1.glb');
+    console.error('Error loading 3D model:', error);
+    // Show fallback UI
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      hero.classList.add('no-3d-fallback');
+    }
   }
 );
 
@@ -129,10 +167,11 @@ function onScroll() {
   camera.position.z = 30 - (scrollY * 0.008);
 }
 
+// Use passive listener for better scroll performance
 if (scrollContainer) {
-  scrollContainer.addEventListener('scroll', onScroll);
+  scrollContainer.addEventListener('scroll', onScroll, { passive: true });
 } else {
-  document.addEventListener('scroll', onScroll);
+  document.addEventListener('scroll', onScroll, { passive: true });
 }
 
 // 🖱️ PARALLAX CON MOUSE - el modelo sigue tu cursor
@@ -140,7 +179,7 @@ const mouse = { x: 0, y: 0 };
 window.addEventListener('mousemove', (e) => {
   mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
   mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
-});
+}, { passive: true });
 
 function parallax() {
   // Cámara sigue el mouse
@@ -181,12 +220,14 @@ function animate() {
 }
 animate();
 
-// 🔄 RESPONSIVE
-window.addEventListener('resize', () => {
+// 🔄 RESPONSIVE - Debounced for better performance
+const handleResize = debounce(() => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-});
+}, 150);
+
+window.addEventListener('resize', handleResize, { passive: true });
 
 // ---------- UX helpers ----------
 document.querySelectorAll('[data-go]').forEach(a => {
@@ -256,9 +297,12 @@ const observer = new IntersectionObserver((entries) => {
       const hue = entry.target.dataset.hue || 330;
     }
   });
-}, { 
+}, {
     threshold: 0.6,
     root: scrollContainer
 });
 
 document.querySelectorAll('.card.tilt, .label-card.tilt, .rental-card.tilt, .vcard.tilt').forEach(el => observer.observe(el));
+
+// Close IIFE
+})();

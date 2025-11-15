@@ -13,10 +13,17 @@
   <meta property="og:title" content="RAGE VENTURE – Portal Inmersivo" />
   <meta property="og:description" content="Explora la música, la producción y el mundo digital" />
   <meta property="og:locale" content="es_ES" />
-  
+  <meta property="og:url" content="https://rageventure.com/" />
+  <meta property="og:image" content="https://rageventure.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="RAGE VENTURE - Portal Inmersivo de Música y Producción" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RAGE VENTURE – Portal Inmersivo" />
   <meta name="twitter:description" content="Explora la música, la producción y el mundo digital" />
+  <meta name="twitter:image" content="https://rageventure.com/assets/twitter-card.jpg" />
+  <meta name="twitter:image:alt" content="RAGE VENTURE logo y visualización del portal" />
   
   <link rel="canonical" href="https://rageventure.com/" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
@@ -38,7 +45,46 @@
     "name": "RAGE VENTURE",
     "description": "Portal inmersivo de música, producción y experiencias digitales",
     "url": "https://rageventure.com",
-    "addressCountry": "EC"
+    "logo": "https://rageventure.com/assets/logorageve_!.png",
+    "image": "https://rageventure.com/assets/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "EC"
+    },
+    "sameAs": [
+      "https://instagram.com/rageventure",
+      "https://soundcloud.com/rageventure",
+      "https://bandcamp.com/rageventure",
+      "https://youtube.com/@rageventure",
+      "https://twitter.com/rageventure",
+      "https://facebook.com/rageventure"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Clases de Producción Musical",
+          "description": "Desde fundamentos hasta técnicas avanzadas de producción y performance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Alquiler de Equipos de Producción",
+          "description": "Sintetizadores, drum machines y samplers profesionales"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Servicio de Producción Musical",
+          "description": "Creación, mezcla y masterización de tracks"
+        }
+      }
+    ]
   }
   </script>
   
@@ -118,7 +164,7 @@
     <section id="intro" class="panel hero snap" aria-label="Sección de presentación">
       <header class="hero-content-centered">
         <h1 class="visually-hidden">RAGE VENTURE - Portal Inmersivo de Música y Producción</h1>
-        <img src="assets/logorageve_!.png" alt="" id="hero-logo-main" aria-hidden="true" loading="eager" />
+        <img src="assets/logorageve_!.png" alt="RAGE VENTURE logo con signo de exclamación en gradiente azul futurista" id="hero-logo-main" loading="eager" />
         <p class="hero-tagline">Crea sin límites. Tu sonido. Tu mundo.</p>
         <button class="cta" data-go="#clases">Despegar</button>
       </header>
@@ -331,40 +377,43 @@
           <input type="hidden" name="csrf_token" value="token_placeholder" />
           
           <label for="name">Nombre <span aria-label="requerido">*</span></label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            placeholder="Tu nombre" 
-            required 
-            minlength="2" 
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Tu nombre"
+            required
+            minlength="2"
             maxlength="100"
             aria-required="true"
-            aria-invalid="false" />
+            aria-invalid="false"
+            aria-describedby="name-error" />
           <span id="name-error" class="error-message" role="alert"></span>
-          
+
           <label for="email">Email <span aria-label="requerido">*</span></label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            placeholder="tucorreo@ejemplo.com" 
-            required 
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="tucorreo@ejemplo.com"
+            required
             aria-required="true"
-            aria-invalid="false" />
+            aria-invalid="false"
+            aria-describedby="email-error" />
           <span id="email-error" class="error-message" role="alert"></span>
-          
+
           <label for="message">Mensaje <span aria-label="requerido">*</span></label>
-          <textarea 
-            id="message" 
-            name="message" 
-            rows="4" 
-            placeholder="Cuéntanos tu idea…" 
-            required 
-            minlength="10" 
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Cuéntanos tu idea…"
+            required
+            minlength="10"
             maxlength="5000"
             aria-required="true"
-            aria-invalid="false"></textarea>
+            aria-invalid="false"
+            aria-describedby="message-error"></textarea>
           <span id="message-error" class="error-message" role="alert"></span>
           
           <button class="cta" type="submit">Enviar Mensaje</button>
@@ -374,7 +423,7 @@
           <div class="footer-grid">
             <div class="footer-column">
               <div class="brand footer-brand">
-                <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+                <img src="assets/logorageve_!.png" alt="RAGE VENTURE - Portal de música electrónica y producción" class="footer-logo" loading="lazy" />
               </div>
               <nav class="footer-nav" aria-label="Navegación rápida">
                 <a href="#intro" data-go>Intro</a>
@@ -424,12 +473,23 @@
   </main>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <!-- Polyfills for browser compatibility (loaded first, no defer) -->
+  <script src="polyfills.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"
+    crossorigin="anonymous"
+    defer></script>
   <script src="animations.js" defer></script>
   <script src="script.js" defer></script>
   <script src="menu-toggle.js" defer></script>
-    <script src="scroll-paint-text.js" defer></script>  ← AGREGAR ESTA LÍNEA
+  <script src="scroll-paint-text.js" defer></script>
 
 </body>
 </html>

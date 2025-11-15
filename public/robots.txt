@@ -1,0 +1,15 @@
+# robots.txt for RAGE VENTURE
+# https://rageventure.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://rageventure.com/sitemap.xml
+
+# Block admin areas if they exist
+# Disallow: /admin/
+# Disallow: /api/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
