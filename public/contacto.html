@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="paginas.css" />
-  
+  <link rel="stylesheet" href="contact-creative.css" />
+
   <title>Contacto - RAGE VENTURE</title>
 </head>
 
@@ -211,92 +212,93 @@
             
             <form class="form contact-form" method="POST" action="/api/contact" novalidate>
               <input type="hidden" name="csrf_token" value="token_placeholder" />
-              
+
               <!-- Nombre -->
               <div class="form-group">
-                <label for="name">Nombre <span aria-label="requerido">*</span></label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  placeholder="Tu nombre completo" 
-                  required 
-                  minlength="2" 
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder=" "
+                  required
+                  minlength="2"
                   maxlength="100"
                   aria-required="true"
                   aria-invalid="false" />
+                <label for="name">Nombre <span>*</span></label>
                 <span id="name-error" class="error-message" role="alert"></span>
               </div>
 
               <!-- Email -->
               <div class="form-group">
-                <label for="email">Email <span aria-label="requerido">*</span></label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  placeholder="tu@email.com" 
-                  required 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder=" "
+                  required
                   aria-required="true"
                   aria-invalid="false" />
+                <label for="email">Email <span>*</span></label>
                 <span id="email-error" class="error-message" role="alert"></span>
               </div>
 
               <!-- Teléfono -->
               <div class="form-group">
-                <label for="phone">Teléfono</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone" 
-                  placeholder="+593 9 9999 9999" />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder=" " />
+                <label for="phone">Teléfono (Opcional)</label>
               </div>
 
               <!-- Asunto -->
               <div class="form-group">
-                <label for="subject">Asunto <span aria-label="requerido">*</span></label>
                 <select id="subject" name="subject" required aria-required="true">
                   <option value="">Selecciona un asunto</option>
-                  <option value="booking">Solicitud de Booking</option>
-                  <option value="demo">Envío de Demo</option>
-                  <option value="classes">Consulta sobre Clases</option>
-                  <option value="rental">Alquiler de Equipos</option>
-                  <option value="collaboration">Colaboración</option>
-                  <option value="other">Otro</option>
+                  <option value="booking">🎵 Solicitud de Booking</option>
+                  <option value="demo">🎧 Envío de Demo</option>
+                  <option value="classes">📚 Consulta sobre Clases</option>
+                  <option value="rental">🎹 Alquiler de Equipos</option>
+                  <option value="collaboration">🤝 Colaboración</option>
+                  <option value="shop">🛒 Consulta de Tienda</option>
+                  <option value="other">💬 Otro</option>
                 </select>
+                <label for="subject">Asunto <span>*</span></label>
               </div>
 
               <!-- Mensaje -->
               <div class="form-group">
-                <label for="message">Mensaje <span aria-label="requerido">*</span></label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows="6" 
-                  placeholder="Cuéntanos tu idea, pregunta o propuesta…" 
-                  required 
-                  minlength="10" 
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder=" "
+                  required
+                  minlength="10"
                   maxlength="5000"
                   aria-required="true"
                   aria-invalid="false"></textarea>
+                <label for="message">Mensaje <span>*</span></label>
                 <span id="message-error" class="error-message" role="alert"></span>
               </div>
 
               <!-- Checkbox Privacidad -->
               <div class="form-group checkbox">
-                <input 
-                  type="checkbox" 
-                  id="privacy" 
-                  name="privacy" 
-                  required 
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
                   aria-required="true" />
-                <label for="privacy">Acepto la <a href="/privacidad" target="_blank">política de privacidad</a></label>
+                <label for="privacy">Acepto la <a href="/privacidad" target="_blank">política de privacidad</a> <span>*</span></label>
               </div>
 
               <!-- Botón Enviar -->
               <button class="cta" type="submit" aria-label="Enviar mensaje">Enviar Mensaje</button>
-              
-              <p class="form-note">Nos comprometemos a responder en menos de 24 horas.</p>
+
+              <p class="form-note">✨ Nos comprometemos a responder en menos de 24 horas</p>
             </form>
           </main>
         </div>
@@ -402,41 +404,276 @@
   <script src="script.js" defer></script>
   <script src="menu-toggle.js" defer></script>
   <script>
-    // Validación básica del formulario
-    const form = document.querySelector('.contact-form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
+    // ═══════════════════════════════════════════════════════════════════
+    // RAGE VENTURE - Creative Contact Form Validation & Animations
+    // ═══════════════════════════════════════════════════════════════════
+
+    (function() {
+      'use strict';
+
+      const form = document.querySelector('.contact-form');
+      if (!form) return;
+
+      const inputs = {
+        name: document.getElementById('name'),
+        email: document.getElementById('email'),
+        phone: document.getElementById('phone'),
+        subject: document.getElementById('subject'),
+        message: document.getElementById('message'),
+        privacy: document.getElementById('privacy')
+      };
+
+      // ═══ VALIDATION RULES ═══
+      const validators = {
+        name: (value) => {
+          if (!value || value.trim().length < 2) {
+            return 'Por favor ingresa tu nombre completo';
+          }
+          if (value.trim().length > 100) {
+            return 'El nombre es demasiado largo';
+          }
+          if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
+            return 'El nombre solo puede contener letras';
+          }
+          return null;
+        },
+
+        email: (value) => {
+          if (!value || value.trim().length === 0) {
+            return 'Por favor ingresa tu email';
+          }
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            return 'Por favor ingresa un email válido';
+          }
+          return null;
+        },
+
+        subject: (value) => {
+          if (!value || value === '') {
+            return 'Por favor selecciona un asunto';
+          }
+          return null;
+        },
+
+        message: (value) => {
+          if (!value || value.trim().length < 10) {
+            return 'El mensaje debe tener al menos 10 caracteres';
+          }
+          if (value.trim().length > 5000) {
+            return 'El mensaje es demasiado largo';
+          }
+          return null;
+        },
+
+        privacy: (checked) => {
+          if (!checked) {
+            return 'Debes aceptar la política de privacidad';
+          }
+          return null;
+        }
+      };
+
+      // ═══ SHOW ERROR ═══
+      function showError(fieldName, message) {
+        const formGroup = inputs[fieldName].closest('.form-group');
+        const errorElement = document.getElementById(`${fieldName}-error`);
+
+        formGroup.classList.add('error');
+        if (errorElement) {
+          errorElement.textContent = message;
+        }
+        inputs[fieldName].setAttribute('aria-invalid', 'true');
+      }
+
+      // ═══ CLEAR ERROR ═══
+      function clearError(fieldName) {
+        const formGroup = inputs[fieldName].closest('.form-group');
+        const errorElement = document.getElementById(`${fieldName}-error`);
+
+        formGroup.classList.remove('error');
+        if (errorElement) {
+          errorElement.textContent = '';
+        }
+        inputs[fieldName].setAttribute('aria-invalid', 'false');
+      }
+
+      // ═══ VALIDATE FIELD ═══
+      function validateField(fieldName) {
+        const input = inputs[fieldName];
+        const value = fieldName === 'privacy' ? input.checked : input.value;
+        const error = validators[fieldName] ? validators[fieldName](value) : null;
+
+        if (error) {
+          showError(fieldName, error);
+          return false;
+        } else {
+          clearError(fieldName);
+          return true;
+        }
+      }
+
+      // ═══ REAL-TIME VALIDATION ═══
+      Object.keys(inputs).forEach(fieldName => {
+        if (fieldName === 'phone') return; // Phone is optional
+
+        const input = inputs[fieldName];
+
+        // Validate on blur
+        input.addEventListener('blur', () => {
+          if (input.value || fieldName === 'privacy') {
+            validateField(fieldName);
+          }
+        });
+
+        // Clear error on input
+        input.addEventListener('input', () => {
+          if (input.closest('.form-group').classList.contains('error')) {
+            clearError(fieldName);
+          }
+        });
+      });
+
+      // ═══ SHOW NOTIFICATION ═══
+      function showNotification(message, type = 'success') {
+        // Remove existing notification
+        const existing = document.querySelector('.form-notification');
+        if (existing) existing.remove();
+
+        // Create notification
+        const notification = document.createElement('div');
+        notification.className = `form-notification ${type}`;
+        notification.innerHTML = `<span>${message}</span>`;
+
+        document.body.appendChild(notification);
+
+        // Trigger animation
+        setTimeout(() => notification.classList.add('show'), 10);
+
+        // Remove after 5 seconds
+        setTimeout(() => {
+          notification.classList.remove('show');
+          setTimeout(() => notification.remove(), 500);
+        }, 5000);
+      }
+
+      // ═══ FORM SUBMISSION ═══
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        // Animación visual de envío
+
+        // Validate all fields
+        let isValid = true;
+        ['name', 'email', 'subject', 'message', 'privacy'].forEach(fieldName => {
+          if (!validateField(fieldName)) {
+            isValid = false;
+          }
+        });
+
+        if (!isValid) {
+          showNotification('Por favor corrige los errores en el formulario', 'error');
+          return;
+        }
+
+        // Get form data
+        const formData = {
+          name: inputs.name.value.trim(),
+          email: inputs.email.value.trim(),
+          phone: inputs.phone.value.trim(),
+          subject: inputs.subject.value,
+          message: inputs.message.value.trim(),
+          timestamp: new Date().toISOString()
+        };
+
+        // Button loading state
         const btn = form.querySelector('button[type="submit"]');
         const originalText = btn.textContent;
-        btn.textContent = '✓ Enviando...';
+        btn.textContent = 'Enviando...';
+        btn.classList.add('loading');
         btn.disabled = true;
-        
-        setTimeout(() => {
+
+        try {
+          // Simulate API call (replace with actual endpoint)
+          await new Promise(resolve => setTimeout(resolve, 1500));
+
+          // Log form data (in production, send to server)
+          console.log('Form submitted:', formData);
+
+          // Success
           btn.textContent = '✓ ¡Enviado!';
-          btn.style.animation = 'pulse-border 0.6s ease-out';
-          
-          // Resetear después de 3 segundos
+          btn.classList.remove('loading');
+
+          showNotification('¡Mensaje enviado con éxito! Te responderemos pronto.', 'success');
+
+          // Reset form after 2 seconds
           setTimeout(() => {
             form.reset();
             btn.textContent = originalText;
             btn.disabled = false;
-            btn.style.animation = 'none';
-          }, 3000);
-        }, 800);
-      });
-    }
 
-    // Animación de detalles (FAQ)
-    document.querySelectorAll('details').forEach(detail => {
-      detail.addEventListener('toggle', (e) => {
-        if (e.target.open) {
-          e.target.style.animation = 'slide-up 0.3s ease-out';
+            // Clear all errors
+            Object.keys(inputs).forEach(fieldName => clearError(fieldName));
+          }, 2000);
+
+        } catch (error) {
+          console.error('Form submission error:', error);
+          btn.textContent = originalText;
+          btn.classList.remove('loading');
+          btn.disabled = false;
+          showNotification('Error al enviar el mensaje. Por favor intenta de nuevo.', 'error');
         }
       });
-    });
+
+      // ═══ PHONE NUMBER FORMATTING ═══
+      if (inputs.phone) {
+        inputs.phone.addEventListener('input', (e) => {
+          let value = e.target.value.replace(/\D/g, '');
+
+          if (value.startsWith('593')) {
+            // Ecuador format: +593 9 9999 9999
+            if (value.length > 3) {
+              value = '+593 ' + value.slice(3);
+            }
+            if (value.length > 7) {
+              value = value.slice(0, 7) + ' ' + value.slice(7);
+            }
+            if (value.length > 12) {
+              value = value.slice(0, 12) + ' ' + value.slice(12, 16);
+            }
+          } else if (value.length > 0) {
+            // Add +593 prefix
+            value = '+593 ' + value;
+          }
+
+          e.target.value = value.slice(0, 17); // Limit length
+        });
+      }
+
+      // ═══ FAQ ANIMATIONS ═══
+      document.querySelectorAll('details').forEach(detail => {
+        detail.addEventListener('toggle', (e) => {
+          if (e.target.open) {
+            const content = e.target.querySelector('p');
+            if (content) {
+              content.style.animation = 'slide-up 0.3s ease-out';
+            }
+          }
+        });
+      });
+
+      // ═══ INPUT FOCUS EFFECTS ═══
+      Object.values(inputs).forEach(input => {
+        input.addEventListener('focus', () => {
+          const formGroup = input.closest('.form-group');
+          formGroup.style.transform = 'scale(1.01)';
+        });
+
+        input.addEventListener('blur', () => {
+          const formGroup = input.closest('.form-group');
+          formGroup.style.transform = 'scale(1)';
+        });
+      });
+
+    })();
   </script>
 </body>
 </html>
