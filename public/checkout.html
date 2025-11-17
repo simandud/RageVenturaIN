@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Checkout - Completa tu compra en RAGE VENTURE" />
+  <meta name="theme-color" content="#030109" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="tienda.css" />
+
+  <title>Checkout - RAGE VENTURE</title>
+
+  <style>
+    /* ═══ CHECKOUT PAGE STYLES ═══ */
+    .checkout-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px 40px 60px;
+      display: grid;
+      grid-template-columns: 1fr 450px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .checkout-main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .checkout-section {
+      background: linear-gradient(145deg, rgba(15, 18, 42, 0.8), rgba(25, 30, 55, 0.5));
+      border: 1px solid var(--stroke);
+      border-radius: 24px;
+      padding: 35px;
+    }
+
+    .checkout-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin: 0 0 10px 0;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .checkout-section .section-number {
+      background: var(--accent);
+      color: var(--bg-primary);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .checkout-section p {
+      color: var(--text-secondary);
+      margin: 0 0 25px 0;
+      font-size: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-group label .required {
+      color: #ff4444;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(0, 123, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Shipping Method */
+    .shipping-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .shipping-option {
+      background: rgba(0, 0, 0, 0.2);
+      border: 2px solid var(--stroke);
+      border-radius: 16px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .shipping-option:hover {
+      background: rgba(0, 123, 255, 0.08);
+      border-color: var(--accent);
+    }
+
+    .shipping-option.selected {
+      background: rgba(0, 123, 255, 0.15);
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+
+    .shipping-radio {
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--stroke);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .shipping-option.selected .shipping-radio {
+      border-color: var(--accent-bright);
+    }
+
+    .shipping-radio::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-bright);
+      transform: scale(0);
+      transition: transform 0.2s ease;
+    }
+
+    .shipping-option.selected .shipping-radio::after {
+      transform: scale(1);
+    }
+
+    .shipping-info {
+      flex: 1;
+    }
+
+    .shipping-name {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .shipping-time {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .shipping-price {
+      font-weight: 700;
+      color: var(--accent-bright);
+      font-family: 'Space Mono', monospace;
+      font-size: 18px;
+    }
+
+    /* Payment Methods */
+    .payment-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .payment-option {
+      background: rgba(0, 0, 0, 0.2);
+      border: 2px solid var(--stroke);
+      border-radius: 16px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .payment-option:hover {
+      background: rgba(0, 123, 255, 0.08);
+      border-color: var(--accent);
+    }
+
+    .payment-option.selected {
+      background: rgba(0, 123, 255, 0.15);
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+
+    .payment-icon {
+      font-size: 36px;
+    }
+
+    .payment-name {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 14px;
+    }
+
+    .card-details {
+      display: none;
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid var(--stroke);
+    }
+
+    .card-details.active {
+      display: block;
+    }
+
+    /* Order Summary Sidebar */
+    .order-summary {
+      position: sticky;
+      top: 100px;
+      background: linear-gradient(145deg, rgba(15, 18, 42, 0.95), rgba(25, 30, 55, 0.85));
+      border: 1px solid var(--stroke);
+      border-radius: 24px;
+      padding: 30px;
+      backdrop-filter: blur(20px);
+    }
+
+    .order-summary h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin: 0 0 25px 0;
+      color: var(--text-primary);
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .order-items {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 25px;
+    }
+
+    .order-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .order-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .order-item-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .order-item-info {
+      flex: 1;
+    }
+
+    .order-item-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .order-item-meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .order-item-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent-bright);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .order-totals {
+      border-top: 1px solid var(--stroke);
+      padding-top: 20px;
+      margin-bottom: 25px;
+    }
+
+    .order-total-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .order-total-row span:first-child {
+      color: var(--text-secondary);
+    }
+
+    .order-total-row span:last-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .order-total-final {
+      border-top: 2px solid var(--accent);
+      margin-top: 15px;
+      padding-top: 15px;
+      font-size: 18px;
+    }
+
+    .order-total-final span {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-bright);
+    }
+
+    .place-order-btn {
+      width: 100%;
+      padding: 18px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .secure-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .secure-badge svg {
+      width: 16px;
+      height: 16px;
+      color: #00ff88;
+    }
+
+    @media (max-width: 1024px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .order-summary {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .checkout-container {
+        padding: 80px 20px 40px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-methods {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#content" class="skip-link">Saltar a contenido principal</a>
+
+  <!-- Header -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
+          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        </a>
+      </div>
+
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Volver a Tienda</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Canvas -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <!-- Checkout Content -->
+  <main id="content" role="main">
+    <div class="checkout-container">
+      <!-- Left Column: Forms -->
+      <div class="checkout-main">
+        <!-- Contact Information -->
+        <section class="checkout-section">
+          <h2>
+            <span class="section-number">1</span>
+            Información de Contacto
+          </h2>
+          <p>Necesitamos estos datos para enviarte confirmación de tu pedido</p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>
+                Nombre <span class="required">*</span>
+              </label>
+              <input type="text" id="firstName" required placeholder="Juan" />
+            </div>
+
+            <div class="form-group">
+              <label>
+                Apellido <span class="required">*</span>
+              </label>
+              <input type="text" id="lastName" required placeholder="Pérez" />
+            </div>
+
+            <div class="form-group full-width">
+              <label>
+                Email <span class="required">*</span>
+              </label>
+              <input type="email" id="email" required placeholder="tu@email.com" />
+            </div>
+
+            <div class="form-group full-width">
+              <label>
+                Teléfono <span class="required">*</span>
+              </label>
+              <input type="tel" id="phone" required placeholder="+593 99 123 4567" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Shipping Information -->
+        <section class="checkout-section">
+          <h2>
+            <span class="section-number">2</span>
+            Dirección de Envío
+          </h2>
+          <p>¿Dónde quieres recibir tu pedido?</p>
+
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label>
+                Calle y Número <span class="required">*</span>
+              </label>
+              <input type="text" id="address" required placeholder="Av. Solano 123 y Av. 12 de Abril" />
+            </div>
+
+            <div class="form-group">
+              <label>
+                Ciudad <span class="required">*</span>
+              </label>
+              <select id="city" required>
+                <option value="">Selecciona tu ciudad</option>
+                <option value="cuenca">Cuenca</option>
+                <option value="quito">Quito</option>
+                <option value="guayaquil">Guayaquil</option>
+                <option value="loja">Loja</option>
+                <option value="ambato">Ambato</option>
+                <option value="riobamba">Riobamba</option>
+                <option value="manta">Manta</option>
+                <option value="otras">Otra ciudad</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>
+                Código Postal
+              </label>
+              <input type="text" id="zipCode" placeholder="010150" />
+            </div>
+
+            <div class="form-group full-width">
+              <label>
+                Referencias (Opcional)
+              </label>
+              <textarea id="addressNotes" placeholder="Casa color blanco, portón negro, cerca del parque..."></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Shipping Method -->
+        <section class="checkout-section">
+          <h2>
+            <span class="section-number">3</span>
+            Método de Envío
+          </h2>
+          <p>Selecciona cómo prefieres recibir tu pedido</p>
+
+          <div class="shipping-methods">
+            <div class="shipping-option selected" data-shipping="standard" data-price="5.00">
+              <div class="shipping-radio"></div>
+              <div class="shipping-info">
+                <div class="shipping-name">Envío Standard</div>
+                <div class="shipping-time">5-7 días hábiles</div>
+              </div>
+              <div class="shipping-price">$5.00</div>
+            </div>
+
+            <div class="shipping-option" data-shipping="express" data-price="12.00">
+              <div class="shipping-radio"></div>
+              <div class="shipping-info">
+                <div class="shipping-name">Envío Express</div>
+                <div class="shipping-time">2-3 días hábiles</div>
+              </div>
+              <div class="shipping-price">$12.00</div>
+            </div>
+
+            <div class="shipping-option" data-shipping="local" data-price="0.00">
+              <div class="shipping-radio"></div>
+              <div class="shipping-info">
+                <div class="shipping-name">Retiro en Tienda (Cuenca)</div>
+                <div class="shipping-time">Disponible hoy</div>
+              </div>
+              <div class="shipping-price">GRATIS</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Payment Method -->
+        <section class="checkout-section">
+          <h2>
+            <span class="section-number">4</span>
+            Método de Pago
+          </h2>
+          <p>Todos los pagos son seguros y encriptados</p>
+
+          <div class="payment-methods">
+            <div class="payment-option selected" data-payment="card">
+              <div class="payment-icon">💳</div>
+              <div class="payment-name">Tarjeta de Crédito/Débito</div>
+            </div>
+
+            <div class="payment-option" data-payment="transfer">
+              <div class="payment-icon">🏦</div>
+              <div class="payment-name">Transferencia Bancaria</div>
+            </div>
+
+            <div class="payment-option" data-payment="paypal">
+              <div class="payment-icon">🅿️</div>
+              <div class="payment-name">PayPal</div>
+            </div>
+
+            <div class="payment-option" data-payment="cash">
+              <div class="payment-icon">💵</div>
+              <div class="payment-name">Pago Contra Entrega</div>
+            </div>
+          </div>
+
+          <!-- Card Payment Details -->
+          <div class="card-details active" id="cardDetails">
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label>
+                  Número de Tarjeta <span class="required">*</span>
+                </label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" />
+              </div>
+
+              <div class="form-group">
+                <label>
+                  Fecha de Expiración <span class="required">*</span>
+                </label>
+                <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" />
+              </div>
+
+              <div class="form-group">
+                <label>
+                  CVV <span class="required">*</span>
+                </label>
+                <input type="text" id="cardCvv" placeholder="123" maxlength="4" />
+              </div>
+
+              <div class="form-group full-width">
+                <label>
+                  Nombre en la Tarjeta <span class="required">*</span>
+                </label>
+                <input type="text" id="cardName" placeholder="JUAN PÉREZ" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: Order Summary -->
+      <aside class="order-summary">
+        <h2>Resumen del Pedido</h2>
+
+        <div class="order-items" id="orderItems">
+          <!-- Order items will be populated by JavaScript -->
+        </div>
+
+        <div class="order-totals">
+          <div class="order-total-row">
+            <span>Subtotal:</span>
+            <span id="summarySubtotal">$0.00</span>
+          </div>
+          <div class="order-total-row">
+            <span>Envío:</span>
+            <span id="summaryShipping">$5.00</span>
+          </div>
+          <div class="order-total-row">
+            <span>IVA (12%):</span>
+            <span id="summaryTax">$0.00</span>
+          </div>
+          <div class="order-total-row order-total-final">
+            <span>Total:</span>
+            <span id="summaryTotal">$0.00</span>
+          </div>
+        </div>
+
+        <button class="place-order-btn cta" id="placeOrderBtn">
+          Completar Pedido
+        </button>
+
+        <div class="secure-badge">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+          Pago seguro y encriptado
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="cart.js" defer></script>
+
+  <script>
+    // ═══ CHECKOUT PAGE LOGIC ═══
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if cart is empty
+      const cart = window.RageVentureCart;
+      if (!cart || cart.items.length === 0) {
+        alert('Tu carrito está vacío');
+        window.location.href = 'tienda.html';
+        return;
+      }
+
+      // Populate order summary
+      function updateOrderSummary() {
+        const orderItems = document.getElementById('orderItems');
+        orderItems.innerHTML = cart.items.map(item => `
+          <div class="order-item">
+            <div class="order-item-image" style="${item.image}"></div>
+            <div class="order-item-info">
+              <div class="order-item-name">${item.name}</div>
+              <div class="order-item-meta">
+                Cantidad: ${item.quantity}
+                ${item.size ? `• Talla: ${item.size}` : ''}
+              </div>
+              <div class="order-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+            </div>
+          </div>
+        `).join('');
+
+        // Update totals
+        const shippingPrice = parseFloat(document.querySelector('.shipping-option.selected').dataset.price);
+        const subtotal = cart.getSubtotal();
+        const tax = cart.getTax();
+        const total = subtotal + shippingPrice + tax;
+
+        document.getElementById('summarySubtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('summaryShipping').textContent = shippingPrice === 0 ? 'GRATIS' : `$${shippingPrice.toFixed(2)}`;
+        document.getElementById('summaryTax').textContent = `$${tax.toFixed(2)}`;
+        document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)}`;
+      }
+
+      updateOrderSummary();
+
+      // Shipping method selection
+      document.querySelectorAll('.shipping-option').forEach(option => {
+        option.addEventListener('click', function() {
+          document.querySelectorAll('.shipping-option').forEach(o => o.classList.remove('selected'));
+          this.classList.add('selected');
+          updateOrderSummary();
+        });
+      });
+
+      // Payment method selection
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.addEventListener('click', function() {
+          document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+          this.classList.add('selected');
+
+          // Show/hide card details
+          const paymentType = this.dataset.payment;
+          const cardDetails = document.getElementById('cardDetails');
+          cardDetails.classList.toggle('active', paymentType === 'card');
+        });
+      });
+
+      // Card number formatting
+      const cardNumber = document.getElementById('cardNumber');
+      if (cardNumber) {
+        cardNumber.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\s/g, '');
+          let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+          e.target.value = formattedValue;
+        });
+      }
+
+      // Expiry date formatting
+      const cardExpiry = document.getElementById('cardExpiry');
+      if (cardExpiry) {
+        cardExpiry.addEventListener('input', function(e) {
+          let value = e.target.value.replace(/\//g, '');
+          if (value.length >= 2) {
+            value = value.slice(0, 2) + '/' + value.slice(2);
+          }
+          e.target.value = value;
+        });
+      }
+
+      // Place order
+      document.getElementById('placeOrderBtn').addEventListener('click', function() {
+        // Validate form
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address').value.trim();
+        const city = document.getElementById('city').value;
+
+        if (!firstName || !lastName || !email || !phone || !address || !city) {
+          alert('Por favor completa todos los campos requeridos');
+          return;
+        }
+
+        // Validate payment method
+        const paymentMethod = document.querySelector('.payment-option.selected').dataset.payment;
+        if (paymentMethod === 'card') {
+          const cardNum = document.getElementById('cardNumber').value.trim();
+          const cardExp = document.getElementById('cardExpiry').value.trim();
+          const cardCvv = document.getElementById('cardCvv').value.trim();
+          const cardName = document.getElementById('cardName').value.trim();
+
+          if (!cardNum || !cardExp || !cardCvv || !cardName) {
+            alert('Por favor completa la información de la tarjeta');
+            return;
+          }
+        }
+
+        // Get order data
+        const shippingMethod = document.querySelector('.shipping-option.selected').dataset.shipping;
+        const shippingPrice = parseFloat(document.querySelector('.shipping-option.selected').dataset.price);
+
+        const orderData = {
+          customer: {
+            firstName,
+            lastName,
+            email,
+            phone
+          },
+          shipping: {
+            address: address,
+            city: city,
+            zipCode: document.getElementById('zipCode').value,
+            notes: document.getElementById('addressNotes').value,
+            method: shippingMethod,
+            price: shippingPrice
+          },
+          payment: {
+            method: paymentMethod
+          },
+          items: cart.items,
+          totals: {
+            subtotal: cart.getSubtotal(),
+            shipping: shippingPrice,
+            tax: cart.getTax(),
+            total: cart.getSubtotal() + shippingPrice + cart.getTax()
+          },
+          timestamp: new Date().toISOString()
+        };
+
+        // Log order (in production, this would send to server)
+        console.log('Order placed:', orderData);
+
+        // Show success message
+        alert('¡Pedido realizado con éxito! Recibirás un email de confirmación.');
+
+        // Clear cart
+        cart.clearCart();
+
+        // Redirect to home
+        window.location.href = 'index.html';
+      });
+    });
+  </script>
+</body>
+</html>
