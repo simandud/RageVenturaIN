@@ -41,95 +41,89 @@
       <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación">Menú</button>
     </div>
   </header>
+ <!-- ═══ Accessibility Skip Link ═══ -->
+ 
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       HEADER - Navigation & Branding
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <header id="main-header" role="banner">
+    <div class="header-content">
 
- <!-- Side Menu -->
-  <!-- Side Menu con Desplegables -->
-<aside id="side-menu" role="navigation" aria-label="Menú lateral">
-  <div class="side-menu-header">
-    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
-      <span class="close-icon"></span>
-    </button>
-  </div>
-  
-  <nav class="side-menu-nav">
-    <!-- Link simple -->
-    <a href="index.html" class="menu-link">
-      <span>Inicio</span>
-    </a>
-    
-    <!-- Sección desplegable: Eventos -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Eventos</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="eventos.html">Todos los Eventos</a>
-        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
-        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
-        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
+      <!-- Brand Logo -->
+      <div class="brand">
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio" class="brand-text">
+          <span class="rage-logo-text">RAGE VENTURE</span>
+        </a>
       </div>
-    </div>
-    
-    <!-- Sección desplegable: Tienda -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Tienda</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="tienda.html">Catálogo Completo</a>
-        <a href="tienda.html#vinilos">Vinilos</a>
-        <a href="tienda.html#merch">Merchandising</a>
-        <a href="tienda.html#accesorios">Accesorios</a>
+
+      <!-- Main Navigation -->
+      <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+        <a href="eventos.html" class="nav-link">EVENTOS</a>
+        <a href="alquiler.html" class="nav-link">ALQUILER</a>
+        <a href="label.html" class="nav-link">MÚSICA</a>
+        <a href="contacto.html" class="nav-link">REVISTA</a>
+        <a href="tienda.html" class="nav-link">STORE</a>
+      </nav>
+
+      <div class="header-spacer"></div>
+
+      <!-- Header Actions -->
+      <div class="header-right">
+
+        <!-- Search Button -->
+        <button class="search-btn" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+
+        <!-- Account Link -->
+        <a href="mi-cuenta.html" class="account-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+          </svg>
+          Mi cuenta
+        </a>
+
+        <!-- Pro Link -->
+        <a href="pro.html" class="pro-link">PRO</a>
       </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
     </div>
-    
-    <!-- Sección desplegable: Clases -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Clases</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="clases.html">Programas Formativos</a>
-        <a href="clases.html#bajo">Clases de Bajo</a>
-        <a href="clases.html#piano">Clases de Piano</a>
-        <a href="clases.html#produccion">Producción Musical</a>
-        <a href="clases.html#dj">Clases de DJ</a>
-      </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SIDE MENU - Mobile Navigation
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <aside id="side-menu" role="navigation" aria-label="Menú lateral">
+
+    <!-- Menu Header -->
+    <div class="side-menu-header">
+      <button id="menu-close-btn" class="menu-toggle-btn" aria-label="Cerrar menú">×</button>
     </div>
-    
-    <!-- Link simple -->
-    <a href="label.html" class="menu-link">
-      <span>Roaster</span>
-    </a>
-    
-    <!-- Sección desplegable: Alquiler -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Alquiler</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="alquiler.html">Servicios</a>
-        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
-        <a href="alquiler.html#grabacion">Grabación de Sets</a>
-        <a href="alquiler.html#produccion">Servicio de Producción</a>
-      </div>
+
+    <!-- Menu Navigation Links -->
+    <nav>
+      <a href="#intro" data-go>Inicio</a>
+      <a href="#about" data-go>Sobre Nosotros</a>
+      <a href="#clases" data-go>Clases</a>
+      <a href="#label" data-go>Label</a>
+      <a href="#alquiler" data-go>Alquiler</a>
+      <a href="#tienda" data-go>Tienda</a>
+      <a href="#eventos" data-go>Eventos</a>
+      <a href="#contacto" data-go>Contacto</a>
+    </nav>
+
+    <!-- Menu Footer -->
+    <div class="side-menu-footer">
+      <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" id="toggleFx">FX: ON</a>
     </div>
-    
-    <!-- Link simple -->
-    <a href="contacto.html" class="menu-link">
-      <span>Contacto</span>
-    </a>
-  </nav>
-  
-  <div class="side-menu-footer">
-    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="#" id="toggleFx">FX: ON</a>
-  </div>
-</aside>
+  </aside>
+
 
   <!-- Canvas -->
   <canvas id="bg" aria-hidden="true"></canvas>

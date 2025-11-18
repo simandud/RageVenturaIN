@@ -13,135 +13,285 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="animations.css" />
   <link rel="stylesheet" href="paginas.css" />
-  <link rel="stylesheet" href="contact-creative.css" />
-
+  
   <title>Contacto - RAGE VENTURE</title>
 </head>
 
 <body>
   <a href="#content" class="skip-link">Saltar a contenido principal</a>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header id="main-header" role="banner">
     <div class="header-content">
+
+      <!-- Brand Logo -->
       <div class="brand">
-        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
-          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio" class="brand-text">
+          <span class="rage-logo-text">RAGE VENTURE</span>
         </a>
       </div>
-      
+
+      <!-- Main Navigation -->
       <nav class="header-nav" role="navigation" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="clases.html">Eventos</a>
-        <a href="label.html">Roaster</a>
-        <a href="alquiler.html">Alquiler</a>
-        <a href="tienda.html">Clases</a>
-        <a href="eventos.html">Tienda</a>
-        <a href="contacto.html" aria-current="page">Contacto</a>
+        <a href="eventos.html" class="nav-link">EVENTOS</a>
+        <a href="alquiler.html" class="nav-link">ALQUILER</a>
+        <a href="label.html" class="nav-link">MÚSICA</a>
+        <a href="contacto.html" class="nav-link">REVISTA</a>
+        <a href="tienda.html" class="nav-link">STORE</a>
       </nav>
-      
-      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="side-menu">Menú</button>
+
+      <div class="header-spacer"></div>
+
+      <!-- Header Actions -->
+      <div class="header-right">
+
+        <!-- Search Button -->
+        <button class="search-btn" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+
+        <!-- Account Link -->
+        <a href="mi-cuenta.html" class="account-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+          </svg>
+          Mi cuenta
+        </a>
+
+        <!-- Pro Link -->
+        <a href="pro.html" class="pro-link">PRO</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
     </div>
   </header>
 
- <!-- Side Menu -->
-  <!-- Side Menu con Desplegables -->
-<aside id="side-menu" role="navigation" aria-label="Menú lateral">
-  <div class="side-menu-header">
-    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
-      <span class="close-icon"></span>
-    </button>
-  </div>
-  
-  <nav class="side-menu-nav">
-    <!-- Link simple -->
-    <a href="index.html" class="menu-link">
-      <span>Inicio</span>
-    </a>
-    
-    <!-- Sección desplegable: Eventos -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Eventos</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="eventos.html">Todos los Eventos</a>
-        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
-        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
-        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
-      </div>
+  <!-- SIDE MENU -->
+  <aside id="side-menu" role="navigation" aria-label="Menú lateral">
+    <div class="side-menu-header">
+      <button id="menu-close-btn" class="menu-toggle-btn" aria-label="Cerrar menú">×</button>
     </div>
-    
-    <!-- Sección desplegable: Tienda -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Tienda</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="tienda.html">Catálogo Completo</a>
-        <a href="tienda.html#vinilos">Vinilos</a>
-        <a href="tienda.html#merch">Merchandising</a>
-        <a href="tienda.html#accesorios">Accesorios</a>
-      </div>
+
+    <nav>
+      <a href="#intro" data-go>Inicio</a>
+      <a href="#about" data-go>Sobre Nosotros</a>
+      <a href="#clases" data-go>Clases</a>
+      <a href="#label" data-go>Label</a>
+      <a href="#alquiler" data-go>Alquiler</a>
+      <a href="#tienda" data-go>Tienda</a>
+      <a href="#eventos" data-go>Eventos</a>
+      <a href="#contacto" data-go>Contacto</a>
+    </nav>
+
+    <div class="side-menu-footer">
+      <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" id="toggleFx">FX: ON</a>
     </div>
-    
-    <!-- Sección desplegable: Clases -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Clases</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="clases.html">Programas Formativos</a>
-        <a href="clases.html#bajo">Clases de Bajo</a>
-        <a href="clases.html#piano">Clases de Piano</a>
-        <a href="clases.html#produccion">Producción Musical</a>
-        <a href="clases.html#dj">Clases de DJ</a>
-      </div>
-    </div>
-    
-    <!-- Link simple -->
-    <a href="label.html" class="menu-link">
-      <span>Roaster</span>
-    </a>
-    
-    <!-- Sección desplegable: Alquiler -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Alquiler</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="alquiler.html">Servicios</a>
-        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
-        <a href="alquiler.html#grabacion">Grabación de Sets</a>
-        <a href="alquiler.html#produccion">Servicio de Producción</a>
-      </div>
-    </div>
-    
-    <!-- Link simple -->
-    <a href="contacto.html" class="menu-link">
-      <span>Contacto</span>
-    </a>
-  </nav>
-  
-  <div class="side-menu-footer">
-    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="#" id="toggleFx">FX: ON</a>
-  </div>
-</aside>
+  </aside>
+
   <!-- Background Canvas 3D -->
   <canvas id="bg" aria-hidden="true"></canvas>
 
-  <!-- Content -->
+  <!-- CONTENT -->
   <main id="content" role="main">
-    <!-- Contacto Header -->
-    <section class="panel hero snap" aria-label="Encabezado de Contacto">
-      <div class="hero-content-centered">
-        <h1 class="hero-title" data-animate="char">Conecta con RAGE</h1>
-        <p class="hero-subtitle" data-animate="word">Estamos aquí para responder tus preguntas y explorar nuevas oportunidades</p>
+    
+    <!-- SECCIÓN LABEL + CLASES -->
+    <section id="label" class="panel snap" aria-label="RΛGΞ VENTURΞ Label y Clases">
+      <div class="panel-content">
+        <div class="section-meta">Clases Magistrales</div>
+
+        <header class="section-header">
+          <h2 data-animate="char">Clases y Aprendizaje</h2>
+          <p data-animate="word">
+            Cada programa está diseñado con metodología progresiva para llevar tu nivel de 0 a profesional en 3-6 meses.
+          </p>
+        </header>
+
+        <!-- Clases Grid -->
+        <div class="cards class-grid">
+          <!-- Clase 1 -->
+          <article class="card tilt" data-hue="210" data-animate="scale-in">
+            <div class="card-badge">Principiante</div>
+            <h3>Fundamentos de Bajo</h3>
+            <p>Aprende groove, técnica de mano izquierda/derecha y exploración de frecuencias graves en instrumentos analógicos y digitales.</p>
+            <div class="card-meta">
+              <span class="duration">12 semanas</span>
+              <span class="level">Iniciante</span>
+            </div>
+            <button class="ghost" aria-label="Más información sobre Fundamentos de Bajo">Saber más</button>
+          </article>
+
+          <!-- Clase 2 -->
+          <article class="card tilt" data-hue="220" data-animate="scale-in">
+            <div class="card-badge">Principiante</div>
+            <h3>Introducción al Piano</h3>
+            <p>Digitación correcta, armonía básica, lectura de partituras aplicada a sintetizadores y modulación de acordes.</p>
+            <div class="card-meta">
+              <span class="duration">12 semanas</span>
+              <span class="level">Iniciante</span>
+            </div>
+            <button class="ghost" aria-label="Más información sobre Introducción al Piano">Saber más</button>
+          </article>
+
+          <!-- Clase 3 -->
+          <article class="card tilt" data-hue="180" data-animate="scale-in">
+            <div class="card-badge">Iniciante</div>
+            <h3>Intro a Tecnología Sonora</h3>
+            <p>Configuración profesional de DAW, interfaces de audio, ruteo avanzado de señal y workflow optimizado para producción 3D.</p>
+            <div class="card-meta">
+              <span class="duration">8 semanas</span>
+              <span class="level">Iniciante</span>
+            </div>
+            <button class="ghost" aria-label="Más información sobre Intro a Tecnología Sonora">Saber más</button>
+          </article>
+
+          <!-- Clase 4 -->
+          <article class="card tilt" data-hue="200" data-animate="scale-in">
+            <div class="card-badge">Intermedio</div>
+            <h3>Producción Musical Avanzada</h3>
+            <p>Sound design experimental, sampling creativo, síntesis sustractiva y mezcla profesional orientada al club y géneros electrónicos.</p>
+            <div class="card-meta">
+              <span class="duration">16 semanas</span>
+              <span class="level">Intermedio</span>
+            </div>
+            <button class="ghost" aria-label="Más información sobre Producción Musical Avanzada">Saber más</button>
+          </article>
+
+          <!-- Clase 5 -->
+          <article class="card tilt" data-hue="210" data-animate="scale-in">
+            <div class="card-badge">Intermedio</div>
+            <h3>Armonía &amp; Composición</h3>
+            <p>Construcción de acordes complejos, progresiones armónicas avanzadas, entrenamiento auditivo y composición para cine/games.</p>
+            <div class="card-meta">
+              <span class="duration">14 semanas</span>
+              <span class="level">Intermedio</span>
+            </div>
+            <button class="ghost" aria-label="Más información sobre Armonía &amp; Composición">Saber más</button>
+          </article>
+
+          <!-- Clase 6 -->
+          <article class="card tilt" data-hue="215" data-animate="scale-in">
+            <div class="card-badge">Avanzado</div>
+            <h3>Performance DJ Profesional</h3>
+            <p>Beatmatching híbrido, effects performativos en vivo, construcción de narrativa de set y gestión de crowd en festivales.</p>
+            <div class="card-meta">
+              <span class="duration">12 semanas</span>
+              <span class="level">Avanzado</span>
+            </div>
+            <button class="ghost" aria-label="Más información sobre Performance DJ Profesional">Saber más</button>
+          </article>
+        </div>
+
+         
+        <!-- CTA Section -->
+        <div class="booking-callout tilt" data-hue="210">
+          <div>
+            <h3>¿Listo para aprender?</h3>
+            <p>Ofrecemos clases grupales, sesiones 1-on-1 personalizadas y workshops intensivos. Elige lo que mejor se adapte a tu ritmo.</p>
+          </div>
+          <button class="cta" data-go="#contacto">Inscribirse Ahora</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SHOWCASE INMERSIVA -->
+    <section class="panel snap immersive-showcase" aria-label="Showcase interactivo RAGE VENTURE">
+      <div class="panel-content">
+
+        <!-- COLUMNA IZQUIERDA - CARRUSEL SHOWCASE -->
+        <div class="showcase-carousel-wrapper">
+          <div class="showcase-carousel-item active" style="background-image: url('assets/showcase/event-1.jpg');">
+            <div class="carousel-text-overlay">
+              <h3>Festival Rage 2025</h3>
+              <p>La mejor experiencia electrónica del año</p>
+            </div>
+          </div>
+
+          <div class="showcase-carousel-item" style="background-image: url('assets/showcase/event-2.jpg');">
+            <div class="carousel-text-overlay">
+              <h3>Estudio Profesional</h3>
+              <p>Equipo de producción de clase mundial</p>
+            </div>
+          </div>
+
+          <div class="showcase-carousel-item" style="background-image: url('assets/showcase/event-3.jpg');">
+            <div class="carousel-text-overlay">
+              <h3>Comunidad Global</h3>
+              <p>Conecta con productores del mundo</p>
+            </div>
+          </div>
+
+          <div class="showcase-carousel-item" style="background-image: url('assets/showcase/event-4.jpg');">
+            <div class="carousel-text-overlay">
+              <h3>Tecnología 3D</h3>
+              <p>Sonido inmersivo del futuro</p>
+            </div>
+          </div>
+
+          <!-- Controles Carousel -->
+          <div class="showcase-carousel-nav">
+            <button class="showcase-prev" aria-label="Slide anterior">←</button>
+            <button class="showcase-next" aria-label="Siguiente slide">→</button>
+          </div>
+
+          <!-- Indicadores -->
+          <div class="showcase-carousel-indicators">
+            <div class="showcase-indicator active" data-slide="0"></div>
+            <div class="showcase-indicator" data-slide="1"></div>
+            <div class="showcase-indicator" data-slide="2"></div>
+            <div class="showcase-indicator" data-slide="3"></div>
+          </div>
+        </div>
+
+        <!-- COLUMNA DERECHA - CONTENIDO + STATS -->
+        <div class="showcase-content">
+
+          <div class="showcase-header">
+            <div class="showcase-meta">
+              ⚡ Electrónica en Cuenca
+            </div>
+            <h2 class="showcase-title">
+              Vive la Experiencia RAGE
+            </h2>
+            <p class="showcase-description">
+              Somos más que música. Somos una comunidad de innovadores, productores y artistas comprometidos con llevar la música electrónica a nuevas dimensiones. Desde clases magistrales hasta producciones de clase mundial.
+            </p>
+          </div>
+
+          <!-- Stats Section -->
+          <div class="showcase-stats">
+            <div class="stat-card">
+              <span class="stat-icon">🎓</span>
+              <div class="stat-number">500+</div>
+              <p class="stat-label">Estudiantes Formados</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">🎵</span>
+              <div class="stat-number">150+</div>
+              <p class="stat-label">Tracks Lanzados</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">🌍</span>
+              <div class="stat-number">45</div>
+              <p class="stat-label">Países Alcanzados</p>
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="showcase-cta-group">
+            <button class="showcase-cta-primary" data-go="#contacto">
+              📞 Contáctanos Ahora
+            </button>
+            <a href="#label" class="showcase-cta-secondary" data-go="#label">
+              🎧 Ver Producciones
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -300,110 +450,138 @@
 
               <p class="form-note">✨ Nos comprometemos a responder en menos de 24 horas</p>
             </form>
-          </main>
+            
         </div>
+        </div>
+        
 
-        <!-- Más Canales -->
-        <section class="more-channels-section">
-          <h2 class="section-title" data-animate="char">Otros Canales</h2>
-          <div class="channels-grid">
-            <div class="channel-card">
-              <h3>💼 WhatsApp Business</h3>
-              <p>Para consultas rápidas y soporte en tiempo real</p>
-              <a href="https://wa.me/5939999999999" class="cta ghost" target="_blank" rel="noopener noreferrer">Chatear</a>
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="panel snap">
+        <div class="footer-container">
+          <div class="footer-top">
+            <div class="footer-logo-section">
+              <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo-main" loading="lazy" />
+              <h2 class="footer-brand-text">RAGE VENTURE</h2>
             </div>
 
-            <div class="channel-card">
-              <h3>🎤 Discord Community</h3>
-              <p>Únete a nuestra comunidad de productores y DJs</p>
-              <a href="https://discord.gg/rageventure" class="cta ghost" target="_blank" rel="noopener noreferrer">Entrar al Discord</a>
-            </div>
-
-            <div class="channel-card">
-              <h3>📱 Instagram Direct</h3>
-              <p>Síguenos y escríbenos por DM para consultas</p>
-              <a href="https://instagram.com/rageventure" class="cta ghost" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </div>
-
-            <div class="channel-card">
-              <h3>🎵 SoundCloud Messages</h3>
-              <p>Envía demos y mensajes a través de SoundCloud</p>
-              <a href="https://soundcloud.com/rageventure" class="cta ghost" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <div class="footer-socials" role="navigation" aria-label="Redes sociales">
+              <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"/><circle cx="17.5" cy="6.5" r="1.5"/>
+                </svg>
+              </a>
+              <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud" title="SoundCloud">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12c0-1 .5-2 1-2s1 .5 1 2v4c0 1-.5 2-1 2s-1-.5-1-2v-4m3-2v8m2-8v8m2-7v7m2-6v6m2-5v5m2-4v4"/>
+                </svg>
+              </a>
+              <a href="https://youtube.com/@rageventure" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 8-0.5 8-5.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
             </div>
           </div>
-        </section>
 
-        <!-- Mapa (opcional, placeholder) -->
-        <section class="map-section">
-          <h2 class="section-title" data-animate="char">Ubicación</h2>
-          <div class="map-placeholder">
-            <p>🗺️ RAGE VENTURE Studio - Cuenca, Ecuador</p>
-            <p class="map-note">Estamos ubicados en el corazón de la escena musical local. Visítanos.</p>
-          </div>
-        </section>
-      </div>
-    </section>
+          <div class="footer-divider"></div>
 
-    <!-- Footer -->
-        <footer class="site-footer" role="contentinfo">
           <div class="footer-grid">
             <div class="footer-column">
-              <div class="brand footer-brand">
-                <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
-              </div>
-              <nav class="footer-nav" aria-label="Navegación rápida">
-                <a href="#intro" data-go>Intro</a>
-                <a href="#clases" data-go>Clases</a>
-                <a href="#label" data-go>Label</a>
-                <a href="#alquiler" data-go>Alquiler</a>
-                <a href="#tienda" data-go>Tienda</a>
-                <a href="#eventos" data-go>Eventos</a>
+              <h3 class="footer-column-title">Servicios</h3>
+              <nav class="footer-nav">
+                <a href="#alquiler">Alquiler de Recursos</a>
+                <a href="#tienda">Tienda Online</a>
+                <a href="#eventos">Próximos Eventos</a>
+                <a href="#clases">Clases & Bootcamps</a>
               </nav>
             </div>
 
             <div class="footer-column">
-              <h3>Conecta</h3>
-              <div class="social-links" role="navigation" aria-label="Redes sociales">
-                <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-                <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-                <a href="https://youtube.com/@rageventure" target="_blank" rel="noopener noreferrer">YouTube</a>
-                <a href="https://twitter.com/rageventure" target="_blank" rel="noopener noreferrer">Twitter</a>
-                <a href="https://facebook.com/rageventure" target="_blank" rel="noopener noreferrer">Facebook</a>
-              </div>
+              <h3 class="footer-column-title">Compañía</h3>
+              <nav class="footer-nav">
+                <a href="#about">Sobre Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <a href="/blog">Blog</a>
+                <a href="/press">Press Kit</a>
+              </nav>
             </div>
 
             <div class="footer-column">
-              <h3>Newsletter</h3>
-              <p class="newsletter-text">Recibe updates exclusivos y lanzamientos.</p>
-              <form class="newsletter-form" method="POST" action="/api/newsletter">
-                <input type="email" name="email" placeholder="tu@email.com" required aria-label="Email para newsletter" />
-                <button type="submit" class="ghost">Suscribir</button>
+              <h3 class="footer-column-title">Recursos</h3>
+              <nav class="footer-nav">
+                <a href="/docs">Documentación</a>
+                <a href="/faq">Preguntas Frecuentes</a>
+                <a href="/soporte">Soporte</a>
+                <a href="/comunidad">Comunidad</a>
+              </nav>
+            </div>
+
+            <div class="footer-column">
+              <h3 class="footer-column-title">Newsletter</h3>
+              <p class="footer-newsletter-text">Recibe updates exclusivos sobre eventos, releases y oportunidades.</p>
+              <form class="footer-newsletter-form" method="POST" action="/api/newsletter" novalidate>
+                <input 
+                  type="email" 
+                  name="email" 
+                  placeholder="tu@email.com" 
+                  required 
+                  aria-label="Email para newsletter" />
+                <button type="submit" class="footer-subscribe-btn">Suscribir</button>
               </form>
             </div>
           </div>
 
+          <div class="footer-divider"></div>
+
           <div class="footer-bottom">
-            <div class="footer-links-legal">
+            <div class="footer-legal-links">
               <a href="/terminos">Términos de Servicio</a>
+              <span class="footer-separator">•</span>
               <a href="/privacidad">Política de Privacidad</a>
+              <span class="footer-separator">•</span>
+              <a href="/cookies">Cookies</a>
             </div>
-            <div class="footer-note">
+            <div class="footer-copyright">
               © 2025 RAGE VENTURE. Todos los derechos reservados.
             </div>
           </div>
-        </footer>
+
+        </div>
       </div>
-    </section>
+    </footer>
+
   </main>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="polyfills.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"
+    crossorigin="anonymous"
+    defer></script>
+
   <script src="animations.js" defer></script>
   <script src="script.js" defer></script>
   <script src="menu-toggle.js" defer></script>
-  <script>
+  <script src="scroll-paint-text.js" defer></script>
+  <script src="polyfills.js" defer></script>
+  <script src="scroll-paint-text.js" defer></script>
+  <script src="carousel.js" defer></script>
+  <script src="music-player.js" defer></script>
+
+ 
     // ═══════════════════════════════════════════════════════════════════
     // RAGE VENTURE - Creative Contact Form Validation & Animations
     // ═══════════════════════════════════════════════════════════════════

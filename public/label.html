@@ -2,158 +2,649 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RAGE VENTURE Label - Catálogo de artistas, lanzamientos exclusivos y submit de demos" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <meta name="description" content="RAGE VENTURE - Portal inmersivo de música, producción y experiencias visuales. Clases, label de música, alquiler de equipos y tienda oficial." />
+  <meta name="keywords" content="música, producción, DJ, síntesis, electrónica, clases, portal 3D" />
   <meta name="theme-color" content="#030109" />
-  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RAGE VENTURE – Portal Inmersivo" />
+  <meta property="og:description" content="Explora la música, la producción y el mundo digital" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content="https://rageventure.com/" />
+  <meta property="og:image" content="https://rageventure.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="RAGE VENTURE - Portal Inmersivo de Música y Producción" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RAGE VENTURE – Portal Inmersivo" />
+  <meta name="twitter:description" content="Explora la música, la producción y el mundo digital" />
+  <meta name="twitter:image" content="https://rageventure.com/assets/twitter-card.jpg" />
+  <meta name="twitter:image:alt" content="RAGE VENTURE logo y visualización del portal" />
+
+  <link rel="canonical" href="https://rageventure.com/" />
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="animations.css" />
-  
-  <title>Label - RAGE VENTURE</title>
+  <link rel="stylesheet" href="paginas.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "RAGE VENTURE",
+    "description": "Portal inmersivo de música, producción y experiencias digitales",
+    "url": "https://rageventure.com",
+    "logo": "https://rageventure.com/assets/logorageve_!.png",
+    "image": "https://rageventure.com/assets/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "EC"
+    },
+    "sameAs": [
+      "https://instagram.com/rageventure",
+      "https://soundcloud.com/rageventure",
+      "https://bandcamp.com/rageventure",
+      "https://youtube.com/@rageventure",
+      "https://twitter.com/rageventure",
+      "https://facebook.com/rageventure"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Clases de Producción Musical",
+          "description": "Desde fundamentos hasta técnicas avanzadas de producción y performance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Alquiler de Equipos de Producción",
+          "description": "Sintetizadores, drum machines y samplers profesionales"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Servicio de Producción Musical",
+          "description": "Creación, mezcla y masterización de tracks"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <title>RAGE VENTURE – Electronic Music</title>
 </head>
-
 <body>
-  <a href="#content" class="skip-link">Saltar a contenido principal</a>
 
-  <!-- Header -->
   <header id="main-header" role="banner">
     <div class="header-content">
       <div class="brand">
-        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
-          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio" class="brand-text">
+          <span class="rage-logo-text">RAGE VENTURE</span>
         </a>
       </div>
-      
+
       <nav class="header-nav" role="navigation" aria-label="Navegación principal">
-<a href="index.html">Inicio</a>
-<a href="eventos.html">Eventos</a>
-<a href="label.html">Roaster</a>
-<a href="alquiler.html">Alquiler</a>
-<a href="clases.html">Clases</a>
-<a href="tienda.html">Tienda</a>
-<a href="contacto.html">Contacto</a>
+        <a href="eventos.html" class="nav-link">EVENTOS</a>
+        <a href="alquiler.html" class="nav-link">ALQUILER</a>
+        <a href="label.html" class="nav-link">MÚSICA</a>
+        <a href="contacto.html" class="nav-link">REVISTA</a>
+        <a href="tienda.html" class="nav-link">STORE</a>
       </nav>
-      
-      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación">Menú</button>
+
+      <div class="header-spacer"></div>
+
+      <div class="header-right">
+        <button class="search-btn" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+
+        <a href="mi-cuenta.html" class="account-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+          </svg>
+          Mi cuenta
+        </a>
+
+        <a href="pro.html" class="pro-link">PRO</a>
+      </div>
+
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
     </div>
   </header>
 
- <!-- Side Menu -->
-  <!-- Side Menu con Desplegables -->
-<aside id="side-menu" role="navigation" aria-label="Menú lateral">
-  <div class="side-menu-header">
-    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
-      <span class="close-icon"></span>
-    </button>
-  </div>
-  
-  <nav class="side-menu-nav">
-    <!-- Link simple -->
-    <a href="index.html" class="menu-link">
-      <span>Inicio</span>
-    </a>
-    
-    <!-- Sección desplegable: Eventos -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Eventos</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="eventos.html">Todos los Eventos</a>
-        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
-        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
-        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
-      </div>
+  <aside id="side-menu" role="navigation" aria-label="Menú lateral">
+    <div class="side-menu-header">
+      <button id="menu-close-btn" class="menu-toggle-btn" aria-label="Cerrar menú">×</button>
     </div>
-    
-    <!-- Sección desplegable: Tienda -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Tienda</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="tienda.html">Catálogo Completo</a>
-        <a href="tienda.html#vinilos">Vinilos</a>
-        <a href="tienda.html#merch">Merchandising</a>
-        <a href="tienda.html#accesorios">Accesorios</a>
-      </div>
-    </div>
-    
-    <!-- Sección desplegable: Clases -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Clases</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="clases.html">Programas Formativos</a>
-        <a href="clases.html#bajo">Clases de Bajo</a>
-        <a href="clases.html#piano">Clases de Piano</a>
-        <a href="clases.html#produccion">Producción Musical</a>
-        <a href="clases.html#dj">Clases de DJ</a>
-      </div>
-    </div>
-    
-    <!-- Link simple -->
-    <a href="label.html" class="menu-link">
-      <span>Roaster</span>
-    </a>
-    
-    <!-- Sección desplegable: Alquiler -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Alquiler</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="alquiler.html">Servicios</a>
-        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
-        <a href="alquiler.html#grabacion">Grabación de Sets</a>
-        <a href="alquiler.html#produccion">Servicio de Producción</a>
-      </div>
-    </div>
-    
-    <!-- Link simple -->
-    <a href="contacto.html" class="menu-link">
-      <span>Contacto</span>
-    </a>
-  </nav>
-  
-  <div class="side-menu-footer">
-    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="#" id="toggleFx">FX: ON</a>
-  </div>
-</aside>
 
-  <!-- Canvas -->
+    <nav>
+      <a href="#intro" data-go>Inicio</a>
+      <a href="#about" data-go>Sobre Nosotros</a>
+      <a href="#clases" data-go>Clases</a>
+      <a href="#label" data-go>Label</a>
+      <a href="#alquiler" data-go>Alquiler</a>
+      <a href="#tienda" data-go>Tienda</a>
+      <a href="#eventos" data-go>Eventos</a>
+      <a href="#contacto" data-go>Contacto</a>
+    </nav>
+
+    <div class="side-menu-footer">
+      <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" id="toggleFx">FX: ON</a>
+    </div>
+  </aside>
+
   <canvas id="bg" aria-hidden="true"></canvas>
 
-  <!-- Content -->
   <main id="content" role="main">
-    <!-- Label Header -->
-    <section class="panel hero snap" aria-label="Encabezado de Label">
-      <div class="hero-content-centered">
-        <h1 class="hero-title" data-animate="char">RAGE VENTURE LABEL</h1>
-        <p class="hero-subtitle" data-animate="word">Un roster curado de artistas que definen el futuro del sonido electrónico</p>
+
+    <!-- PLAYLISTS + GÉNEROS -->
+    <section class="panel snap music-section" aria-label="Playlists y géneros">
+      <div class="panel-content music-layout">
+
+        <!-- PLAYLISTS -->
+        <div class="music-column playlists-column">
+          <header class="music-section-header">
+            <h2><span class="section-chip">PLAYLISTS DESTACADAS</span></h2>
+          </header>
+
+          <div class="playlists-scroller">
+            <button
+              type="button"
+              class="playlist-arrow playlist-arrow-left"
+              aria-label="Desplazar playlists hacia la izquierda">
+              ‹
+            </button>
+
+            <div class="playlists-grid" id="playlistsGrid">
+              <!-- Cada playlist-card ahora tiene <img> para la portada -->
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="assets/audio/audio1.mp3"
+                data-title="Deep Space Beats"
+                data-artist="Cosmic Echo">
+                <figure class="playlist-cover cover-1">
+                  <img src="assets/logorageve.png" alt="Portada Deep Space Beats">
+                </figure>
+                <span class="playlist-name">DEEP SPACE BEATS</span>
+              </button>
+
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="audio/cybernetic-soul-1.mp3"
+                data-title="Cybernetic Soul"
+                data-artist="Neon Walkers">
+                <figure class="playlist-cover cover-2">
+                  <img src="assets/logo1.jpg" alt="Portada Cybernetic Soul">
+                </figure>
+                <span class="playlist-name">CYBERNETIC SOUL</span>
+              </button>
+
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="audio/cybernetic-soul-1.mp3"
+                data-title="Cybernetic Soul"
+                data-artist="Neon Walkers">
+                <figure class="playlist-cover cover-2">
+                  <img src="assets/logorageve_!_HORIZONTAL.png" alt="Portada Cybernetic Soul Alt">
+                </figure>
+                <span class="playlist-name">CYBERNETIC SOUL</span>
+              </button>
+
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="audio/cybernetic-soul-1.mp3"
+                data-title="Cybernetic Soul"
+                data-artist="Neon Walkers">
+                <figure class="playlist-cover cover-2">
+                  <img src="assets/logorageve_!.png" alt="Portada Cybernetic Soul Live">
+                </figure>
+                <span class="playlist-name">CYBERNETIC SOUL</span>
+              </button>
+
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="audio/cybernetic-soul-2.mp3"
+                data-title="Cybernetic Soul II"
+                data-artist="Neon Walkers">
+                <figure class="playlist-cover cover-3">
+                  <img src="assets/logorageve_!.png" alt="Portada Cybernetic Soul II">
+                </figure>
+                <span class="playlist-name">CYBERNETIC SOUL II</span>
+              </button>
+
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="audio/galactic-grooves.mp3"
+                data-title="Galactic Grooves"
+                data-artist="Stellar Unit">
+                <figure class="playlist-cover cover-4">
+                  <img src="assets/logorageve_!_HORIZONTAL.png" alt="Portada Galactic Grooves">
+                </figure>
+                <span class="playlist-name">GALACTIC GROOVES</span>
+              </button>
+
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="audio/electric-grobs.mp3"
+                data-title="Electric Grobs"
+                data-artist="Red Horizon">
+                <figure class="playlist-cover cover-5">
+                  <img src="assets/logorageve.png" alt="Portada Electric Grobs">
+                </figure>
+                <span class="playlist-name">ELECTRIC GROBS</span>
+              </button>
+
+              <button
+                type="button"
+                class="playlist-card"
+                data-src="audio/deep-space-beats-2.mp3"
+                data-title="Deep Space Beats II"
+                data-artist="Cosmic Echo">
+                <figure class="playlist-cover cover-6">
+                  <img src="assets/logo1.jpg" alt="Portada Deep Space Beats II">
+                </figure>
+                <span class="playlist-name">DEEP SPACE BEATS II</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              class="playlist-arrow playlist-arrow-right"
+              aria-label="Desplazar playlists hacia la derecha">
+              ›
+            </button>
+          </div>
+        </div>
+
+        <!-- GÉNEROS -->
+        <div class="music-column genres-column">
+          <header class="music-section-header">
+            <h2><span class="section-chip">EXPLORAR GÉNEROS</span></h2>
+          </header>
+
+          <ol class="genres-list">
+            <li>
+              <button
+                type="button"
+                class="genre-card"
+                data-src="audio/genre-techno.mp3"
+                data-title="Techno Circuit"
+                data-artist="RV Techno">
+                <span class="genre-chip">Techno</span>
+                <span>Session</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="genre-card"
+                data-src="audio/genre-ambient.mp3"
+                data-title="Ambient Drift"
+                data-artist="RV Ambient">
+                <span class="genre-chip">Ambient</span>
+                <span>Session</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="genre-card"
+                data-src="audio/genre-electro-funk.mp3"
+                data-title="Electro Funk Pulse"
+                data-artist="RV Electro">
+                <span class="genre-chip">Electro-Funk</span>
+                <span>Session</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="genre-card"
+                data-src="audio/genre-synthwave.mp3"
+                data-title="Neon Synthwave"
+                data-artist="RV Synthwave">
+                <span class="genre-chip">Synthwave</span>
+                <span>Session</span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="genre-card"
+                data-src="audio/genre-trance.mp3"
+                data-title="Trance Uplink"
+                data-artist="RV Trance">
+                <span class="genre-chip">Trance</span>
+                <span>Session</span>
+              </button>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Reproductor inferior -->
+      <div class="music-player-bar" aria-label="Reproductor de música">
+        <div class="player-track-info">
+          <div class="player-cover-thumb" id="playerCover"></div>
+          <div class="player-meta">
+            <p class="player-title" id="playerTitle">Selecciona una playlist</p>
+            <p class="player-artist" id="playerArtist">RAGE VENTURE LABEL</p>
+          </div>
+        </div>
+
+        <div class="player-controls">
+          <button type="button" id="playerPrev" class="player-btn" aria-label="Pista anterior">⏮</button>
+          <button type="button" id="playerPlayPause" class="player-btn player-btn-main" aria-label="Reproducir / Pausar">▶</button>
+          <button type="button" id="playerNext" class="player-btn" aria-label="Pista siguiente">⏭</button>
+        </div>
+
+        <div class="player-progress">
+          <input type="range" id="playerSeek" min="0" max="100" value="0" aria-label="Progreso de la pista">
+        </div>
+
+        <div class="player-volume">
+          <span>VOL</span>
+          <input type="range" id="playerVolume" min="0" max="1" step="0.01" value="0.8" aria-label="Volumen">
+        </div>
+
+        <audio id="audioPlayer" preload="metadata"></audio>
       </div>
     </section>
+ 
+<section class="panel snap music-mag-section" aria-label="Revista - Artículos, entrevistas y últimas publicaciones">
+  <div class="panel-content music-mag-layout">
 
-    <!-- Label Contenido -->
+    <!-- ────────────────────────────────────────────────────────────────────
+         COLUMNA IZQUIERDA - ARTÍCULO PRINCIPAL
+         ──────────────────────────────────────────────────────────────────── -->
+    <div class="mag-main-article">
+      
+      <!-- Imagen Hero -->
+      <div class="mag-hero-media">
+        <div class="mag-hero-cover" style="background-image: url('assets/logorageve_!_HORIZONTAL.png');">
+          <span class="mag-hero-badge">ENTREVISTA</span>
+        </div>
+      </div>
+
+      <!-- Contenido Artículo -->
+      <div class="mag-hero-body">
+        <p class="mag-tag">ENTREVISTA</p>
+        
+        <h2 class="mag-title">
+          Entrevista exclusiva: The Non Nomad habla sobre su próximo álbum "Synthetic Realms"
+        </h2>
+        
+        <p class="mag-meta">15.05.2024 · ENTREVISTA · Por RAGE VENTURE</p>
+        
+        <p class="mag-excerpt">
+          Los nuevos temas tienen a la vez un enfoque para pista y una narrativa visual fuerte. Hablamos sobre sintetizadores, procesos creativos y cómo Rage Venture ha influido en el sonido del proyecto. Una conversación profunda sobre el futuro de la música electrónica experimental.
+        </p>
+
+        <!-- Fragmentos de entrevista -->
+        <div class="mag-quote-block">
+          <blockquote>
+            "La síntesis modular cambió mi forma de entender la música. Ya no es solo composición, es arquitectura sonora."
+          </blockquote>
+          <p class="mag-quote-author">— The Non Nomad</p>
+        </div>
+
+        <!-- Acciones -->
+        <div class="mag-actions">
+          <a href="#" class="cta">Leer artículo completo</a>
+          <button
+            type="button"
+            class="mag-track-card"
+            data-src="assets/audio/stardust-serenade.mp3"
+            data-title="Stardust Serenade"
+            data-artist="Cosmic Echo">
+            ▶ Escuchar sesión
+          </button>
+        </div>
+      </div>
+
+      <!-- Artículos Relacionados -->
+      <div class="mag-related-articles">
+        <h3 class="mag-section-title">También te podría interesar</h3>
+        <div class="mag-related-grid">
+          
+          <article class="mag-related-card">
+            <div class="mag-related-thumb" style="background-image: url('assets/logorageve_!_HORIZONTAL.png');"></div>
+            <div class="mag-related-body">
+              <p class="mag-related-tag">Guía</p>
+              <h4 class="mag-related-title">Guía Completa: Sintetizadores para Principiantes</h4>
+              <p class="mag-related-meta">12.05.2024</p>
+            </div>
+          </article>
+
+          <article class="mag-related-card">
+            <div class="mag-related-thumb" style="background-image: url('assets/revista/production-tips.jpg');"></div>
+            <div class="mag-related-body">
+              <p class="mag-related-tag">Tips</p>
+              <h4 class="mag-related-title">5 Tips de Producción que Cambiaron mi Carrera</h4>
+              <p class="mag-related-meta">08.05.2024</p>
+            </div>
+          </article>
+
+          <article class="mag-related-card">
+            <div class="mag-related-thumb" style="background-image: url('assets/revista/live-sessions.jpg');"></div>
+            <div class="mag-related-body">
+              <p class="mag-related-tag">Evento</p>
+              <h4 class="mag-related-title">Live Sessions: Sesiones en Vivo del Estudio</h4>
+              <p class="mag-related-meta">01.05.2024</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         COLUMNA DERECHA - SIDEBAR
+         ──────────────────────────────────────────────────────────────────── -->
+    <aside class="mag-sidebar" aria-label="Últimas publicaciones y artículos destacados">
+      
+      <!-- Sección Entrevistas Destacadas -->
+      <div class="mag-sidebar-section">
+        <header class="mag-sidebar-header">
+          <h2><span class="section-chip">ENTREVISTAS DESTACADAS</span></h2>
+        </header>
+
+        <ol class="mag-featured-interviews">
+          
+          <li>
+            <button
+              type="button"
+              class="mag-interview-card"
+              data-src="assets/audio/interview-nonnom.mp3"
+              data-title="Entrevista: The Non Nomad"
+              data-artist="RAGE VENTURE Entrevistas">
+              <div class="mag-interview-index">1</div>
+              <div class="mag-interview-thumb" style="background-image: url('assets/revista/interview-1.jpg');"></div>
+              <div class="mag-interview-body">
+                <p class="mag-interview-tag">ENTREVISTA</p>
+                <h3 class="mag-interview-title">The Non Nomad: Síntesis Modular</h3>
+                <p class="mag-interview-meta">15.05.2024</p>
+              </div>
+            </button>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              class="mag-interview-card"
+              data-src="assets/audio/interview-kora.mp3"
+              data-title="Entrevista: KØRA"
+              data-artist="RAGE VENTURE Entrevistas">
+              <div class="mag-interview-index">2</div>
+              <div class="mag-interview-thumb" style="background-image: url('assets/revista/interview-2.jpg');"></div>
+              <div class="mag-interview-body">
+                <p class="mag-interview-tag">ENTREVISTA</p>
+                <h3 class="mag-interview-title">KØRA: Techno Hipnótico en Vivo</h3>
+                <p class="mag-interview-meta">10.05.2024</p>
+              </div>
+            </button>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              class="mag-interview-card"
+              data-src="assets/audio/interview-mxr.mp3"
+              data-title="Entrevista: MxR"
+              data-artist="RAGE VENTURE Entrevistas">
+              <div class="mag-interview-index">3</div>
+              <div class="mag-interview-thumb" style="background-image: url('assets/revista/interview-3.jpg');"></div>
+              <div class="mag-interview-body">
+                <p class="mag-interview-tag">ENTREVISTA</p>
+                <h3 class="mag-interview-title">MxR: Sound Design Experimental</h3>
+                <p class="mag-interview-meta">05.05.2024</p>
+              </div>
+            </button>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              class="mag-interview-card"
+              data-src="assets/audio/interview-tel.mp3"
+              data-title="Entrevista: TÊL"
+              data-artist="RAGE VENTURE Entrevistas">
+              <div class="mag-interview-index">4</div>
+              <div class="mag-interview-thumb" style="background-image: url('assets/revista/interview-4.jpg');"></div>
+              <div class="mag-interview-body">
+                <p class="mag-interview-tag">ENTREVISTA</p>
+                <h3 class="mag-interview-title">TÊL: House & Acid Clásico</h3>
+                <p class="mag-interview-meta">28.04.2024</p>
+              </div>
+            </button>
+          </li>
+
+          <li>
+            <button
+              type="button"
+              class="mag-interview-card"
+              data-src="assets/audio/interview-luna.mp3"
+              data-title="Entrevista: Luna Echo"
+              data-artist="RAGE VENTURE Entrevistas">
+              <div class="mag-interview-index">5</div>
+              <div class="mag-interview-thumb" style="background-image: url('assets/logorageve_!_HORIZONTAL.png');"></div>
+              <div class="mag-interview-body">
+                <p class="mag-interview-tag">ENTREVISTA</p>
+                <h3 class="mag-interview-title">Luna Echo: Ambient & Textura</h3>
+                <p class="mag-interview-meta">20.04.2024</p>
+              </div>
+            </button>
+          </li>
+
+        </ol>
+      </div>
+
+      <!-- Divisor -->
+      <div class="mag-sidebar-divider"></div>
+
+     
+      <!-- Divisor -->
+      <div class="mag-sidebar-divider"></div>
+
+      <!-- Sección por Categorías -->
+      <div class="mag-sidebar-section">
+        <header class="mag-sidebar-header">
+          <h2><span class="section-chip">POR CATEGORÍA</span></h2>
+        </header>
+
+        <div class="mag-categories-list">
+          <button type="button" class="mag-category-chip" data-filter="entrevista">
+            Entrevistas <span class="mag-category-count">5</span>
+          </button>
+          <button type="button" class="mag-category-chip" data-filter="produccion">
+            Producción <span class="mag-category-count">12</span>
+          </button>
+          <button type="button" class="mag-category-chip" data-filter="evento">
+            Eventos <span class="mag-category-count">8</span>
+          </button>
+          <button type="button" class="mag-category-chip" data-filter="tutorial">
+            Tutoriales <span class="mag-category-count">15</span>
+          </button>
+          <button type="button" class="mag-category-chip" data-filter="resena">
+            Reseñas <span class="mag-category-count">7</span>
+          </button>
+          <button type="button" class="mag-category-chip" data-filter="perfil">
+            Perfiles <span class="mag-category-count">6</span>
+          </button>
+          <button type="button" class="mag-category-chip" data-filter="noticia">
+            Noticias <span class="mag-category-count">22</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="mag-sidebar-divider"></div>
+
+      <!-- Suscripción Newsletter -->
+      <div class="mag-sidebar-section">
+        <header class="mag-sidebar-header">
+          <h2><span class="section-chip">NEWSLETTER</span></h2>
+        </header>
+
+        <div class="mag-newsletter">
+          <p class="mag-newsletter-text">Recibe las mejores entrevistas y artículos cada semana</p>
+          <form class="mag-newsletter-form" method="POST" action="/api/magazine-newsletter">
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="tu@email.com" 
+              required 
+              aria-label="Email para newsletter" />
+            <button type="submit" class="cta">Suscribir</button>
+          </form>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+    <!-- LABEL -->
     <section class="panel snap" aria-label="Información del Label">
       <div class="panel-content">
         <div class="section-meta">Roster & Releases</div>
         <header class="section-header">
-          <h2 data-animate="char">Nuestros Artistas</h2>
+          <h2 data-animate="char"><span class="section-chip">Nuestros Artistas</span></h2>
           <p data-animate="word">Descubre el talento que está redefiniendo la música electrónica moderna. Desde productores experimentales hasta DJs residentes, cada artista trae su propia visión.</p>
         </header>
 
-        <!-- Artistas Grid -->
         <div class="cards label-grid">
           <article class="label-card tilt" data-hue="210" data-animate="scale-in">
             <div class="artist-avatar" style="background: linear-gradient(135deg, #007BFF, #00d4ff);"></div>
@@ -189,9 +680,8 @@
           </article>
         </div>
 
-        <!-- Sección de Lanzamientos -->
         <section class="releases-section">
-          <h2 class="section-title" data-animate="char">Lanzamientos Recientes</h2>
+          <h2 class="section-title" data-animate="char"><span class="section-chip">Lanzamientos Recientes</span></h2>
           <div class="releases-grid">
             <article class="release-card">
               <div class="release-cover" style="background: linear-gradient(135deg, #ff0066, #007BFF);"></div>
@@ -219,9 +709,8 @@
           </div>
         </section>
 
-        <!-- Submit Section -->
         <div class="submit-section">
-          <h2 class="section-title" data-animate="char">¿Eres Artista?</h2>
+          <h2 class="section-title" data-animate="char"><span class="section-chip">¿Eres Artista?</span></h2>
           <div class="submit-content">
             <p>Estamos buscando talento fresco y visión única. Si tu música resuena con la filosofía RAGE VENTURE, nos encantaría escucharla.</p>
             <div class="submit-requirements">
@@ -236,72 +725,205 @@
             <button class="cta">Enviar Demo</button>
           </div>
         </div>
+ </section>
+ 
+    <!-- CLASES -->
+     
+    <!-- ─────────────────────────────────────────────────────────────────────
+     SECTION 08 - CONTACTO / CONTACT FORM MINIMALISTA
+     ───────────────────────────────────────────────────────────────────── -->
+<section id="contacto" class="panel snap" aria-label="Contacto y formulario">
+  <div class="panel-content">
 
-        <!-- CTA Final -->
-        <div class="booking-callout tilt" data-hue="210">
-          <div>
-            <h3>Síguenos en Todas Partes</h3>
-            <p>Mantente atento a lanzamientos exclusivos, sesiones en vivo y anuncios de artistas.</p>
-          </div>
-          <div class="social-links">
-            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer" class="ghost">Instagram</a>
-            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer" class="ghost">SoundCloud</a>
-            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer" class="ghost">Bandcamp</a>
-          </div>
-        </div>
+    <!-- Section Header -->
+    <header class="section-header contact-header">
+      <h2>Contacto</h2>
+     </header>
+
+    <!-- Contact Form -->
+    <form class="contact-form" method="POST" action="/api/contact" novalidate>
+      <input type="hidden" name="csrf_token" value="token_placeholder" />
+
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Tu nombre completo"
+          required
+          minlength="2"
+          maxlength="100"
+          aria-required="true"
+          aria-invalid="false"
+          aria-describedby="name-error" />
+        <span id="name-error" class="error-message" role="alert"></span>
       </div>
-    </section>
 
-    <!-- Footer -->
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="tucorreo@ejemplo.com"
+          required
+          aria-required="true"
+          aria-invalid="false"
+          aria-describedby="email-error" />
+        <span id="email-error" class="error-message" role="alert"></span>
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Cuéntanos tu idea…"
+          required
+          minlength="10"
+          maxlength="5000"
+          aria-required="true"
+          aria-invalid="false"
+          aria-describedby="message-error"></textarea>
+        <span id="message-error" class="error-message" role="alert"></span>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="contact-btn" type="submit">Enviar</button>
+    </form>
+  </div>
+  </section>
+
+    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <div class="brand footer-brand">
-            <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
+      <div class="panel snap">
+        <div class="footer-container">
+          <div class="footer-top">
+            <div class="footer-logo-section">
+              <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo-main" loading="lazy" />
+              <h2 class="footer-brand-text">RAGE VENTURE</h2>
+            </div>
+
+            <div class="footer-socials" role="navigation" aria-label="Redes sociales">
+              <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"/><circle cx="17.5" cy="6.5" r="1.5"/>
+                </svg>
+              </a>
+              <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud" title="SoundCloud">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12c0-1 .5-2 1-2s1 .5 1 2v4c0 1-.5 2-1 2s-1-.5-1-2v-4m3-2v8m2-8v8m2-7v7m2-6v6m2-5v5m2-4v4"/>
+                </svg>
+              </a>
+              <a href="https://youtube.com/@rageventure" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 8-0.5 8-5.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+            </div>
           </div>
-          <nav class="footer-nav" aria-label="Navegación rápida">
-            <a href="index.html">Inicio</a>
-            <a href="clases.html">Clases</a>
-            <a href="label.html">Label</a>
-            <a href="alquiler.html">Alquiler</a>
-            <a href="tienda.html">Tienda</a>
-          </nav>
-        </div>
 
-        <div class="footer-column">
-          <h3>Conecta</h3>
-          <div class="social-links" role="navigation">
-            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          <div class="footer-divider"></div>
+
+          <div class="footer-grid">
+            <div class="footer-column">
+              <h3 class="footer-column-title">Servicios</h3>
+              <nav class="footer-nav">
+                <a href="#alquiler">Alquiler de Recursos</a>
+                <a href="#tienda">Tienda Online</a>
+                <a href="#eventos">Próximos Eventos</a>
+                <a href="#clases">Clases & Bootcamps</a>
+              </nav>
+            </div>
+
+            <div class="footer-column">
+              <h3 class="footer-column-title">Compañía</h3>
+              <nav class="footer-nav">
+                <a href="#about">Sobre Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <a href="/blog">Blog</a>
+                <a href="/press">Press Kit</a>
+              </nav>
+            </div>
+
+            <div class="footer-column">
+              <h3 class="footer-column-title">Recursos</h3>
+              <nav class="footer-nav">
+                <a href="/docs">Documentación</a>
+                <a href="/faq">Preguntas Frecuentes</a>
+                <a href="/soporte">Soporte</a>
+                <a href="/comunidad">Comunidad</a>
+              </nav>
+            </div>
+
+            <div class="footer-column">
+              <h3 class="footer-column-title">Newsletter</h3>
+              <p class="footer-newsletter-text">Recibe updates exclusivos sobre eventos, releases y oportunidades.</p>
+              <form class="footer-newsletter-form" method="POST" action="/api/newsletter" novalidate>
+                <input 
+                  type="email" 
+                  name="email" 
+                  placeholder="tu@email.com" 
+                  required 
+                  aria-label="Email para newsletter" />
+                <button type="submit" class="footer-subscribe-btn">Suscribir</button>
+              </form>
+            </div>
           </div>
-        </div>
 
-        <div class="footer-column">
-          <h3>Newsletter</h3>
-          <p class="newsletter-text">Recibe updates exclusivos de artistas.</p>
-          <form class="newsletter-form" method="POST" action="/api/newsletter">
-            <input type="email" name="email" placeholder="tu@email.com" required />
-            <button type="submit" class="ghost">Suscribir</button>
-          </form>
-        </div>
-      </div>
+          <div class="footer-divider"></div>
 
-      <div class="footer-bottom">
-        <div class="footer-links-legal">
-          <a href="/terminos">Términos</a>
-          <a href="/privacidad">Privacidad</a>
+          <div class="footer-bottom">
+            <div class="footer-legal-links">
+              <a href="/terminos">Términos de Servicio</a>
+              <span class="footer-separator">•</span>
+              <a href="/privacidad">Política de Privacidad</a>
+              <span class="footer-separator">•</span>
+              <a href="/cookies">Cookies</a>
+            </div>
+            <div class="footer-copyright">
+              © 2025 RAGE VENTURE. Todos los derechos reservados.
+            </div>
+          </div>
+
         </div>
-        <div class="footer-note">© 2025 RAGE VENTURE. Todos los derechos reservados.</div>
       </div>
     </footer>
+
   </main>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="polyfills.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"
+    crossorigin="anonymous"
+    defer></script>
+
   <script src="animations.js" defer></script>
   <script src="script.js" defer></script>
   <script src="menu-toggle.js" defer></script>
+  <script src="scroll-paint-text.js" defer></script>
+  <script src="polyfills.js" defer></script>
+  <script src="scroll-paint-text.js" defer></script>
+  <script src="carousel.js" defer></script>
+  <script src="music-player.js" defer></script>
+
 </body>
 </html>

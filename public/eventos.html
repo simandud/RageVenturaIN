@@ -1,150 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<!-- ══════════════════════════════════════════════════════════════════════════════
+     HEAD - Meta Tags, SEO, Fonts & Styles
+     ══════════════════════════════════════════════════════════════════════════════ -->
 <head>
+  <!-- ═══ Character Set & Viewport ═══ -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Eventos RAGE VENTURE - Showcases, festivales y experiencias inmersivas de música electrónica" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- ═══ Primary Meta Tags ═══ -->
+  <meta name="description" content="RAGE VENTURE - Portal inmersivo de música, producción y experiencias visuales. Clases, label de música, alquiler de equipos y tienda oficial." />
+  <meta name="keywords" content="música, producción, DJ, síntesis, electrónica, clases, portal 3D" />
   <meta name="theme-color" content="#030109" />
-  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- ═══ Open Graph / Facebook ═══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RAGE VENTURE – Portal Inmersivo" />
+  <meta property="og:description" content="Explora la música, la producción y el mundo digital" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content="https://rageventure.com/" />
+  <meta property="og:image" content="https://rageventure.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="RAGE VENTURE - Portal Inmersivo de Música y Producción" />
+
+  <!-- ═══ Twitter Card ═══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RAGE VENTURE – Portal Inmersivo" />
+  <meta name="twitter:description" content="Explora la música, la producción y el mundo digital" />
+  <meta name="twitter:image" content="https://rageventure.com/assets/twitter-card.jpg" />
+  <meta name="twitter:image:alt" content="RAGE VENTURE logo y visualización del portal" />
+
+  <!-- ═══ Canonical & Favicons ═══ -->
+  <link rel="canonical" href="https://rageventure.com/" />
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- ═══ Fonts Preconnect ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
+  <!-- ═══ Stylesheets ═══ -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="animations.css" />
-  
-  <title>Eventos - RAGE VENTURE</title>
+  <link rel="stylesheet" href="paginas.css" />
+
+  <!-- ═══ Structured Data - Schema.org ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "RAGE VENTURE",
+    "description": "Portal inmersivo de música, producción y experiencias digitales",
+    "url": "https://rageventure.com",
+    "logo": "https://rageventure.com/assets/logorageve_!.png",
+    "image": "https://rageventure.com/assets/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "EC"
+    },
+    "sameAs": [
+      "https://instagram.com/rageventure",
+      "https://soundcloud.com/rageventure",
+      "https://bandcamp.com/rageventure",
+      "https://youtube.com/@rageventure",
+      "https://twitter.com/rageventure",
+      "https://facebook.com/rageventure"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Clases de Producción Musical",
+          "description": "Desde fundamentos hasta técnicas avanzadas de producción y performance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Alquiler de Equipos de Producción",
+          "description": "Sintetizadores, drum machines y samplers profesionales"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Servicio de Producción Musical",
+          "description": "Creación, mezcla y masterización de tracks"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <title>RAGE VENTURE – Electronic Music</title>
 </head>
 
+<!-- ══════════════════════════════════════════════════════════════════════════════
+     BODY - Main Content Structure
+     ══════════════════════════════════════════════════════════════════════════════ -->
 <body>
-  <a href="#content" class="skip-link">Saltar a contenido principal</a>
 
-  <!-- Header -->
+  <!-- ═══ Accessibility Skip Link ═══ -->
+ 
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       HEADER - Navigation & Branding
+       ══════════════════════════════════════════════════════════════════════════ -->
   <header id="main-header" role="banner">
     <div class="header-content">
+
+      <!-- Brand Logo -->
       <div class="brand">
-        <a href="index.html" aria-label="RAGE VENTURE - Inicio">
-          <img src="assets/logorageve_!.png" alt="RAGE VENTURE Logo" id="header-logo" loading="eager" />
+        <a href="index.html" aria-label="RAGE VENTURE - Inicio" class="brand-text">
+          <span class="rage-logo-text">RAGE VENTURE</span>
         </a>
       </div>
-      
+
+      <!-- Main Navigation -->
       <nav class="header-nav" role="navigation" aria-label="Navegación principal">
-<a href="index.html">Inicio</a>
-<a href="eventos.html">Eventos</a>
-<a href="label.html">Roaster</a>
-<a href="alquiler.html">Alquiler</a>
-<a href="clases.html">Clases</a>
-<a href="tienda.html">Tienda</a>
-<a href="contacto.html">Contacto</a>
-        
+        <a href="eventos.html" class="nav-link">EVENTOS</a>
+        <a href="alquiler.html" class="nav-link">ALQUILER</a>
+        <a href="label.html" class="nav-link">MÚSICA</a>
+        <a href="contacto.html" class="nav-link">REVISTA</a>
+        <a href="tienda.html" class="nav-link">STORE</a>
+
       </nav>
-      
-      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación">Menú</button>
+
+      <div class="header-spacer"></div>
+
+      <!-- Header Actions -->
+      <div class="header-right">
+
+        <!-- Search Button -->
+        <button class="search-btn" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+
+        <!-- Account Link -->
+        <a href="mi-cuenta.html" class="account-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+          </svg>
+          Mi cuenta
+        </a>
+
+        <!-- Pro Link -->
+        <a href="pro.html" class="pro-link">PRO</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-open-btn" class="menu-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <!-- Side Menu -->
-  <!-- Side Menu con Desplegables -->
-<aside id="side-menu" role="navigation" aria-label="Menú lateral">
-  <div class="side-menu-header">
-    <button id="menu-close-btn" class="menu-close-btn" aria-label="Cerrar menú">
-      <span class="close-icon"></span>
-    </button>
-  </div>
-  
-  <nav class="side-menu-nav">
-    <!-- Link simple -->
-    <a href="index.html" class="menu-link">
-      <span>Inicio</span>
-    </a>
-    
-    <!-- Sección desplegable: Eventos -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Eventos</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="eventos.html">Todos los Eventos</a>
-        <a href="eventos.html#neon-rave">Neon Rave - Quito</a>
-        <a href="eventos.html#afterglow">Afterglow - Cuenca</a>
-        <a href="eventos.html#midnight-pulse">Midnight Pulse - Guayaquil</a>
-      </div>
-    </div>
-    
-    <!-- Sección desplegable: Tienda -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Tienda</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="tienda.html">Catálogo Completo</a>
-        <a href="tienda.html#vinilos">Vinilos</a>
-        <a href="tienda.html#merch">Merchandising</a>
-        <a href="tienda.html#accesorios">Accesorios</a>
-      </div>
-    </div>
-    
-    <!-- Sección desplegable: Clases -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Clases</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="clases.html">Programas Formativos</a>
-        <a href="clases.html#bajo">Clases de Bajo</a>
-        <a href="clases.html#piano">Clases de Piano</a>
-        <a href="clases.html#produccion">Producción Musical</a>
-        <a href="clases.html#dj">Clases de DJ</a>
-      </div>
-    </div>
-    
-    <!-- Link simple -->
-    <a href="label.html" class="menu-link">
-      <span>Roaster</span>
-    </a>
-    
-    <!-- Sección desplegable: Alquiler -->
-    <div class="menu-section">
-      <button class="menu-section-btn" aria-expanded="false">
-        <span>Alquiler</span>
-        <span class="arrow">›</span>
-      </button>
-      <div class="menu-section-content">
-        <a href="alquiler.html">Servicios</a>
-        <a href="alquiler.html#maquinas">Máquinas de Producción</a>
-        <a href="alquiler.html#grabacion">Grabación de Sets</a>
-        <a href="alquiler.html#produccion">Servicio de Producción</a>
-      </div>
-    </div>
-    
-    <!-- Link simple -->
-    <a href="contacto.html" class="menu-link">
-      <span>Contacto</span>
-    </a>
-  </nav>
-  
-  <div class="side-menu-footer">
-    <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="#" id="toggleFx">FX: ON</a>
-  </div>
-</aside>
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SIDE MENU - Mobile Navigation
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <aside id="side-menu" role="navigation" aria-label="Menú lateral">
 
-  <!-- Canvas -->
+    <!-- Menu Header -->
+    <div class="side-menu-header">
+      <button id="menu-close-btn" class="menu-toggle-btn" aria-label="Cerrar menú">×</button>
+    </div>
+
+    <!-- Menu Navigation Links -->
+    <nav>
+      <a href="#intro" data-go>Inicio</a>
+      <a href="#about" data-go>Sobre Nosotros</a>
+      <a href="#clases" data-go>Clases</a>
+      <a href="#label" data-go>Label</a>
+      <a href="#alquiler" data-go>Alquiler</a>
+      <a href="#tienda" data-go>Tienda</a>
+      <a href="#eventos" data-go>Eventos</a>
+      <a href="#contacto" data-go>Contacto</a>
+    </nav>
+
+    <!-- Menu Footer -->
+    <div class="side-menu-footer">
+      <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" id="toggleFx">FX: ON</a>
+    </div>
+  </aside>
+
+  <!-- ═══ 3D Background Canvas ═══ -->
   <canvas id="bg" aria-hidden="true"></canvas>
 
-  <!-- Content -->
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       MAIN CONTENT - All Sections
+       ══════════════════════════════════════════════════════════════════════════ -->
   <main id="content" role="main">
-    <!-- Eventos Header -->
-    <section class="panel hero snap" aria-label="Encabezado de Eventos">
-      <div class="hero-content-centered">
-        <h1 class="hero-title" data-animate="char">Eventos & Booking</h1>
-        <p class="hero-subtitle" data-animate="word">Agenda de showcases, festivales y experiencias inmersivas</p>
-      </div>
-    </section>
 
+     <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 03 - CLASES / PROGRAMAS FORMATIVOS
+            <section id="label" class="panel snap" aria-label="Rage Venture Label">
+      <div class="panel-content">
+         ───────────────────────────────────────────────────────────────────── -->
+   <!-- CAROUSEL DE IMÁGENES ROTATIVAS -->
+<section id="label" class="panel snap">
+  <div class="panel-content">
+    <!-- Slide 1 -->
+    <div class="carousel-slide active" style="background-image: url('assets/logo1.jpg')">
+      <div class="carousel-content">
+        <h2>RA Exchange 783</h2>
+        <p>Descubre la experiencia única de nuestro primer intercambio</p>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-slide" style="background-image: url('assets/logorageve_!_HORIZONTAL.png')">
+      <div class="carousel-content">
+        <h2>Dixon</h2>
+        <p>Una colección exclusiva para ti</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-slide" style="background-image: url('ruta/imagen3.jpg')">
+      <div class="carousel-content">
+        <h2>Colección Especial</h2>
+        <p>Diseñado para los mejores</p>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="carousel-slide" style="background-image: url('ruta/imagen4.jpg')">
+      <div class="carousel-content">
+        <h2>Experiencia Premium</h2>
+        <p>Lo mejor en cada detalle</p>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="carousel-slide" style="background-image: url('ruta/imagen5.jpg')">
+      <div class="carousel-content">
+        <h2>Innovación</h2>
+        <p>El futuro está aquí</p>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="carousel-slide" style="background-image: url('ruta/imagen6.jpg')">
+      <div class="carousel-content">
+        <h2>Exclusivo</h2>
+        <p>Solo para ti</p>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="carousel-slide" style="background-image: url('ruta/imagen7.jpg')">
+      <div class="carousel-content">
+        <h2>Transformación</h2>
+        <p>Cambia tu forma de vivir</p>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="carousel-slide" style="background-image: url('ruta/imagen8.jpg')">
+      <div class="carousel-content">
+        <h2>Futuro Brillante</h2>
+        <p>Tu destino te espera</p>
+      </div>
+    </div>
+
+    <!-- Contador superior derecha -->
+    <div class="carousel-counter">
+      <span class="carousel-current" id="currentSlide">01</span>
+      <span class="carousel-total">/ 08</span>
+    </div>
+
+    <!-- Indicadores (dots) -->
+    <div class="carousel-indicators" id="indicators"></div>
+
+    <!-- Botones de navegación -->
+    <div class="carousel-nav">
+      <button id="prevBtn" aria-label="Slide anterior">❮</button>
+      <button id="nextBtn" aria-label="Siguiente slide">❯</button>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 02 - ABOUT US
+         ───────────────────────────────────────────────────────────────────── -->
     <!-- Eventos Contenido -->
     <section class="panel snap" aria-label="Calendario de eventos">
       <div class="panel-content">
@@ -338,75 +488,474 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <div class="brand footer-brand">
-            <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo" loading="lazy" />
-          </div>
-          <nav class="footer-nav" aria-label="Navegación rápida">
-            <a href="index.html">Inicio</a>
-            <a href="clases.html">Clases</a>
-            <a href="label.html">Label</a>
-            <a href="alquiler.html">Alquiler</a>
-            <a href="tienda.html">Tienda</a>
-          </nav>
-        </div>
+   <!--────────────────────────────────────────── -->
+<section class="panel snap immersive-showcase" aria-label="Showcase interactivo RAGE VENTURE">
+  <div class="panel-content">
 
-        <div class="footer-column">
-          <h3>Conecta</h3>
-          <div class="social-links" role="navigation">
-            <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-            <a href="https://bandcamp.com/rageventure" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h3>Newsletter</h3>
-          <p class="newsletter-text">Sé el primero en enterarte de nuevos eventos.</p>
-          <form class="newsletter-form" method="POST" action="/api/newsletter">
-            <input type="email" name="email" placeholder="tu@email.com" required />
-            <button type="submit" class="ghost">Suscribir</button>
-          </form>
+    <!-- ────────────────────────────────────────────────────────────────
+         COLUMNA IZQUIERDA - CARRUSEL SHOWCASE
+         ──────────────────────────────────────────────────────────────── -->
+    <div class="showcase-carousel-wrapper">
+      <!-- Carousel Items -->
+      <div class="showcase-carousel-item active" style="background-image: url('assets/showcase/event-1.jpg');">
+        <div class="carousel-text-overlay">
+          <h3>Festival Rage 2025</h3>
+          <p>La mejor experiencia electrónica del año</p>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div class="footer-links-legal">
-          <a href="/terminos">Términos</a>
-          <a href="/privacidad">Privacidad</a>
+      <div class="showcase-carousel-item" style="background-image: url('assets/showcase/event-2.jpg');">
+        <div class="carousel-text-overlay">
+          <h3>Estudio Profesional</h3>
+          <p>Equipo de producción de clase mundial</p>
         </div>
-        <div class="footer-note">© 2025 RAGE VENTURE. Todos los derechos reservados.</div>
       </div>
-    </footer>
+
+      <div class="showcase-carousel-item" style="background-image: url('assets/showcase/event-3.jpg');">
+        <div class="carousel-text-overlay">
+          <h3>Comunidad Global</h3>
+          <p>Conecta con productores del mundo</p>
+        </div>
+      </div>
+
+      <div class="showcase-carousel-item" style="background-image: url('assets/showcase/event-4.jpg');">
+        <div class="carousel-text-overlay">
+          <h3>Tecnología 3D</h3>
+          <p>Sonido inmersivo del futuro</p>
+        </div>
+      </div>
+
+      <!-- Controles Carousel -->
+      <div class="showcase-carousel-nav">
+        <button class="showcase-prev" aria-label="Slide anterior">←</button>
+        <button class="showcase-next" aria-label="Siguiente slide">→</button>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="showcase-carousel-indicators">
+        <div class="showcase-indicator active" data-slide="0"></div>
+        <div class="showcase-indicator" data-slide="1"></div>
+        <div class="showcase-indicator" data-slide="2"></div>
+        <div class="showcase-indicator" data-slide="3"></div>
+      </div>
+    </div>
+
+    <!-- ────────────────────────────────────────────────────────────────
+         COLUMNA DERECHA - CONTENIDO + STATS
+         ──────────────────────────────────────────────────────────────── -->
+    <div class="showcase-content">
+
+      <!-- Header -->
+      <div class="showcase-header">
+        <div class="showcase-meta">
+          ⚡ Electrónica en Cuenca
+        </div>
+        <h2 class="showcase-title">
+          Vive la Experiencia RAGE
+        </h2>
+        <p class="showcase-description">
+          Somos más que música. Somos una comunidad de innovadores, productores y artistas comprometidos con llevar la música electrónica a nuevas dimensiones. Desde clases magistrales hasta producciones de clase mundial.
+        </p>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="showcase-stats">
+        <div class="stat-card">
+          <span class="stat-icon">🎓</span>
+          <div class="stat-number">500+</div>
+          <p class="stat-label">Estudiantes Formados</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🎵</span>
+          <div class="stat-number">150+</div>
+          <p class="stat-label">Tracks Lanzados</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🌍</span>
+          <div class="stat-number">45</div>
+          <p class="stat-label">Países Alcanzados</p>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="showcase-cta-group">
+        <button class="showcase-cta-primary" data-go="#contacto">
+          📞 Contáctanos Ahora
+        </button>
+        <a href="#label" class="showcase-cta-secondary" data-go="#label">
+          🎧 Ver Producciones
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     JAVASCRIPT - SHOWCASE CAROUSEL
+     ═════════════════════════════════════════════════════════════════════ -->
+<script>
+/* ════════════════════════════════════════════════════════════════════════
+   SHOWCASE CAROUSEL CONTROLLER
+   
+   Maneja la interactividad del carrusel inmersivo con:
+   • Navegación fluida
+   • Indicadores dinámicos
+   • Autoplay inteligente
+   • Pausas interactivas
+   ════════════════════════════════════════════════════════════════════════ */
+
+class ShowcaseCarousel {
+  constructor() {
+    this.container = document.querySelector('.immersive-showcase');
+    if (!this.container) return;
+
+    // Elementos
+    this.items = this.container.querySelectorAll('.showcase-carousel-item');
+    this.indicators = this.container.querySelectorAll('.showcase-indicator');
+    this.prevBtn = this.container.querySelector('.showcase-prev');
+    this.nextBtn = this.container.querySelector('.showcase-next');
+
+    // Estado
+    this.currentIndex = 0;
+    this.totalItems = this.items.length;
+    this.autoPlayInterval = null;
+    this.autoPlayDelay = 6000; // 6 segundos
+
+    this.init();
+  }
+
+  init() {
+    // Event Listeners
+    this.prevBtn?.addEventListener('click', () => this.prev());
+    this.nextBtn?.addEventListener('click', () => this.next());
+
+    this.indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => this.goToSlide(index));
+    });
+
+    // Pausar en hover/touch
+    this.container.addEventListener('mouseenter', () => this.stopAutoPlay());
+    this.container.addEventListener('mouseleave', () => this.startAutoPlay());
+    this.container.addEventListener('touchstart', () => this.stopAutoPlay());
+    this.container.addEventListener('touchend', () => this.startAutoPlay());
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') this.prev();
+      if (e.key === 'ArrowRight') this.next();
+    });
+
+    // Iniciar autoplay
+    this.startAutoPlay();
+    console.log('✅ Showcase Carousel iniciado');
+  }
+
+  goToSlide(index) {
+    // Remover active de todos
+    this.items.forEach(item => item.classList.remove('active'));
+    this.indicators.forEach(indicator => indicator.classList.remove('active'));
+
+    // Agregar active al nuevo
+    this.currentIndex = index;
+    this.items[this.currentIndex].classList.add('active');
+    this.indicators[this.currentIndex].classList.add('active');
+
+    // Reset autoplay
+    this.resetAutoPlay();
+    console.log(`→ Showcase slide ${this.currentIndex + 1}/${this.totalItems}`);
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.totalItems;
+    this.goToSlide(this.currentIndex);
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.totalItems) % this.totalItems;
+    this.goToSlide(this.currentIndex);
+  }
+
+  startAutoPlay() {
+    if (this.autoPlayInterval) return;
+
+    this.autoPlayInterval = setInterval(() => {
+      this.next();
+    }, this.autoPlayDelay);
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+
+  resetAutoPlay() {
+    this.stopAutoPlay();
+    this.startAutoPlay();
+  }
+}
+
+// Inicializar cuando DOM esté listo
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.showcaseCarousel = new ShowcaseCarousel();
+  });
+} else {
+  window.showcaseCarousel = new ShowcaseCarousel();
+}
+
+// Debug
+window.debugShowcase = () => {
+  if (window.showcaseCarousel) {
+    console.log({
+      currentSlide: window.showcaseCarousel.currentIndex + 1,
+      totalSlides: window.showcaseCarousel.totalItems,
+      autoPlayDelay: window.showcaseCarousel.autoPlayDelay
+    });
+  }
+};
+</script>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     FIN - SECCIÓN SHOWCASE INMERSIVA
+     ════════════════════════════════════════════════════════════════════ -->
+
+<!-- ─────────────────────────────────────────────────────────────────────
+     SECTION 08 - CONTACTO / CONTACT FORM MINIMALISTA
+     ───────────────────────────────────────────────────────────────────── -->
+<section id="contacto" class="panel snap" aria-label="Contacto y formulario">
+  <div class="panel-content">
+
+    <!-- Section Header -->
+    <header class="section-header contact-header">
+      <h2>Contacto</h2>
+     </header>
+
+    <!-- Contact Form -->
+    <form class="contact-form" method="POST" action="/api/contact" novalidate>
+      <input type="hidden" name="csrf_token" value="token_placeholder" />
+
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Tu nombre completo"
+          required
+          minlength="2"
+          maxlength="100"
+          aria-required="true"
+          aria-invalid="false"
+          aria-describedby="name-error" />
+        <span id="name-error" class="error-message" role="alert"></span>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="tucorreo@ejemplo.com"
+          required
+          aria-required="true"
+          aria-invalid="false"
+          aria-describedby="email-error" />
+        <span id="email-error" class="error-message" role="alert"></span>
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Cuéntanos tu idea…"
+          required
+          minlength="10"
+          maxlength="5000"
+          aria-required="true"
+          aria-invalid="false"
+          aria-describedby="message-error"></textarea>
+        <span id="message-error" class="error-message" role="alert"></span>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="contact-btn" type="submit">Enviar</button>
+    </form>
+  </div>
+  </section>
+
+  
+    <!-- ─────────────────────────────────────────────────────────────────────
+         SECTION 01 - INTRO / HERO
+         ───────────────────────────────────────────────────────────────────── -->
+    <section id="intro" class="panel hero snap" aria-label="Sección de presentación">
+      <header class="hero-content-centered">
+         <img src="assets/logorageve_!.png" alt="RAGE VENTURE logo con signo de exclamación en gradiente azul futurista" id="hero-logo-main" loading="eager" />
+        <p class="hero-tagline">Crea sin límites. Tu sonido. Tu mundo.</p>
+       </header>
+
+      <!-- Animated Marquee -->
+      <div class="marquee" aria-hidden="true">
+        <span>RAGE VENTURE • PORTAL 3D • CLASES • LABEL • ALQUILER • TIENDA • EVENTOS • </span>
+        <span>RAGE VENTURE • PORTAL 3D • CLASES • LABEL • ALQUILER • TIENDA • EVENTOS • </span>
+      </div>
+    </section>
+<!-- ═══════════════════════════════════════════════════════════════════
+     FOOTER - ELEGANTE & MINIMALISTA (TOMORROWLAND STYLE)
+     ═══════════════════════════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="panel snap"> <div class="footer-container">
+
+    <!-- FOOTER TOP - Logo y Redes Sociales Centrados -->
+    <div class="footer-top">
+      <div class="footer-logo-section">
+        <img src="assets/logorageve_!.png" alt="RAGE VENTURE" class="footer-logo-main" loading="lazy" />
+        <h2 class="footer-brand-text">RAGE VENTURE</h2>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div class="footer-socials" role="navigation" aria-label="Redes sociales">
+        <a href="https://instagram.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"/><circle cx="17.5" cy="6.5" r="1.5"/>
+          </svg>
+        </a>
+        <a href="https://soundcloud.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud" title="SoundCloud">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12c0-1 .5-2 1-2s1 .5 1 2v4c0 1-.5 2-1 2s-1-.5-1-2v-4m3-2v8m2-8v8m2-7v7m2-6v6m2-5v5m2-4v4"/>
+          </svg>
+        </a>
+        <a href="https://youtube.com/@rageventure" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com/rageventure" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 8-0.5 8-5.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="footer-divider"></div>
+
+    <!-- FOOTER GRID - 4 Columnas -->
+    <div class="footer-grid">
+
+      <!-- Columna 1: Servicios -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Servicios</h3>
+        <nav class="footer-nav">
+          <a href="#alquiler">Alquiler de Recursos</a>
+          <a href="#tienda">Tienda Online</a>
+          <a href="#eventos">Próximos Eventos</a>
+          <a href="#clases">Clases & Bootcamps</a>
+        </nav>
+      </div>
+
+      <!-- Columna 2: Compañía -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Compañía</h3>
+        <nav class="footer-nav">
+          <a href="#about">Sobre Nosotros</a>
+          <a href="#contacto">Contacto</a>
+          <a href="/blog">Blog</a>
+          <a href="/press">Press Kit</a>
+        </nav>
+      </div>
+
+      <!-- Columna 3: Recursos -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Recursos</h3>
+        <nav class="footer-nav">
+          <a href="/docs">Documentación</a>
+          <a href="/faq">Preguntas Frecuentes</a>
+          <a href="/soporte">Soporte</a>
+          <a href="/comunidad">Comunidad</a>
+        </nav>
+      </div>
+
+      <!-- Columna 4: Newsletter -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">Newsletter</h3>
+        <p class="footer-newsletter-text">Recibe updates exclusivos sobre eventos, releases y oportunidades.</p>
+        <form class="footer-newsletter-form" method="POST" action="/api/newsletter" novalidate>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="tu@email.com" 
+            required 
+            aria-label="Email para newsletter" />
+          <button type="submit" class="footer-subscribe-btn">Suscribir</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- DIVIDER 2 -->
+    <div class="footer-divider"></div>
+
+    <!-- FOOTER BOTTOM - Legal Links -->
+    <div class="footer-bottom">
+      <div class="footer-legal-links">
+        <a href="/terminos">Términos de Servicio</a>
+        <span class="footer-separator">•</span>
+        <a href="/privacidad">Política de Privacidad</a>
+        <span class="footer-separator">•</span>
+        <a href="/cookies">Cookies</a>
+      </div>
+      <div class="footer-copyright">
+        © 2025 RAGE VENTURE. Todos los derechos reservados.
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SCRIPTS - JavaScript Libraries & Custom Code
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- Browser Compatibility Polyfills (no defer - loads first) -->
+  <script src="polyfills.js"></script>
+
+  <!-- Three.js Library (3D Graphics) -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer></script>
+
+  <!-- Three.js GLTF Loader -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"
+    crossorigin="anonymous"
+    defer></script>
+
+  <!-- Custom Scripts -->
   <script src="animations.js" defer></script>
   <script src="script.js" defer></script>
   <script src="menu-toggle.js" defer></script>
-  <script>
-    // Simple event filtering
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        document.querySelectorAll('.event-card').forEach(card => {
-          if (filter === 'all' || card.dataset.filter === filter) {
-            card.style.display = 'block';
-            card.style.animation = 'fade-in-up 0.6s ease-out';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
+  <script src="scroll-paint-text.js" defer></script>
+  <script src="polyfills.js" defer></script>
+  <script src="scroll-paint-text.js" defer></script>
+  <script src="carousel.js" defer></script>
 </body>
 </html>
