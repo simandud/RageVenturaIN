@@ -88,7 +88,7 @@ const loader = new THREE.GLTFLoader();
 
 // 👇 AQUÍ está tu archivo - CAMBIA LA RUTA si es diferente
 loader.load(
-  'assets/synthesizer.glb', // 👈 Tu archivo GLB
+  'assets/nam1.glb', // 👈 Archivo GLB actualizado
   (gltf) => {
     myModel = gltf.scene;
     
