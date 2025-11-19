@@ -6819,3 +6819,276 @@ textarea:focus-visible {
   text-decoration: underline;
 }
 
+/* ════════════════════════════════════════════════════════════════════════
+   ✨ CLICK ANIMATIONS - INTERACTIVE WHITE FLASH
+   Sistema interactivo de animaciones al hacer click
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* Overlay de flash blanco */
+.white-flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.white-flash-overlay.active {
+  opacity: 1;
+}
+
+.white-flash-overlay.fade-out {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modo blanco activado en el body */
+body.white-mode {
+  background: #ffffff !important;
+  color: #000000 !important;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Panel en modo blanco */
+body.white-mode .panel {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #e0e0e0;
+}
+
+/* Header en modo blanco */
+body.white-mode .header,
+body.white-mode header {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-bottom: 2px solid #000000;
+}
+
+body.white-mode .header-nav a,
+body.white-mode .footer-nav a {
+  color: #000000 !important;
+}
+
+/* Botones en modo blanco */
+body.white-mode .cta,
+body.white-mode button {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000;
+}
+
+body.white-mode .cta:hover,
+body.white-mode button:hover {
+  background: #333333 !important;
+  transform: scale(1.05);
+}
+
+/* Cards en modo blanco */
+body.white-mode .card,
+body.white-mode .label-card,
+body.white-mode .rental-card,
+body.white-mode .vcard {
+  background: #f8f9fa !important;
+  color: #000000 !important;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero en modo blanco */
+body.white-mode .hero {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%) !important;
+  color: #000000 !important;
+}
+
+/* Textos en modo blanco */
+body.white-mode h1,
+body.white-mode h2,
+body.white-mode h3,
+body.white-mode h4,
+body.white-mode h5,
+body.white-mode h6,
+body.white-mode p,
+body.white-mode span,
+body.white-mode a {
+  color: #000000 !important;
+}
+
+/* Links con hover en modo blanco */
+body.white-mode a:hover {
+  color: #666666 !important;
+  text-decoration: underline;
+}
+
+/* Footer en modo blanco */
+body.white-mode .footer,
+body.white-mode footer {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-top: 2px solid #000000;
+}
+
+/* Efectos de partículas en modo blanco */
+body.white-mode .particle {
+  background: #000000 !important;
+}
+
+/* Animación de ripple en click */
+.click-ripple {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  z-index: 999998;
+  animation: ripple-expand 1s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes ripple-expand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 2000px;
+    height: 2000px;
+    opacity: 0;
+  }
+}
+
+/* Efecto de onda expansiva */
+.wave-effect {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999997;
+  animation: wave-expand 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes wave-expand {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+  }
+  100% {
+    width: 3000px;
+    height: 3000px;
+    opacity: 0;
+  }
+}
+
+/* Botón toggle para activar/desactivar modo blanco */
+.white-mode-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.white-mode-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 6px 30px rgba(0, 123, 255, 0.6);
+}
+
+.white-mode-toggle:active {
+  transform: scale(0.95);
+}
+
+body.white-mode .white-mode-toggle {
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  border-color: #000000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Efecto de pulso en el botón */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.white-mode-toggle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #007BFF;
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+body.white-mode .white-mode-toggle::before {
+  border-color: #000000;
+}
+
+/* Transiciones suaves para todos los elementos */
+body,
+.panel,
+.header,
+.footer,
+.card,
+.cta,
+button,
+a {
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input y formularios en modo blanco */
+body.white-mode input,
+body.white-mode textarea,
+body.white-mode select {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+body.white-mode input:focus,
+body.white-mode textarea:focus,
+body.white-mode select:focus {
+  outline: 3px solid #007BFF;
+  border-color: #007BFF !important;
+}
+
+/* Marquee en modo blanco */
+body.white-mode .marquee {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Iconos en modo blanco */
+body.white-mode .icon,
+body.white-mode svg {
+  fill: #000000 !important;
+  color: #000000 !important;
+}
+
