@@ -624,13 +624,7 @@ body::before {
   min-height: calc(100vh - var(--header-height));
 }
 
-.snap {
-  scroll-snap-align: start;
-}
-
-#content {
-  scroll-snap-type: y mandatory;
-}
+/* Scroll libre - removido scroll-snap para navegación fluida */
 
 .panel {
   min-height: calc(100vh - var(--header-height));
