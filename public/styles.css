@@ -6820,9 +6820,20 @@ textarea:focus-visible {
 }
 
 /* ════════════════════════════════════════════════════════════════════════
-   ✨ CLICK ANIMATIONS - INTERACTIVE WHITE FLASH
-   Sistema interactivo de animaciones al hacer click
+   ✨ CLICK ANIMATIONS - INTERACTIVE WHITE MODE
+   Sistema interactivo de animaciones al hacer click - MEJORADO
    ════════════════════════════════════════════════════════════════════════ */
+
+/* Variables de tema para modo blanco */
+:root {
+  --white-bg: #ffffff;
+  --white-text: #000000;
+  --white-text-secondary: #333333;
+  --white-text-muted: #666666;
+  --white-border: #e0e0e0;
+  --white-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --transition-theme: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* Overlay de flash blanco */
 .white-flash-overlay {
@@ -6831,7 +6842,7 @@ textarea:focus-visible {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #ffffff;
+  background: var(--white-bg);
   pointer-events: none;
   z-index: 999999;
   opacity: 0;
@@ -6847,101 +6858,303 @@ textarea:focus-visible {
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Modo blanco activado en el body */
+/* ═══ MODO BLANCO ACTIVADO - BODY ═══ */
 body.white-mode {
-  background: #ffffff !important;
-  color: #000000 !important;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--white-bg);
+  color: var(--white-text);
 }
 
-/* Panel en modo blanco */
+/* Ocultar efectos de fondo en modo blanco */
+body.white-mode::before {
+  opacity: 0;
+}
+
+body.white-mode #bg {
+  opacity: 0;
+}
+
+/* ═══ HEADER EN MODO BLANCO ═══ */
+body.white-mode #main-header {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--white-border);
+  box-shadow: var(--white-shadow);
+}
+
+body.white-mode .brand-text,
+body.white-mode .rage-logo-text {
+  color: var(--white-text);
+}
+
+body.white-mode .header-nav a {
+  color: var(--white-text);
+}
+
+body.white-mode .header-nav a::after {
+  background: #007BFF;
+}
+
+body.white-mode .header-nav a:hover {
+  color: #007BFF;
+}
+
+body.white-mode .search-btn,
+body.white-mode .account-link,
+body.white-mode .pro-link {
+  color: var(--white-text);
+}
+
+body.white-mode .search-btn:hover,
+body.white-mode .account-link:hover,
+body.white-mode .pro-link:hover {
+  color: #007BFF;
+}
+
+body.white-mode .menu-toggle-btn {
+  color: var(--white-text);
+}
+
+/* ═══ SIDE MENU EN MODO BLANCO ═══ */
+body.white-mode #side-menu {
+  background: rgba(255, 255, 255, 0.98);
+  border-right: 1px solid var(--white-border);
+}
+
+body.white-mode #side-menu a {
+  color: var(--white-text);
+}
+
+body.white-mode #side-menu a:hover {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007BFF;
+}
+
+/* ═══ PANELES EN MODO BLANCO ═══ */
 body.white-mode .panel {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border: 2px solid #e0e0e0;
+  background: var(--white-bg);
+  color: var(--white-text);
 }
 
-/* Header en modo blanco */
-body.white-mode .header,
-body.white-mode header {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border-bottom: 2px solid #000000;
+/* Intro/Hero mantiene su diseño pero adaptado */
+body.white-mode #intro.panel {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
-body.white-mode .header-nav a,
-body.white-mode .footer-nav a {
-  color: #000000 !important;
+/* About, News, Popular, Contacto - ya son blancos, solo ajustar detalles */
+body.white-mode #about.panel,
+body.white-mode #news-section.panel,
+body.white-mode #popular.panel,
+body.white-mode #contacto.panel {
+  background: var(--white-bg);
 }
 
-/* Botones en modo blanco */
-body.white-mode .cta,
-body.white-mode button {
-  background: #000000 !important;
-  color: #ffffff !important;
-  border: 2px solid #000000;
-}
-
-body.white-mode .cta:hover,
-body.white-mode button:hover {
-  background: #333333 !important;
-  transform: scale(1.05);
-}
-
-/* Cards en modo blanco */
-body.white-mode .card,
-body.white-mode .label-card,
-body.white-mode .rental-card,
-body.white-mode .vcard {
-  background: #f8f9fa !important;
-  color: #000000 !important;
-  border: 2px solid #000000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero en modo blanco */
-body.white-mode .hero {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%) !important;
-  color: #000000 !important;
-}
-
-/* Textos en modo blanco */
+/* ═══ TEXTOS EN MODO BLANCO ═══ */
 body.white-mode h1,
 body.white-mode h2,
 body.white-mode h3,
 body.white-mode h4,
 body.white-mode h5,
-body.white-mode h6,
+body.white-mode h6 {
+  color: var(--white-text);
+}
+
+/* Respetar gradientes de texto existentes */
+body.white-mode #about.panel .section-header h2,
+body.white-mode #news-section.panel .section-header h2,
+body.white-mode #news-section.panel h3,
+body.white-mode #news-section.panel h4,
+body.white-mode #popular.panel h2,
+body.white-mode #popular.panel h3,
+body.white-mode #contacto.panel h2 {
+  background: linear-gradient(135deg, #007BFF 0%, #5db4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 body.white-mode p,
 body.white-mode span,
+body.white-mode .section-meta,
+body.white-mode .section-header p {
+  color: var(--white-text-secondary);
+}
+
 body.white-mode a {
-  color: #000000 !important;
+  color: var(--white-text);
 }
 
-/* Links con hover en modo blanco */
 body.white-mode a:hover {
-  color: #666666 !important;
-  text-decoration: underline;
+  color: #007BFF;
 }
 
-/* Footer en modo blanco */
-body.white-mode .footer,
+/* ═══ HERO EN MODO BLANCO ═══ */
+body.white-mode .hero-tagline {
+  color: var(--white-text-secondary);
+}
+
+body.white-mode #hero-logo-main {
+  filter: drop-shadow(0 10px 30px rgba(0, 123, 255, 0.2)) brightness(1);
+}
+
+/* ═══ MARQUEE EN MODO BLANCO ═══ */
+body.white-mode .marquee {
+  background: linear-gradient(90deg, #000000 0%, #333333 100%);
+  color: #ffffff;
+  border-top: 1px solid var(--white-text);
+  border-bottom: 1px solid var(--white-text);
+}
+
+/* ═══ BOTONES EN MODO BLANCO ═══ */
+body.white-mode .cta,
+body.white-mode button,
+body.white-mode .learn-more-btn,
+body.white-mode .contact-btn,
+body.white-mode .see-all-btn,
+body.white-mode .footer-subscribe-btn {
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  color: #ffffff;
+  border: 2px solid var(--white-text);
+}
+
+body.white-mode .cta:hover,
+body.white-mode button:hover,
+body.white-mode .learn-more-btn:hover,
+body.white-mode .contact-btn:hover {
+  background: linear-gradient(135deg, #333333 0%, #555555 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ═══ CARDS Y CONTENEDORES EN MODO BLANCO ═══ */
+body.white-mode .card,
+body.white-mode .label-card,
+body.white-mode .rental-card,
+body.white-mode .vcard,
+body.white-mode .news-item,
+body.white-mode .featured-news,
+body.white-mode .popular-card {
+  background: #f8f9fa;
+  color: var(--white-text);
+  border: 1px solid var(--white-border);
+  box-shadow: var(--white-shadow);
+}
+
+body.white-mode .card:hover,
+body.white-mode .label-card:hover,
+body.white-mode .rental-card:hover,
+body.white-mode .vcard:hover,
+body.white-mode .news-item:hover,
+body.white-mode .popular-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #007BFF;
+}
+
+/* News container específico */
+body.white-mode .news-container {
+  background: rgba(248, 249, 250, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+body.white-mode .news-meta time,
+body.white-mode .news-category,
+body.white-mode .popular-meta {
+  color: var(--white-text-muted);
+}
+
+/* ═══ FORMULARIOS EN MODO BLANCO ═══ */
+body.white-mode input,
+body.white-mode textarea,
+body.white-mode select {
+  background: #f8f9fa;
+  color: var(--white-text);
+  border: 2px solid var(--white-border);
+}
+
+body.white-mode input:focus,
+body.white-mode textarea:focus,
+body.white-mode select:focus {
+  outline: 3px solid #007BFF;
+  border-color: #007BFF;
+  background: #ffffff;
+}
+
+body.white-mode input::placeholder,
+body.white-mode textarea::placeholder {
+  color: var(--white-text-muted);
+}
+
+/* ═══ FOOTER EN MODO BLANCO ═══ */
+body.white-mode .site-footer,
 body.white-mode footer {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border-top: 2px solid #000000;
+  background: var(--white-bg);
+  color: var(--white-text);
+  border-top: 1px solid var(--white-border);
 }
 
-/* Efectos de partículas en modo blanco */
-body.white-mode .particle {
-  background: #000000 !important;
+body.white-mode .footer-brand-text,
+body.white-mode .footer-column-title {
+  color: var(--white-text);
 }
 
-/* Animación de ripple en click */
+body.white-mode .footer-nav a,
+body.white-mode .footer-legal-links a,
+body.white-mode .footer-socials a {
+  color: var(--white-text-secondary);
+}
+
+body.white-mode .footer-nav a:hover,
+body.white-mode .footer-legal-links a:hover,
+body.white-mode .footer-socials a:hover {
+  color: #007BFF;
+}
+
+body.white-mode .footer-divider {
+  background: var(--white-border);
+}
+
+body.white-mode .footer-newsletter-text,
+body.white-mode .footer-copyright {
+  color: var(--white-text-muted);
+}
+
+/* ═══ CAROUSEL EN MODO BLANCO ═══ */
+body.white-mode .carousel-banner {
+  border: 1px solid var(--white-border);
+}
+
+body.white-mode .carousel-banner-item img {
+  opacity: 0.9;
+}
+
+body.white-mode .dot {
+  background: var(--white-text-muted);
+}
+
+body.white-mode .dot.active {
+  background: #007BFF;
+}
+
+/* ═══ ICONOS Y SVG EN MODO BLANCO ═══ */
+body.white-mode .icon,
+body.white-mode svg {
+  stroke: var(--white-text);
+}
+
+body.white-mode .search-btn svg,
+body.white-mode .account-link svg {
+  stroke: var(--white-text);
+  fill: none;
+}
+
+body.white-mode .footer-socials a svg:hover {
+  stroke: #007BFF;
+}
+
+/* ═══ ANIMACIONES DE RIPPLE ═══ */
 .click-ripple {
   position: fixed;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
   pointer-events: none;
   z-index: 999998;
   animation: ripple-expand 1s cubic-bezier(0, 0, 0.2, 1) forwards;
@@ -6960,7 +7173,12 @@ body.white-mode .particle {
   }
 }
 
-/* Efecto de onda expansiva */
+/* Ripple oscuro al desactivar */
+.click-ripple-dark {
+  background: radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 70%);
+}
+
+/* ═══ EFECTO DE ONDA EXPANSIVA ═══ */
 .wave-effect {
   position: fixed;
   top: 50%;
@@ -6968,11 +7186,12 @@ body.white-mode .particle {
   transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;
-  border: 3px solid #ffffff;
+  border: 4px solid #ffffff;
   border-radius: 50%;
   pointer-events: none;
   z-index: 999997;
   animation: wave-expand 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes wave-expand {
@@ -6988,13 +7207,13 @@ body.white-mode .particle {
   }
 }
 
-/* Botón toggle para activar/desactivar modo blanco */
+/* ═══ BOTÓN TOGGLE MEJORADO ═══ */
 .white-mode-toggle {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
   border: 3px solid #ffffff;
@@ -7003,34 +7222,39 @@ body.white-mode .particle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+  font-size: 32px;
+  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.5);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
 }
 
 .white-mode-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: 0 6px 30px rgba(0, 123, 255, 0.6);
+  transform: scale(1.15) rotate(15deg);
+  box-shadow: 0 8px 32px rgba(0, 123, 255, 0.7);
 }
 
 .white-mode-toggle:active {
-  transform: scale(0.95);
+  transform: scale(0.95) rotate(0deg);
 }
 
 body.white-mode .white-mode-toggle {
   background: linear-gradient(135deg, #000000 0%, #333333 100%);
   border-color: #000000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.white-mode .white-mode-toggle:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
 }
 
 /* Efecto de pulso en el botón */
 @keyframes pulse-ring {
   0% {
-    transform: scale(0.9);
+    transform: scale(0.95);
     opacity: 1;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1.6);
     opacity: 0;
   }
 }
@@ -7041,54 +7265,99 @@ body.white-mode .white-mode-toggle {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 2px solid #007BFF;
-  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  border: 3px solid #007BFF;
+  animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: -1;
 }
 
 body.white-mode .white-mode-toggle::before {
   border-color: #000000;
 }
 
-/* Transiciones suaves para todos los elementos */
+/* ═══ TRANSICIONES SUAVES PARA TODOS LOS ELEMENTOS ═══ */
 body,
+body::before,
+#bg,
 .panel,
-.header,
+#main-header,
+.header-nav a,
 .footer,
 .card,
 .cta,
 button,
-a {
-  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+a,
+input,
+textarea,
+select,
+.marquee,
+svg {
+  transition: background-color var(--transition-theme),
+              background var(--transition-theme),
+              color var(--transition-theme),
+              border-color var(--transition-theme),
+              opacity var(--transition-theme),
+              fill var(--transition-theme),
+              stroke var(--transition-theme);
 }
 
-/* Input y formularios en modo blanco */
-body.white-mode input,
-body.white-mode textarea,
-body.white-mode select {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border: 2px solid #000000 !important;
+/* ═══ RESPONSIVE - BOTÓN TOGGLE EN MÓVIL ═══ */
+@media (max-width: 768px) {
+  .white-mode-toggle {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+  }
 }
 
-body.white-mode input:focus,
-body.white-mode textarea:focus,
-body.white-mode select:focus {
+@media (max-width: 480px) {
+  .white-mode-toggle {
+    width: 56px;
+    height: 56px;
+    bottom: 16px;
+    right: 16px;
+    font-size: 24px;
+  }
+}
+
+/* ═══ EFECTOS ADICIONALES ═══ */
+/* Partículas en modo blanco */
+body.white-mode .particle {
+  background: var(--white-text);
+}
+
+/* About section text color fix */
+body.white-mode #about.panel * {
+  color: #1a1a2e;
+}
+
+body.white-mode #about.panel .section-header h2 {
+  background: linear-gradient(135deg, #007BFF 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Mejoras de accesibilidad */
+body.white-mode *:focus-visible {
   outline: 3px solid #007BFF;
-  border-color: #007BFF !important;
+  outline-offset: 3px;
 }
 
-/* Marquee en modo blanco */
-body.white-mode .marquee {
-  background: #000000 !important;
-  color: #ffffff !important;
+/* Animación de entrada para modo blanco */
+@keyframes whiteModeFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Iconos en modo blanco */
-body.white-mode .icon,
-body.white-mode svg {
-  fill: #000000 !important;
-  color: #000000 !important;
+body.white-mode .panel {
+  animation: whiteModeFadeIn 0.6s ease-out forwards;
 }
 

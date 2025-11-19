@@ -391,86 +391,158 @@ window.addEventListener('load', () => {
 });
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ✨ INTERACTIVE WHITE MODE - CLICK ANIMATIONS
-// Sistema de animaciones interactivas al hacer click
+// ✨ INTERACTIVE WHITE MODE - CLICK ANIMATIONS (OPTIMIZADO)
+// Sistema interactivo de animaciones al hacer click - Versión mejorada
 // ═══════════════════════════════════════════════════════════════════════════════
 
 class WhiteModeController {
   constructor() {
+    // Estado
     this.isWhiteMode = false;
+    this.isTransitioning = false;
     this.overlay = null;
     this.toggleButton = null;
-    this.init();
+
+    // Configuración
+    this.config = {
+      transitionDuration: 800,
+      rippleDuration: 1000,
+      waveDuration: 1500,
+      particleCount: 30,
+      animationDelay: 50
+    };
+
+    // Referencias de event handlers para poder removerlos
+    this.handlers = {
+      buttonClick: null,
+      buttonKeydown: null,
+      documentDblclick: null
+    };
+
+    // Inicializar solo si no existe ya
+    if (!window.whiteModeController) {
+      this.init();
+    }
   }
 
   // ── INICIALIZACIÓN ──
   init() {
+    // Verificar que estamos en el DOM
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this.setup());
+    } else {
+      this.setup();
+    }
+  }
+
+  setup() {
     this.createOverlay();
     this.createToggleButton();
     this.attachEventListeners();
+    this.loadSavedState();
+    console.log('✨ White Mode Controller initialized!');
   }
 
   // ═══ CREAR OVERLAY DE FLASH BLANCO ═══
   createOverlay() {
+    // Solo crear si no existe
+    if (document.querySelector('.white-flash-overlay')) return;
+
     this.overlay = document.createElement('div');
     this.overlay.className = 'white-flash-overlay';
+    this.overlay.setAttribute('aria-hidden', 'true');
     document.body.appendChild(this.overlay);
   }
 
   // ═══ CREAR BOTÓN TOGGLE ═══
   createToggleButton() {
-    this.toggleButton = document.createElement('div');
+    // Solo crear si no existe
+    if (document.querySelector('.white-mode-toggle')) return;
+
+    this.toggleButton = document.createElement('button');
     this.toggleButton.className = 'white-mode-toggle';
     this.toggleButton.innerHTML = '💡';
-    this.toggleButton.setAttribute('aria-label', 'Toggle White Mode');
-    this.toggleButton.setAttribute('role', 'button');
-    this.toggleButton.setAttribute('tabindex', '0');
+    this.toggleButton.setAttribute('aria-label', 'Activar modo blanco');
+    this.toggleButton.setAttribute('aria-pressed', 'false');
+    this.toggleButton.setAttribute('type', 'button');
+    this.toggleButton.setAttribute('title', 'Doble click en cualquier parte o presiona este botón');
     document.body.appendChild(this.toggleButton);
   }
 
   // ═══ ADJUNTAR EVENT LISTENERS ═══
   attachEventListeners() {
+    // Prevenir listeners duplicados
+    this.removeEventListeners();
+
     // Click en el botón toggle
-    this.toggleButton.addEventListener('click', (e) => {
-      this.toggleWhiteMode(e);
-    });
+    this.handlers.buttonClick = (e) => this.toggleWhiteMode(e);
+    this.toggleButton.addEventListener('click', this.handlers.buttonClick);
 
     // Keyboard accessibility
-    this.toggleButton.addEventListener('keydown', (e) => {
+    this.handlers.buttonKeydown = (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         this.toggleWhiteMode(e);
       }
-    });
+    };
+    this.toggleButton.addEventListener('keydown', this.handlers.buttonKeydown);
 
     // Doble click en cualquier parte para activar
-    document.addEventListener('dblclick', (e) => {
+    this.handlers.documentDblclick = (e) => {
       // No activar en inputs, textareas o elementos editables
       if (e.target.tagName === 'INPUT' ||
           e.target.tagName === 'TEXTAREA' ||
-          e.target.isContentEditable) {
+          e.target.isContentEditable ||
+          e.target.closest('button') ||
+          e.target.closest('a')) {
         return;
       }
       this.toggleWhiteMode(e);
-    });
+    };
+    document.addEventListener('dblclick', this.handlers.documentDblclick);
+  }
+
+  // ═══ REMOVER EVENT LISTENERS ═══
+  removeEventListeners() {
+    if (this.handlers.buttonClick && this.toggleButton) {
+      this.toggleButton.removeEventListener('click', this.handlers.buttonClick);
+    }
+    if (this.handlers.buttonKeydown && this.toggleButton) {
+      this.toggleButton.removeEventListener('keydown', this.handlers.buttonKeydown);
+    }
+    if (this.handlers.documentDblclick) {
+      document.removeEventListener('dblclick', this.handlers.documentDblclick);
+    }
   }
 
   // ═══ TOGGLE MODO BLANCO ═══
   toggleWhiteMode(event) {
+    // Prevenir múltiples toggles simultáneos
+    if (this.isTransitioning) return;
+
+    this.isTransitioning = true;
+
     if (this.isWhiteMode) {
       this.deactivateWhiteMode(event);
     } else {
       this.activateWhiteMode(event);
     }
+
+    // Reset transitioning flag
+    setTimeout(() => {
+      this.isTransitioning = false;
+    }, this.config.transitionDuration);
   }
 
   // ═══ ACTIVAR MODO BLANCO CON EFECTOS ═══
   activateWhiteMode(event) {
-    // Crear efecto ripple desde el punto de click
-    this.createRippleEffect(event.clientX, event.clientY);
+    const x = event.clientX || window.innerWidth / 2;
+    const y = event.clientY || window.innerHeight / 2;
 
-    // Crear efecto de onda expansiva
+    // Crear efectos visuales
+    this.createRippleEffect(x, y);
     this.createWaveEffect();
+    this.createParticles(x, y);
 
     // Flash overlay
     this.overlay.classList.add('active');
@@ -480,8 +552,11 @@ class WhiteModeController {
       document.body.classList.add('white-mode');
       this.isWhiteMode = true;
 
-      // Cambiar icono del botón
-      this.toggleButton.innerHTML = '🌙';
+      // Actualizar botón
+      this.updateButton();
+
+      // Guardar estado
+      this.saveState();
 
       // Iniciar fade out del overlay
       setTimeout(() => {
@@ -500,18 +575,60 @@ class WhiteModeController {
 
   // ═══ DESACTIVAR MODO BLANCO ═══
   deactivateWhiteMode(event) {
+    const x = event.clientX || window.innerWidth / 2;
+    const y = event.clientY || window.innerHeight / 2;
+
     // Crear efecto ripple oscuro
-    this.createDarkRippleEffect(event.clientX, event.clientY);
+    this.createDarkRippleEffect(x, y);
 
     // Transición suave de vuelta
     document.body.classList.remove('white-mode');
     this.isWhiteMode = false;
 
-    // Cambiar icono del botón
-    this.toggleButton.innerHTML = '💡';
+    // Actualizar botón
+    this.updateButton();
+
+    // Guardar estado
+    this.saveState();
 
     // Shake effect en algunos elementos
     this.shakeElements();
+  }
+
+  // ═══ ACTUALIZAR BOTÓN ═══
+  updateButton() {
+    if (this.isWhiteMode) {
+      this.toggleButton.innerHTML = '🌙';
+      this.toggleButton.setAttribute('aria-label', 'Desactivar modo blanco');
+      this.toggleButton.setAttribute('aria-pressed', 'true');
+    } else {
+      this.toggleButton.innerHTML = '💡';
+      this.toggleButton.setAttribute('aria-label', 'Activar modo blanco');
+      this.toggleButton.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  // ═══ GUARDAR/CARGAR ESTADO ═══
+  saveState() {
+    try {
+      localStorage.setItem('whiteModeEnabled', this.isWhiteMode);
+    } catch (e) {
+      // LocalStorage no disponible
+    }
+  }
+
+  loadSavedState() {
+    try {
+      const saved = localStorage.getItem('whiteModeEnabled');
+      if (saved === 'true') {
+        // Activar sin animaciones al cargar
+        document.body.classList.add('white-mode');
+        this.isWhiteMode = true;
+        this.updateButton();
+      }
+    } catch (e) {
+      // LocalStorage no disponible
+    }
   }
 
   // ═══ CREAR EFECTO RIPPLE EN PUNTO DE CLICK ═══
@@ -521,42 +638,44 @@ class WhiteModeController {
     ripple.style.left = `${x}px`;
     ripple.style.top = `${y}px`;
     ripple.style.transform = 'translate(-50%, -50%)';
+    ripple.setAttribute('aria-hidden', 'true');
     document.body.appendChild(ripple);
 
     setTimeout(() => {
       ripple.remove();
-    }, 1000);
+    }, this.config.rippleDuration);
   }
 
   // ═══ CREAR EFECTO RIPPLE OSCURO ═══
   createDarkRippleEffect(x, y) {
     const ripple = document.createElement('div');
-    ripple.className = 'click-ripple';
-    ripple.style.background = 'radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%)';
+    ripple.className = 'click-ripple click-ripple-dark';
     ripple.style.left = `${x}px`;
     ripple.style.top = `${y}px`;
     ripple.style.transform = 'translate(-50%, -50%)';
+    ripple.setAttribute('aria-hidden', 'true');
     document.body.appendChild(ripple);
 
     setTimeout(() => {
       ripple.remove();
-    }, 1000);
+    }, this.config.rippleDuration);
   }
 
   // ═══ CREAR EFECTO DE ONDA EXPANSIVA ═══
   createWaveEffect() {
     const wave = document.createElement('div');
     wave.className = 'wave-effect';
+    wave.setAttribute('aria-hidden', 'true');
     document.body.appendChild(wave);
 
     setTimeout(() => {
       wave.remove();
-    }, 1500);
+    }, this.config.waveDuration);
   }
 
   // ═══ ANIMAR ELEMENTOS SECUENCIALMENTE ═══
   animateElementsSequentially() {
-    const elements = document.querySelectorAll('.card, .label-card, .rental-card, h2, .cta');
+    const elements = document.querySelectorAll('.card, .label-card, .rental-card, .popular-card, .news-item, .cta, h2');
 
     elements.forEach((el, index) => {
       setTimeout(() => {
@@ -564,13 +683,13 @@ class WhiteModeController {
         setTimeout(() => {
           el.style.transform = '';
         }, 200);
-      }, index * 50);
+      }, index * this.config.animationDelay);
     });
   }
 
   // ═══ SHAKE EFFECT EN ELEMENTOS ═══
   shakeElements() {
-    const elements = document.querySelectorAll('.card, .label-card');
+    const elements = document.querySelectorAll('.card, .label-card, .popular-card, .news-item');
 
     elements.forEach((el, index) => {
       setTimeout(() => {
@@ -584,44 +703,53 @@ class WhiteModeController {
 
   // ═══ EFECTO DE PARTÍCULAS AL ACTIVAR ═══
   createParticles(x, y) {
-    const particleCount = 20;
+    const particleCount = this.config.particleCount;
+    const colors = ['#ffffff', '#007BFF', '#5db4ff', '#00d4ff'];
 
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
+      const size = 6 + Math.random() * 8;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
       particle.style.cssText = `
         position: fixed;
-        width: 8px;
-        height: 8px;
-        background: white;
+        width: ${size}px;
+        height: ${size}px;
+        background: ${color};
         border-radius: 50%;
         pointer-events: none;
         z-index: 999999;
         left: ${x}px;
         top: ${y}px;
+        box-shadow: 0 0 10px ${color};
       `;
+      particle.setAttribute('aria-hidden', 'true');
 
       document.body.appendChild(particle);
 
       const angle = (Math.PI * 2 * i) / particleCount;
-      const velocity = 5 + Math.random() * 5;
+      const velocity = 5 + Math.random() * 10;
       const vx = Math.cos(angle) * velocity;
       const vy = Math.sin(angle) * velocity;
 
       let px = x;
       let py = y;
       let opacity = 1;
+      let gravity = 0.3;
+      let velocityY = vy;
 
       const animate = () => {
         px += vx;
-        py += vy;
-        opacity -= 0.02;
+        py += velocityY;
+        velocityY += gravity; // Añadir gravedad
+        opacity -= 0.015;
 
         particle.style.left = `${px}px`;
         particle.style.top = `${py}px`;
         particle.style.opacity = opacity;
 
-        if (opacity > 0) {
+        if (opacity > 0 && py < window.innerHeight + 100) {
           requestAnimationFrame(animate);
         } else {
           particle.remove();
@@ -631,29 +759,41 @@ class WhiteModeController {
       requestAnimationFrame(animate);
     }
   }
+
+  // ═══ DESTRUCTOR (para cleanup) ═══
+  destroy() {
+    this.removeEventListeners();
+    if (this.overlay) this.overlay.remove();
+    if (this.toggleButton) this.toggleButton.remove();
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // 🚀 INICIAR WHITE MODE CONTROLLER
 // ═══════════════════════════════════════════════════════════════════════════════
 
-document.addEventListener('DOMContentLoaded', () => {
-  const whiteModeController = new WhiteModeController();
-
-  // Exponer globalmente para acceso desde otros scripts
-  window.whiteModeController = whiteModeController;
-
-  console.log('✨ White Mode Controller initialized!');
-  console.log('💡 Double-click anywhere or click the toggle button to activate');
-});
-
-// Añadir animación shake-small al documento
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes shake-small {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+// Singleton pattern para evitar instancias duplicadas
+if (!window.whiteModeController) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      window.whiteModeController = new WhiteModeController();
+    });
+  } else {
+    window.whiteModeController = new WhiteModeController();
   }
-`;
-document.head.appendChild(style);
+}
+
+// Añadir animación shake-small al documento si no existe
+if (!document.querySelector('#shake-animation-styles')) {
+  const style = document.createElement('style');
+  style.id = 'shake-animation-styles';
+  style.textContent = `
+    @keyframes shake-small {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px) rotate(-1deg); }
+      50% { transform: translateX(5px) rotate(1deg); }
+      75% { transform: translateX(-5px) rotate(-1deg); }
+    }
+  `;
+  document.head.appendChild(style);
+}
