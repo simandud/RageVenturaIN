@@ -389,3 +389,271 @@ window.addEventListener('load', () => {
     window.animationsEngine.observeAnimatableElements();
   }
 });
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ✨ INTERACTIVE WHITE MODE - CLICK ANIMATIONS
+// Sistema de animaciones interactivas al hacer click
+// ═══════════════════════════════════════════════════════════════════════════════
+
+class WhiteModeController {
+  constructor() {
+    this.isWhiteMode = false;
+    this.overlay = null;
+    this.toggleButton = null;
+    this.init();
+  }
+
+  // ── INICIALIZACIÓN ──
+  init() {
+    this.createOverlay();
+    this.createToggleButton();
+    this.attachEventListeners();
+  }
+
+  // ═══ CREAR OVERLAY DE FLASH BLANCO ═══
+  createOverlay() {
+    this.overlay = document.createElement('div');
+    this.overlay.className = 'white-flash-overlay';
+    document.body.appendChild(this.overlay);
+  }
+
+  // ═══ CREAR BOTÓN TOGGLE ═══
+  createToggleButton() {
+    this.toggleButton = document.createElement('div');
+    this.toggleButton.className = 'white-mode-toggle';
+    this.toggleButton.innerHTML = '💡';
+    this.toggleButton.setAttribute('aria-label', 'Toggle White Mode');
+    this.toggleButton.setAttribute('role', 'button');
+    this.toggleButton.setAttribute('tabindex', '0');
+    document.body.appendChild(this.toggleButton);
+  }
+
+  // ═══ ADJUNTAR EVENT LISTENERS ═══
+  attachEventListeners() {
+    // Click en el botón toggle
+    this.toggleButton.addEventListener('click', (e) => {
+      this.toggleWhiteMode(e);
+    });
+
+    // Keyboard accessibility
+    this.toggleButton.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleWhiteMode(e);
+      }
+    });
+
+    // Doble click en cualquier parte para activar
+    document.addEventListener('dblclick', (e) => {
+      // No activar en inputs, textareas o elementos editables
+      if (e.target.tagName === 'INPUT' ||
+          e.target.tagName === 'TEXTAREA' ||
+          e.target.isContentEditable) {
+        return;
+      }
+      this.toggleWhiteMode(e);
+    });
+  }
+
+  // ═══ TOGGLE MODO BLANCO ═══
+  toggleWhiteMode(event) {
+    if (this.isWhiteMode) {
+      this.deactivateWhiteMode(event);
+    } else {
+      this.activateWhiteMode(event);
+    }
+  }
+
+  // ═══ ACTIVAR MODO BLANCO CON EFECTOS ═══
+  activateWhiteMode(event) {
+    // Crear efecto ripple desde el punto de click
+    this.createRippleEffect(event.clientX, event.clientY);
+
+    // Crear efecto de onda expansiva
+    this.createWaveEffect();
+
+    // Flash overlay
+    this.overlay.classList.add('active');
+
+    // Esperar un momento antes de aplicar el modo blanco
+    setTimeout(() => {
+      document.body.classList.add('white-mode');
+      this.isWhiteMode = true;
+
+      // Cambiar icono del botón
+      this.toggleButton.innerHTML = '🌙';
+
+      // Iniciar fade out del overlay
+      setTimeout(() => {
+        this.overlay.classList.remove('active');
+        this.overlay.classList.add('fade-out');
+
+        setTimeout(() => {
+          this.overlay.classList.remove('fade-out');
+        }, 1200);
+      }, 300);
+
+      // Animar elementos uno por uno
+      this.animateElementsSequentially();
+    }, 200);
+  }
+
+  // ═══ DESACTIVAR MODO BLANCO ═══
+  deactivateWhiteMode(event) {
+    // Crear efecto ripple oscuro
+    this.createDarkRippleEffect(event.clientX, event.clientY);
+
+    // Transición suave de vuelta
+    document.body.classList.remove('white-mode');
+    this.isWhiteMode = false;
+
+    // Cambiar icono del botón
+    this.toggleButton.innerHTML = '💡';
+
+    // Shake effect en algunos elementos
+    this.shakeElements();
+  }
+
+  // ═══ CREAR EFECTO RIPPLE EN PUNTO DE CLICK ═══
+  createRippleEffect(x, y) {
+    const ripple = document.createElement('div');
+    ripple.className = 'click-ripple';
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    ripple.style.transform = 'translate(-50%, -50%)';
+    document.body.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 1000);
+  }
+
+  // ═══ CREAR EFECTO RIPPLE OSCURO ═══
+  createDarkRippleEffect(x, y) {
+    const ripple = document.createElement('div');
+    ripple.className = 'click-ripple';
+    ripple.style.background = 'radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%)';
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    ripple.style.transform = 'translate(-50%, -50%)';
+    document.body.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 1000);
+  }
+
+  // ═══ CREAR EFECTO DE ONDA EXPANSIVA ═══
+  createWaveEffect() {
+    const wave = document.createElement('div');
+    wave.className = 'wave-effect';
+    document.body.appendChild(wave);
+
+    setTimeout(() => {
+      wave.remove();
+    }, 1500);
+  }
+
+  // ═══ ANIMAR ELEMENTOS SECUENCIALMENTE ═══
+  animateElementsSequentially() {
+    const elements = document.querySelectorAll('.card, .label-card, .rental-card, h2, .cta');
+
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+          el.style.transform = '';
+        }, 200);
+      }, index * 50);
+    });
+  }
+
+  // ═══ SHAKE EFFECT EN ELEMENTOS ═══
+  shakeElements() {
+    const elements = document.querySelectorAll('.card, .label-card');
+
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.style.animation = 'shake-small 0.5s ease-in-out';
+        setTimeout(() => {
+          el.style.animation = '';
+        }, 500);
+      }, index * 30);
+    });
+  }
+
+  // ═══ EFECTO DE PARTÍCULAS AL ACTIVAR ═══
+  createParticles(x, y) {
+    const particleCount = 20;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.cssText = `
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 999999;
+        left: ${x}px;
+        top: ${y}px;
+      `;
+
+      document.body.appendChild(particle);
+
+      const angle = (Math.PI * 2 * i) / particleCount;
+      const velocity = 5 + Math.random() * 5;
+      const vx = Math.cos(angle) * velocity;
+      const vy = Math.sin(angle) * velocity;
+
+      let px = x;
+      let py = y;
+      let opacity = 1;
+
+      const animate = () => {
+        px += vx;
+        py += vy;
+        opacity -= 0.02;
+
+        particle.style.left = `${px}px`;
+        particle.style.top = `${py}px`;
+        particle.style.opacity = opacity;
+
+        if (opacity > 0) {
+          requestAnimationFrame(animate);
+        } else {
+          particle.remove();
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// 🚀 INICIAR WHITE MODE CONTROLLER
+// ═══════════════════════════════════════════════════════════════════════════════
+
+document.addEventListener('DOMContentLoaded', () => {
+  const whiteModeController = new WhiteModeController();
+
+  // Exponer globalmente para acceso desde otros scripts
+  window.whiteModeController = whiteModeController;
+
+  console.log('✨ White Mode Controller initialized!');
+  console.log('💡 Double-click anywhere or click the toggle button to activate');
+});
+
+// Añadir animación shake-small al documento
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes shake-small {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+`;
+document.head.appendChild(style);
