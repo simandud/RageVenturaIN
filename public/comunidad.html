@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidad | RageVentura</title>
+  <meta name="description" content="Conoce a la comunidad RageVentura - Fans de la música electrónica">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="community.css">
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <!-- Header -->
+  <header id="main-header">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" id="header-logo">RAGEVENTURA</a>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">Inicio</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="comunidad.html" class="active">Comunidad</a>
+        <a href="tienda.html">Tienda</a>
+      </nav>
+      <div class="header-right" id="user-menu">
+        <a href="login.html" class="ghost">Iniciar Sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="content">
+    <!-- Hero Section -->
+    <section class="panel community-hero">
+      <div class="panel-content">
+        <div class="section-header">
+          <span class="section-meta">Comunidad</span>
+          <h1>Nuestra Tribu</h1>
+          <p>Conecta con miles de amantes de la música electrónica. Descubre perfiles, comparte experiencias y forma parte de algo único.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="community-stats" id="community-stats">
+          <div class="stat-card">
+            <span class="stat-number" id="total-members">-</span>
+            <span class="stat-name">Miembros</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="total-djs">-</span>
+            <span class="stat-name">DJs</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="pro-members">-</span>
+            <span class="stat-name">Miembros PRO</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="new-this-week">-</span>
+            <span class="stat-name">Nuevos esta semana</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="panel search-section">
+      <div class="panel-content">
+        <div class="search-container">
+          <div class="search-box">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-users" placeholder="Buscar por nombre o @tag...">
+          </div>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="user">Fans</button>
+            <button class="filter-btn" data-filter="dj">DJs</button>
+          </div>
+          <div class="sort-select">
+            <select id="sort-users">
+              <option value="newest">Más recientes</option>
+              <option value="oldest">Más antiguos</option>
+              <option value="points">Más puntos</option>
+              <option value="events">Más eventos</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured DJs -->
+    <section class="panel featured-section" id="featured-section">
+      <div class="panel-content">
+        <h2 class="section-title">DJs Destacados</h2>
+        <div class="featured-grid" id="featured-djs">
+          <!-- Se llena con JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Users Grid -->
+    <section class="panel users-section">
+      <div class="panel-content">
+        <h2 class="section-title">Miembros de la Comunidad</h2>
+
+        <!-- Loading State -->
+        <div class="users-loading" id="users-loading">
+          <div class="loader-spinner"></div>
+          <p>Cargando comunidad...</p>
+        </div>
+
+        <!-- Users Grid -->
+        <div class="users-grid" id="users-grid" hidden>
+          <!-- Se llena con JS -->
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="no-results" hidden>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <p>No se encontraron usuarios</p>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination" hidden>
+          <button class="pagination-btn prev" id="prev-page" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Anterior
+          </button>
+          <span class="pagination-info">
+            Página <span id="current-page">1</span> de <span id="total-pages">1</span>
+          </span>
+          <button class="pagination-btn next" id="next-page">
+            Siguiente
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Members -->
+    <section class="panel new-members-section">
+      <div class="panel-content">
+        <h2 class="section-title">Recién llegados</h2>
+        <div class="new-members-slider" id="new-members">
+          <!-- Se llena con JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Join -->
+    <section class="panel join-cta-section">
+      <div class="panel-content">
+        <div class="join-cta-card">
+          <h2>¿Todavía no eres miembro?</h2>
+          <p>Únete gratis y forma parte de la comunidad de música electrónica más activa</p>
+          <div class="join-cta-actions">
+            <a href="register.html" class="cta">Crear Cuenta Gratis</a>
+            <a href="login.html" class="ghost">Ya tengo cuenta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- User Profile Modal -->
+  <div class="modal" id="user-modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-body" id="modal-body">
+        <!-- Se llena con JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="script.js"></script>
+  <script src="auth-client.js"></script>
+  <script src="community-client.js"></script>
+</body>
+</html>

@@ -128,36 +128,18 @@
       <!-- Main Navigation -->
       <nav class="header-nav" role="navigation" aria-label="Navegación principal">
         <a href="eventos.html" class="nav-link">EVENTOS</a>
-        <a href="alquiler.html" class="nav-link">ALQUILER</a>
-        <a href="label.html" class="nav-link">MÚSICA</a>
-        <a href="contacto.html" class="nav-link">REVISTA</a>
-        <a href="tienda.html" class="nav-link">STORE</a>
+        <a href="comunidad.html" class="nav-link">COMUNIDAD</a>
+        <a href="clases.html" class="nav-link">CLASES</a>
+        <a href="tienda.html" class="nav-link">TIENDA</a>
 
       </nav>
 
       <div class="header-spacer"></div>
 
       <!-- Header Actions -->
-      <div class="header-right">
-
-        <!-- Search Button -->
-        <button class="search-btn" aria-label="Buscar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-        </button>
-
-        <!-- Account Link -->
-        <a href="mi-cuenta.html" class="account-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
-          </svg>
-          Mi cuenta
-        </a>
-
-        <!-- Pro Link -->
-        <a href="pro.html" class="pro-link">PRO</a>
+      <div class="header-right" id="user-menu">
+        <!-- Se actualiza dinámicamente con auth-client.js -->
+        <a href="login.html" class="ghost">Iniciar Sesión</a>
       </div>
 
       <!-- Mobile Menu Toggle -->
@@ -669,5 +651,6 @@
   <script src="menu-toggle.js" defer></script>
   <script src="scroll-paint-text.js" defer></script>
   <script src="carousel.js" defer></script>
+  <script src="auth-client.js" defer></script>
 </body>
 </html>
