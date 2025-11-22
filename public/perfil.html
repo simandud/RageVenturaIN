@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil | RageVentura</title>
+  <meta name="description" content="Tu perfil en RageVentura">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <!-- Header -->
+  <header id="main-header">
+    <div class="header-content">
+      <div class="brand">
+        <a href="index.html" id="header-logo">RAGEVENTURA</a>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">Inicio</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="tienda.html">Tienda</a>
+      </nav>
+      <div class="header-right" id="user-menu">
+        <!-- Se llena dinámicamente con JS -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="content">
+    <!-- Loading State -->
+    <section class="profile-loading" id="profile-loading">
+      <div class="loader-container">
+        <div class="loader-spinner"></div>
+        <p>Cargando perfil...</p>
+      </div>
+    </section>
+
+    <!-- Not Logged In -->
+    <section class="profile-not-logged" id="profile-not-logged" hidden>
+      <div class="not-logged-content">
+        <h2>Inicia sesión para ver tu perfil</h2>
+        <p>Accede a tu cuenta para gestionar tu perfil y ver tu actividad</p>
+        <div class="not-logged-actions">
+          <a href="login.html" class="cta">Iniciar Sesión</a>
+          <a href="register.html" class="ghost">Crear Cuenta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-section" id="profile-section" hidden>
+      <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header-card">
+          <div class="profile-cover">
+            <div class="cover-gradient"></div>
+          </div>
+          <div class="profile-header-content">
+            <div class="avatar-section">
+              <div class="avatar-wrapper">
+                <img src="/assets/default-avatar.png" alt="Avatar" id="profile-avatar" class="profile-avatar">
+                <button class="avatar-edit-btn" id="avatar-edit-btn" title="Cambiar avatar">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                </button>
+                <input type="file" id="avatar-input" accept="image/*" hidden>
+              </div>
+              <div class="profile-info">
+                <h1 class="profile-username" id="profile-username">Usuario</h1>
+                <span class="profile-tag" id="profile-tag">@tag</span>
+                <div class="profile-badges" id="profile-badges"></div>
+              </div>
+            </div>
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-value" id="stat-points">0</span>
+                <span class="stat-label">Puntos</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value" id="stat-events">0</span>
+                <span class="stat-label">Eventos</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value" id="stat-badges">0</span>
+                <span class="stat-label">Badges</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Tabs -->
+        <div class="profile-tabs">
+          <button class="tab-btn active" data-tab="info">Información</button>
+          <button class="tab-btn" data-tab="edit">Editar Perfil</button>
+          <button class="tab-btn" data-tab="security">Seguridad</button>
+          <button class="tab-btn" data-tab="badges">Mis Badges</button>
+        </div>
+
+        <!-- Tab: Info -->
+        <div class="tab-content active" id="tab-info">
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Sobre mí</h3>
+              <p class="bio-text" id="profile-bio">Sin biografía aún</p>
+            </div>
+            <div class="info-card">
+              <h3>Datos</h3>
+              <ul class="info-list">
+                <li><span class="info-label">Email:</span> <span id="profile-email">-</span></li>
+                <li><span class="info-label">Ciudad:</span> <span id="profile-city">-</span></li>
+                <li><span class="info-label">Género favorito:</span> <span id="profile-genre">-</span></li>
+                <li><span class="info-label">Miembro desde:</span> <span id="profile-since">-</span></li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Redes Sociales</h3>
+              <div class="social-links" id="profile-socials">
+                <p class="no-socials">No hay redes vinculadas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Edit Profile -->
+        <div class="tab-content" id="tab-edit">
+          <form id="edit-profile-form" class="edit-form">
+            <div class="form-section">
+              <h3>Información básica</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="edit-username">Nombre</label>
+                  <input type="text" id="edit-username" name="username" maxlength="50">
+                </div>
+                <div class="form-group">
+                  <label for="edit-city">Ciudad</label>
+                  <input type="text" id="edit-city" name="city" maxlength="100" placeholder="Tu ciudad">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="edit-bio">Biografía</label>
+                <textarea id="edit-bio" name="bio" maxlength="500" rows="3" placeholder="Cuéntanos sobre ti..."></textarea>
+                <span class="char-count"><span id="bio-count">0</span>/500</span>
+              </div>
+              <div class="form-group">
+                <label for="edit-genre">Género musical favorito</label>
+                <select id="edit-genre" name="favorite_genre">
+                  <option value="">Selecciona uno</option>
+                  <option value="Techno">Techno</option>
+                  <option value="House">House</option>
+                  <option value="Trance">Trance</option>
+                  <option value="Drum & Bass">Drum & Bass</option>
+                  <option value="Dubstep">Dubstep</option>
+                  <option value="EDM">EDM</option>
+                  <option value="Progressive">Progressive</option>
+                  <option value="Minimal">Minimal</option>
+                  <option value="Hardstyle">Hardstyle</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Redes Sociales</h3>
+              <div class="form-group">
+                <label for="edit-instagram">Instagram</label>
+                <div class="input-with-icon">
+                  <span class="input-prefix">@</span>
+                  <input type="text" id="edit-instagram" name="social_instagram" placeholder="tu_usuario">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="edit-soundcloud">SoundCloud</label>
+                <input type="url" id="edit-soundcloud" name="social_soundcloud" placeholder="https://soundcloud.com/...">
+              </div>
+              <div class="form-group">
+                <label for="edit-spotify">Spotify</label>
+                <input type="url" id="edit-spotify" name="social_spotify" placeholder="https://open.spotify.com/user/...">
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="cta">Guardar Cambios</button>
+              <button type="button" class="ghost" id="cancel-edit">Cancelar</button>
+            </div>
+            <div class="form-message" id="edit-message" hidden></div>
+          </form>
+        </div>
+
+        <!-- Tab: Security -->
+        <div class="tab-content" id="tab-security">
+          <form id="change-password-form" class="edit-form">
+            <div class="form-section">
+              <h3>Cambiar Contraseña</h3>
+              <div class="form-group">
+                <label for="current-password">Contraseña actual</label>
+                <input type="password" id="current-password" name="current_password" required>
+              </div>
+              <div class="form-group">
+                <label for="new-password">Nueva contraseña</label>
+                <input type="password" id="new-password" name="new_password" required minlength="8">
+              </div>
+              <div class="form-group">
+                <label for="confirm-new-password">Confirmar nueva contraseña</label>
+                <input type="password" id="confirm-new-password" required minlength="8">
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="cta">Cambiar Contraseña</button>
+            </div>
+            <div class="form-message" id="password-message" hidden></div>
+          </form>
+
+          <div class="danger-zone">
+            <h3>Zona de peligro</h3>
+            <p>Cerrar sesión en todos los dispositivos o eliminar tu cuenta</p>
+            <div class="danger-actions">
+              <button class="ghost danger" id="logout-all">Cerrar todas las sesiones</button>
+              <button class="ghost danger" id="delete-account">Eliminar cuenta</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Badges -->
+        <div class="tab-content" id="tab-badges">
+          <div class="badges-grid" id="badges-grid">
+            <!-- Se llena con JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="script.js"></script>
+  <script src="auth-client.js"></script>
+  <script src="profile-client.js"></script>
+</body>
+</html>
