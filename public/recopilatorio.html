@@ -781,6 +781,1080 @@
       background: linear-gradient(90deg, transparent 0%, var(--stroke) 50%, transparent 100%);
       margin: 80px 0;
     }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       NUEVAS SECCIONES CREATIVAS E INNOVADORAS
+       ══════════════════════════════════════════════════════════════════════ */
+
+    /* ─── 1. COUNTDOWN / PRÓXIMO EVENTO ─── */
+    .countdown-section {
+      background: linear-gradient(135deg, rgba(0, 123, 255, 0.2) 0%, rgba(255, 0, 102, 0.1) 100%);
+      border: 1px solid var(--stroke);
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .countdown-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(0, 123, 255, 0.1), transparent);
+      animation: rotate-bg 20s linear infinite;
+    }
+
+    @keyframes rotate-bg {
+      100% { transform: rotate(360deg); }
+    }
+
+    .countdown-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .countdown-event-name {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 5vw, 56px);
+      background: var(--chrome-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .countdown-date {
+      font-size: 16px;
+      color: var(--accent);
+      margin-bottom: 30px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .countdown-item {
+      background: var(--glass-strong);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      padding: 20px 30px;
+      min-width: 100px;
+    }
+
+    .countdown-number {
+      font-family: var(--font-mono);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      color: var(--fg);
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+
+    /* ─── 2. AUDIO VISUALIZER ─── */
+    .visualizer-section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .visualizer-container {
+      background: linear-gradient(180deg, var(--glass) 0%, rgba(0, 0, 0, 0.8) 100%);
+      border: 1px solid var(--stroke);
+      border-radius: 24px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+
+    .audio-bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 4px;
+      height: 150px;
+      margin-bottom: 30px;
+    }
+
+    .audio-bar {
+      width: 8px;
+      background: linear-gradient(180deg, var(--accent-bright) 0%, var(--accent) 50%, #ff0066 100%);
+      border-radius: 4px;
+      animation: audio-pulse var(--delay, 0.5s) ease-in-out infinite alternate;
+    }
+
+    @keyframes audio-pulse {
+      0% { height: 20%; opacity: 0.5; }
+      100% { height: 100%; opacity: 1; }
+    }
+
+    .visualizer-track {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .track-cover {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .track-info {
+      flex: 1;
+    }
+
+    .track-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+
+    .track-artist {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .track-progress {
+      width: 100%;
+      height: 4px;
+      background: var(--glass-strong);
+      border-radius: 2px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+
+    .track-progress-bar {
+      height: 100%;
+      width: 35%;
+      background: var(--chrome-btn);
+      border-radius: 2px;
+      animation: progress-move 8s linear infinite;
+    }
+
+    @keyframes progress-move {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    .track-controls {
+      display: flex;
+      gap: 12px;
+    }
+
+    .track-btn {
+      width: 48px;
+      height: 48px;
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: var(--fg);
+    }
+
+    .track-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .track-btn.play-btn {
+      width: 56px;
+      height: 56px;
+      background: var(--chrome-btn);
+      border: none;
+    }
+
+    /* ─── 3. BEAT PAD INTERACTIVO ─── */
+    .beatpad-section {
+      padding: 80px 0;
+    }
+
+    .beatpad-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 500px;
+      margin: 40px auto 0;
+    }
+
+    .beat-pad {
+      aspect-ratio: 1;
+      background: linear-gradient(145deg, var(--glass-strong) 0%, var(--glass) 100%);
+      border: 2px solid var(--stroke);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .beat-pad::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, var(--accent) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .beat-pad:hover {
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+
+    .beat-pad:active,
+    .beat-pad.active {
+      transform: scale(0.95);
+      border-color: var(--accent-bright);
+      box-shadow: 0 0 30px rgba(0, 123, 255, 0.5), inset 0 0 20px rgba(0, 123, 255, 0.3);
+    }
+
+    .beat-pad:active::before,
+    .beat-pad.active::before {
+      opacity: 0.6;
+    }
+
+    .beat-pad[data-color="red"] { --pad-color: #ff0066; }
+    .beat-pad[data-color="blue"] { --pad-color: #007BFF; }
+    .beat-pad[data-color="green"] { --pad-color: #00ff88; }
+    .beat-pad[data-color="yellow"] { --pad-color: #ffcc00; }
+    .beat-pad[data-color="purple"] { --pad-color: #9966ff; }
+    .beat-pad[data-color="cyan"] { --pad-color: #00d4ff; }
+    .beat-pad[data-color="orange"] { --pad-color: #ff6600; }
+    .beat-pad[data-color="pink"] { --pad-color: #ff66cc; }
+
+    .beat-pad:active,
+    .beat-pad.active {
+      border-color: var(--pad-color, var(--accent));
+      box-shadow: 0 0 30px color-mix(in srgb, var(--pad-color, var(--accent)) 50%, transparent);
+    }
+
+    .beatpad-info {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ─── 4. MOOD SELECTOR / GÉNERO EXPLORER ─── */
+    .mood-section {
+      padding: 80px 0;
+    }
+
+    .mood-wheel {
+      position: relative;
+      width: 350px;
+      height: 350px;
+      margin: 40px auto;
+    }
+
+    .mood-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: var(--glass-strong);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .mood-emoji {
+      font-size: 40px;
+      margin-bottom: 4px;
+    }
+
+    .mood-name {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      color: var(--fg);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .mood-item {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mood-item:hover {
+      transform: scale(1.1);
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .mood-item.active {
+      background: var(--accent);
+      border-color: var(--accent-bright);
+    }
+
+    .mood-item span {
+      font-size: 24px;
+    }
+
+    .mood-item small {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Posiciones de los mood items en círculo */
+    .mood-item:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+    .mood-item:nth-child(2) { top: 15%; right: 5%; }
+    .mood-item:nth-child(3) { top: 50%; right: -10%; transform: translateY(-50%); }
+    .mood-item:nth-child(4) { bottom: 15%; right: 5%; }
+    .mood-item:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); }
+    .mood-item:nth-child(6) { bottom: 15%; left: 5%; }
+    .mood-item:nth-child(7) { top: 50%; left: -10%; transform: translateY(-50%); }
+    .mood-item:nth-child(8) { top: 15%; left: 5%; }
+
+    /* ─── 5. TIMELINE HISTORIA ─── */
+    .timeline-section {
+      padding: 80px 0;
+    }
+
+    .timeline-container {
+      position: relative;
+      max-width: 800px;
+      margin: 60px auto 0;
+      padding: 0 20px;
+    }
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--stroke) 100%);
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-container::before {
+        left: 20px;
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .timeline-item:nth-child(odd) {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item,
+      .timeline-item:nth-child(odd) {
+        flex-direction: row;
+        text-align: left;
+        padding-left: 50px;
+      }
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-dot {
+        left: 20px;
+      }
+    }
+
+    .timeline-content {
+      width: calc(50% - 40px);
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-content {
+        width: 100%;
+      }
+    }
+
+    .timeline-content:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+    .timeline-year {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── 6. ARTISTAS ROSTER ─── */
+    .roster-section {
+      padding: 80px 0;
+    }
+
+    .roster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .artist-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+      group: artist;
+    }
+
+    .artist-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .artist-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .artist-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(3, 1, 9, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .artist-card:hover .artist-overlay {
+      background: linear-gradient(180deg, rgba(0, 123, 255, 0.2) 0%, rgba(3, 1, 9, 0.98) 100%);
+    }
+
+    .artist-name {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+
+    .artist-genre {
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+
+    .artist-socials {
+      display: flex;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .artist-card:hover .artist-socials {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .artist-social-link {
+      width: 36px;
+      height: 36px;
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg);
+      transition: all 0.25s ease;
+    }
+
+    .artist-social-link:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ─── 7. PLAYLIST CURADA ─── */
+    .playlist-section {
+      padding: 80px 0;
+    }
+
+    .playlist-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .playlist-card {
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .playlist-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .playlist-cover {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .playlist-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .playlist-card:hover .playlist-cover img {
+      transform: scale(1.05);
+    }
+
+    .playlist-play {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      width: 56px;
+      height: 56px;
+      background: var(--accent);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.4);
+    }
+
+    .playlist-card:hover .playlist-play {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .playlist-play svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+      margin-left: 4px;
+    }
+
+    .playlist-info {
+      padding: 20px;
+    }
+
+    .playlist-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+
+    .playlist-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ─── 8. LOGROS / BADGES ─── */
+    .badges-section {
+      padding: 80px 0;
+    }
+
+    .badges-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .badge-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .badge-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .badge-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(145deg, var(--glass-strong) 0%, var(--glass) 100%);
+      border: 2px solid var(--stroke);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-item:hover .badge-icon {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+    }
+
+    .badge-icon::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transform: rotate(45deg);
+      transition: all 0.5s ease;
+    }
+
+    .badge-item:hover .badge-icon::after {
+      top: 100%;
+      left: 100%;
+    }
+
+    .badge-item.locked .badge-icon {
+      opacity: 0.4;
+      filter: grayscale(100%);
+    }
+
+    .badge-name {
+      font-size: 13px;
+      color: var(--fg);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .badge-item.locked .badge-name {
+      color: var(--muted);
+    }
+
+    /* ─── 9. WEATHER MUSIC MATCHER ─── */
+    .weather-section {
+      padding: 80px 0;
+    }
+
+    .weather-container {
+      background: linear-gradient(135deg, var(--glass) 0%, rgba(0, 123, 255, 0.1) 100%);
+      border: 1px solid var(--stroke);
+      border-radius: 24px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .weather-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .weather-display {
+      text-align: center;
+    }
+
+    .weather-icon {
+      font-size: 80px;
+      margin-bottom: 16px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .weather-temp {
+      font-family: var(--font-mono);
+      font-size: 48px;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+
+    .weather-condition {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .weather-location {
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .weather-playlist {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .weather-playlist-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+
+    .weather-track {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--glass);
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .weather-track:hover {
+      border-color: var(--accent);
+      background: rgba(0, 123, 255, 0.1);
+    }
+
+    .weather-track-num {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--muted);
+      width: 24px;
+    }
+
+    .weather-track-info {
+      flex: 1;
+    }
+
+    .weather-track-name {
+      font-size: 14px;
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .weather-track-artist {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .weather-track-duration {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ─── 10. BEHIND THE SCENES ─── */
+    .bts-section {
+      padding: 80px 0;
+    }
+
+    .bts-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .bts-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+
+    .bts-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .bts-item:nth-child(1) { grid-column: span 5; }
+    .bts-item:nth-child(2) { grid-column: span 4; }
+    .bts-item:nth-child(3) { grid-column: span 3; }
+    .bts-item:nth-child(4) { grid-column: span 4; }
+    .bts-item:nth-child(5) { grid-column: span 8; }
+
+    @media (max-width: 768px) {
+      .bts-item { grid-column: span 1 !important; min-height: 200px; }
+    }
+
+    .bts-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .bts-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .bts-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(3, 1, 9, 0.9) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .bts-item:hover .bts-overlay {
+      opacity: 1;
+    }
+
+    .bts-caption {
+      font-size: 14px;
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    /* ─── 11. COMPARADOR DE CURSOS ─── */
+    .compare-section {
+      padding: 80px 0;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 40px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--stroke);
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .compare-table th {
+      background: var(--glass-strong);
+      font-family: var(--font-heading);
+      font-size: 16px;
+      color: var(--fg);
+    }
+
+    .compare-table td {
+      background: var(--glass);
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .compare-table .feature-name {
+      text-align: left;
+      font-weight: 600;
+      color: var(--fg);
+    }
+
+    .compare-check {
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    .compare-x {
+      color: var(--muted-dark);
+      font-size: 20px;
+    }
+
+    .compare-highlight {
+      background: rgba(0, 123, 255, 0.1) !important;
+      border-left: 2px solid var(--accent);
+      border-right: 2px solid var(--accent);
+    }
+
+    .compare-highlight.header {
+      border-top: 2px solid var(--accent);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    /* ─── 12. LIVE RADIO WIDGET ─── */
+    .radio-widget {
+      position: fixed;
+      bottom: 100px;
+      left: 30px;
+      background: var(--glass-strong);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 99;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .radio-widget:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .radio-live-dot {
+      width: 12px;
+      height: 12px;
+      background: #ff0066;
+      border-radius: 50%;
+      animation: pulse-live 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    .radio-info {
+      flex: 1;
+    }
+
+    .radio-label {
+      font-size: 10px;
+      color: #ff0066;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    .radio-now-playing {
+      font-size: 13px;
+      color: var(--fg);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
+    }
+
+    .radio-toggle {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .radio-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .radio-toggle svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+    }
   </style>
 </head>
 
@@ -1452,6 +2526,646 @@
 
       <div class="section-divider"></div>
 
+      <!-- ══════════════════════════════════════════════════════════════════════
+           NUEVAS SECCIONES CREATIVAS E INNOVADORAS
+           ══════════════════════════════════════════════════════════════════════ -->
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           COUNTDOWN - PRÓXIMO EVENTO EN VIVO
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="countdown" class="panel" aria-label="Cuenta regresiva próximo evento">
+        <div class="panel-content">
+          <div class="section-meta">EVENTO EN VIVO</div>
+
+          <div class="countdown-section">
+            <div class="countdown-content">
+              <h2 class="countdown-event-name">NEON RAVE 2025</h2>
+              <p class="countdown-date">31 de Enero • Warehouse 12, Quito</p>
+
+              <div class="countdown-timer" id="countdown-timer">
+                <div class="countdown-item">
+                  <div class="countdown-number" id="countdown-days">00</div>
+                  <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="countdown-hours">00</div>
+                  <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="countdown-minutes">00</div>
+                  <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="countdown-seconds">00</div>
+                  <div class="countdown-label">Segundos</div>
+                </div>
+              </div>
+
+              <button class="cta-primary">RESERVAR TICKETS</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           AUDIO VISUALIZER - REPRODUCTOR INMERSIVO
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="visualizer" class="panel visualizer-section" aria-label="Visualizador de audio">
+        <div class="panel-content">
+          <div class="section-meta">Sección Creativa / Visualizer</div>
+          <header class="section-header">
+            <h2>Escucha Ahora</h2>
+            <p>Visualiza la música con nuestro reproductor inmersivo</p>
+          </header>
+
+          <div class="visualizer-container">
+            <div class="audio-bars">
+              <div class="audio-bar" style="--delay: 0.3s;"></div>
+              <div class="audio-bar" style="--delay: 0.5s;"></div>
+              <div class="audio-bar" style="--delay: 0.2s;"></div>
+              <div class="audio-bar" style="--delay: 0.6s;"></div>
+              <div class="audio-bar" style="--delay: 0.4s;"></div>
+              <div class="audio-bar" style="--delay: 0.7s;"></div>
+              <div class="audio-bar" style="--delay: 0.3s;"></div>
+              <div class="audio-bar" style="--delay: 0.5s;"></div>
+              <div class="audio-bar" style="--delay: 0.2s;"></div>
+              <div class="audio-bar" style="--delay: 0.8s;"></div>
+              <div class="audio-bar" style="--delay: 0.4s;"></div>
+              <div class="audio-bar" style="--delay: 0.6s;"></div>
+              <div class="audio-bar" style="--delay: 0.3s;"></div>
+              <div class="audio-bar" style="--delay: 0.5s;"></div>
+              <div class="audio-bar" style="--delay: 0.7s;"></div>
+              <div class="audio-bar" style="--delay: 0.2s;"></div>
+              <div class="audio-bar" style="--delay: 0.4s;"></div>
+              <div class="audio-bar" style="--delay: 0.6s;"></div>
+              <div class="audio-bar" style="--delay: 0.8s;"></div>
+              <div class="audio-bar" style="--delay: 0.3s;"></div>
+              <div class="audio-bar" style="--delay: 0.5s;"></div>
+              <div class="audio-bar" style="--delay: 0.4s;"></div>
+              <div class="audio-bar" style="--delay: 0.7s;"></div>
+              <div class="audio-bar" style="--delay: 0.2s;"></div>
+              <div class="audio-bar" style="--delay: 0.6s;"></div>
+            </div>
+
+            <div class="visualizer-track">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&h=100&fit=crop" alt="Album cover" class="track-cover">
+              <div class="track-info">
+                <h4 class="track-title">Neon Genesis</h4>
+                <p class="track-artist">KØRA</p>
+                <div class="track-progress">
+                  <div class="track-progress-bar"></div>
+                </div>
+              </div>
+              <div class="track-controls">
+                <button class="track-btn" aria-label="Anterior">⏮</button>
+                <button class="track-btn play-btn" aria-label="Play">▶</button>
+                <button class="track-btn" aria-label="Siguiente">⏭</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           BEAT PAD INTERACTIVO - CREA TU RITMO
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="beatpad" class="panel beatpad-section" aria-label="Beat Pad interactivo">
+        <div class="panel-content">
+          <div class="section-meta">Sección Interactiva / Beat Lab</div>
+          <header class="section-header">
+            <h2>Beat Lab</h2>
+            <p>Haz click en los pads para crear tu propio ritmo</p>
+          </header>
+
+          <div class="beatpad-container">
+            <div class="beat-pad" data-color="red" data-sound="kick">KICK</div>
+            <div class="beat-pad" data-color="blue" data-sound="snare">SNARE</div>
+            <div class="beat-pad" data-color="green" data-sound="hihat">HI-HAT</div>
+            <div class="beat-pad" data-color="yellow" data-sound="clap">CLAP</div>
+            <div class="beat-pad" data-color="purple" data-sound="tom">TOM</div>
+            <div class="beat-pad" data-color="cyan" data-sound="ride">RIDE</div>
+            <div class="beat-pad" data-color="orange" data-sound="perc">PERC</div>
+            <div class="beat-pad" data-color="pink" data-sound="fx">FX</div>
+            <div class="beat-pad" data-color="red" data-sound="bass">BASS</div>
+            <div class="beat-pad" data-color="blue" data-sound="synth">SYNTH</div>
+            <div class="beat-pad" data-color="green" data-sound="stab">STAB</div>
+            <div class="beat-pad" data-color="yellow" data-sound="vocal">VOCAL</div>
+            <div class="beat-pad" data-color="purple" data-sound="acid">ACID</div>
+            <div class="beat-pad" data-color="cyan" data-sound="pad">PAD</div>
+            <div class="beat-pad" data-color="orange" data-sound="arp">ARP</div>
+            <div class="beat-pad" data-color="pink" data-sound="noise">NOISE</div>
+          </div>
+
+          <p class="beatpad-info">Usa las teclas 1-9, Q-W-E-R-T-Y-U para activar los pads</p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           MOOD SELECTOR - EXPLORA GÉNEROS
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="mood" class="panel mood-section" aria-label="Selector de mood y género">
+        <div class="panel-content">
+          <div class="section-meta">Sección Creativa / Mood Explorer</div>
+          <header class="section-header">
+            <h2>Mood Explorer</h2>
+            <p>Selecciona tu estado de ánimo y descubre música perfecta para ti</p>
+          </header>
+
+          <div class="mood-wheel">
+            <div class="mood-item" data-mood="energetic">
+              <span>⚡</span>
+              <small>Energético</small>
+            </div>
+            <div class="mood-item" data-mood="happy">
+              <span>😄</span>
+              <small>Feliz</small>
+            </div>
+            <div class="mood-item" data-mood="chill">
+              <span>😌</span>
+              <small>Chill</small>
+            </div>
+            <div class="mood-item" data-mood="dark">
+              <span>🌙</span>
+              <small>Oscuro</small>
+            </div>
+            <div class="mood-item" data-mood="melancholic">
+              <span>💭</span>
+              <small>Melancólico</small>
+            </div>
+            <div class="mood-item" data-mood="focus">
+              <span>🎯</span>
+              <small>Focus</small>
+            </div>
+            <div class="mood-item active" data-mood="hypnotic">
+              <span>🌀</span>
+              <small>Hipnótico</small>
+            </div>
+            <div class="mood-item" data-mood="euphoric">
+              <span>🔥</span>
+              <small>Eufórico</small>
+            </div>
+
+            <div class="mood-center">
+              <span class="mood-emoji">🌀</span>
+              <span class="mood-name">Hipnótico</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           TIMELINE - HISTORIA DE RAGE VENTURE
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="timeline" class="panel timeline-section" aria-label="Historia de RAGE VENTURE">
+        <div class="panel-content">
+          <div class="section-meta">Nuestra Historia</div>
+          <header class="section-header">
+            <h2>Timeline RAGE</h2>
+            <p>El viaje de RAGE VENTURE desde sus inicios hasta hoy</p>
+          </header>
+
+          <div class="timeline-container">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2020</span>
+                <h3 class="timeline-title">El Comienzo</h3>
+                <p class="timeline-desc">RAGE VENTURE nace como un proyecto de pasión por la música electrónica en Cuenca, Ecuador.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2021</span>
+                <h3 class="timeline-title">Primer Evento</h3>
+                <p class="timeline-desc">Organizamos nuestro primer showcase con 200 personas. El inicio de algo grande.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2022</span>
+                <h3 class="timeline-title">Lanzamiento del Label</h3>
+                <p class="timeline-desc">Nace RAGE Records con nuestro primer EP "Digital Genesis" alcanzando 100k streams.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2023</span>
+                <h3 class="timeline-title">Academia de Producción</h3>
+                <p class="timeline-desc">Abrimos nuestro programa de clases formando a más de 300 estudiantes.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2024</span>
+                <h3 class="timeline-title">Expansión Nacional</h3>
+                <p class="timeline-desc">Eventos en Quito, Guayaquil y Cuenca. +5000 personas en nuestros festivales.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2025</span>
+                <h3 class="timeline-title">El Futuro es Ahora</h3>
+                <p class="timeline-desc">Portal inmersivo 3D, nuevas experiencias y conexión global. Esto es solo el comienzo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           ROSTER - ARTISTAS DEL LABEL
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="roster" class="panel roster-section" aria-label="Artistas del roster">
+        <div class="panel-content">
+          <div class="section-meta">Artistas / Roster</div>
+          <header class="section-header">
+            <h2>Nuestros Artistas</h2>
+            <p>El talento que define el sonido de RAGE VENTURE</p>
+          </header>
+
+          <div class="roster-grid">
+            <article class="artist-card">
+              <img src="https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=400&h=500&fit=crop" alt="KØRA" loading="lazy">
+              <div class="artist-overlay">
+                <h3 class="artist-name">KØRA</h3>
+                <span class="artist-genre">Techno / Industrial</span>
+                <div class="artist-socials">
+                  <a href="#" class="artist-social-link" aria-label="Instagram">📷</a>
+                  <a href="#" class="artist-social-link" aria-label="SoundCloud">🎵</a>
+                  <a href="#" class="artist-social-link" aria-label="Spotify">🎧</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="artist-card">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=500&fit=crop" alt="MxR" loading="lazy">
+              <div class="artist-overlay">
+                <h3 class="artist-name">MxR</h3>
+                <span class="artist-genre">Ambient / Experimental</span>
+                <div class="artist-socials">
+                  <a href="#" class="artist-social-link" aria-label="Instagram">📷</a>
+                  <a href="#" class="artist-social-link" aria-label="SoundCloud">🎵</a>
+                  <a href="#" class="artist-social-link" aria-label="Spotify">🎧</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="artist-card">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=500&fit=crop" alt="TÊL" loading="lazy">
+              <div class="artist-overlay">
+                <h3 class="artist-name">TÊL</h3>
+                <span class="artist-genre">Acid House / Breaks</span>
+                <div class="artist-socials">
+                  <a href="#" class="artist-social-link" aria-label="Instagram">📷</a>
+                  <a href="#" class="artist-social-link" aria-label="SoundCloud">🎵</a>
+                  <a href="#" class="artist-social-link" aria-label="Spotify">🎧</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="artist-card">
+              <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=500&fit=crop" alt="NOVA" loading="lazy">
+              <div class="artist-overlay">
+                <h3 class="artist-name">NOVA</h3>
+                <span class="artist-genre">Progressive / Melodic</span>
+                <div class="artist-socials">
+                  <a href="#" class="artist-social-link" aria-label="Instagram">📷</a>
+                  <a href="#" class="artist-social-link" aria-label="SoundCloud">🎵</a>
+                  <a href="#" class="artist-social-link" aria-label="Spotify">🎧</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           PLAYLISTS CURADAS
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="playlists" class="panel playlist-section" aria-label="Playlists curadas">
+        <div class="panel-content">
+          <div class="section-meta">Música / Playlists</div>
+          <header class="section-header">
+            <h2>Playlists Curadas</h2>
+            <p>Selecciones especiales para cada momento</p>
+          </header>
+
+          <div class="playlist-container">
+            <article class="playlist-card">
+              <div class="playlist-cover">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop" alt="Late Night Techno" loading="lazy">
+                <button class="playlist-play" aria-label="Reproducir playlist">
+                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                </button>
+              </div>
+              <div class="playlist-info">
+                <h4 class="playlist-title">Late Night Techno</h4>
+                <div class="playlist-meta">
+                  <span>42 tracks</span>
+                  <span>•</span>
+                  <span>3h 24min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="playlist-card">
+              <div class="playlist-cover">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop" alt="Sunrise Sessions" loading="lazy">
+                <button class="playlist-play" aria-label="Reproducir playlist">
+                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                </button>
+              </div>
+              <div class="playlist-info">
+                <h4 class="playlist-title">Sunrise Sessions</h4>
+                <div class="playlist-meta">
+                  <span>28 tracks</span>
+                  <span>•</span>
+                  <span>2h 15min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="playlist-card">
+              <div class="playlist-cover">
+                <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=400&h=400&fit=crop" alt="Deep Focus" loading="lazy">
+                <button class="playlist-play" aria-label="Reproducir playlist">
+                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                </button>
+              </div>
+              <div class="playlist-info">
+                <h4 class="playlist-title">Deep Focus</h4>
+                <div class="playlist-meta">
+                  <span>35 tracks</span>
+                  <span>•</span>
+                  <span>2h 48min</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="playlist-card">
+              <div class="playlist-cover">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop" alt="Peak Time Bangers" loading="lazy">
+                <button class="playlist-play" aria-label="Reproducir playlist">
+                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                </button>
+              </div>
+              <div class="playlist-info">
+                <h4 class="playlist-title">Peak Time Bangers</h4>
+                <div class="playlist-meta">
+                  <span>50 tracks</span>
+                  <span>•</span>
+                  <span>4h 10min</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           BADGES / LOGROS DE LA COMUNIDAD
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="badges" class="panel badges-section" aria-label="Logros de la comunidad">
+        <div class="panel-content">
+          <div class="section-meta">Comunidad / Logros</div>
+          <header class="section-header">
+            <h2>Logros RAGE</h2>
+            <p>Desbloquea badges participando en eventos y cursos</p>
+          </header>
+
+          <div class="badges-grid">
+            <div class="badge-item">
+              <div class="badge-icon">🎧</div>
+              <span class="badge-name">First Beat</span>
+            </div>
+            <div class="badge-item">
+              <div class="badge-icon">🎓</div>
+              <span class="badge-name">Graduado</span>
+            </div>
+            <div class="badge-item">
+              <div class="badge-icon">🔥</div>
+              <span class="badge-name">On Fire</span>
+            </div>
+            <div class="badge-item">
+              <div class="badge-icon">⭐</div>
+              <span class="badge-name">Rising Star</span>
+            </div>
+            <div class="badge-item">
+              <div class="badge-icon">🏆</div>
+              <span class="badge-name">Champion</span>
+            </div>
+            <div class="badge-item locked">
+              <div class="badge-icon">💎</div>
+              <span class="badge-name">Diamond</span>
+            </div>
+            <div class="badge-item locked">
+              <div class="badge-icon">👑</div>
+              <span class="badge-name">Legendario</span>
+            </div>
+            <div class="badge-item locked">
+              <div class="badge-icon">🌟</div>
+              <span class="badge-name">Maestro</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           WEATHER MUSIC MATCHER
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="weather" class="panel weather-section" aria-label="Weather Music Matcher">
+        <div class="panel-content">
+          <div class="section-meta">Innovación / Weather Sync</div>
+          <header class="section-header">
+            <h2>Weather Vibes</h2>
+            <p>Música perfecta para el clima de tu ciudad</p>
+          </header>
+
+          <div class="weather-container">
+            <div class="weather-display">
+              <div class="weather-icon">🌧️</div>
+              <div class="weather-temp">18°C</div>
+              <p class="weather-condition">Lluvia ligera</p>
+              <p class="weather-location">📍 Cuenca, Ecuador</p>
+            </div>
+
+            <div class="weather-playlist">
+              <h4 class="weather-playlist-title">Playlist para días lluviosos</h4>
+
+              <div class="weather-track">
+                <span class="weather-track-num">01</span>
+                <div class="weather-track-info">
+                  <div class="weather-track-name">Rainy Nights</div>
+                  <div class="weather-track-artist">KØRA</div>
+                </div>
+                <span class="weather-track-duration">6:42</span>
+              </div>
+
+              <div class="weather-track">
+                <span class="weather-track-num">02</span>
+                <div class="weather-track-info">
+                  <div class="weather-track-name">Misty Morning</div>
+                  <div class="weather-track-artist">MxR</div>
+                </div>
+                <span class="weather-track-duration">5:18</span>
+              </div>
+
+              <div class="weather-track">
+                <span class="weather-track-num">03</span>
+                <div class="weather-track-info">
+                  <div class="weather-track-name">Cloud Walker</div>
+                  <div class="weather-track-artist">TÊL</div>
+                </div>
+                <span class="weather-track-duration">7:24</span>
+              </div>
+
+              <div class="weather-track">
+                <span class="weather-track-num">04</span>
+                <div class="weather-track-info">
+                  <div class="weather-track-name">Drops</div>
+                  <div class="weather-track-artist">NOVA</div>
+                </div>
+                <span class="weather-track-duration">4:56</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           BEHIND THE SCENES - GALERÍA CREATIVA
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="bts" class="panel bts-section" aria-label="Behind the scenes">
+        <div class="panel-content">
+          <div class="section-meta">Exclusivo / Behind The Scenes</div>
+          <header class="section-header">
+            <h2>Behind The Scenes</h2>
+            <p>El making of de RAGE VENTURE</p>
+          </header>
+
+          <div class="bts-grid">
+            <div class="bts-item">
+              <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=400&fit=crop" alt="Studio session" loading="lazy">
+              <div class="bts-overlay">
+                <span class="bts-caption">Sesión de grabación</span>
+              </div>
+            </div>
+            <div class="bts-item">
+              <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&h=400&fit=crop" alt="Sound check" loading="lazy">
+              <div class="bts-overlay">
+                <span class="bts-caption">Sound check pre-show</span>
+              </div>
+            </div>
+            <div class="bts-item">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop" alt="Team meeting" loading="lazy">
+              <div class="bts-overlay">
+                <span class="bts-caption">Planning del festival</span>
+              </div>
+            </div>
+            <div class="bts-item">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&h=400&fit=crop" alt="DJ booth setup" loading="lazy">
+              <div class="bts-overlay">
+                <span class="bts-caption">Montaje DJ booth</span>
+              </div>
+            </div>
+            <div class="bts-item">
+              <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&h=400&fit=crop" alt="Crowd moment" loading="lazy">
+              <div class="bts-overlay">
+                <span class="bts-caption">Momento épico del crowd</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ─────────────────────────────────────────────────────────────────────
+           COMPARADOR DE CURSOS
+           ───────────────────────────────────────────────────────────────────── -->
+      <section id="compare" class="panel compare-section" aria-label="Comparador de cursos">
+        <div class="panel-content">
+          <div class="section-meta">Cursos / Comparador</div>
+          <header class="section-header">
+            <h2>Compara Nuestros Programas</h2>
+            <p>Encuentra el curso perfecto para tu nivel</p>
+          </header>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Características</th>
+                <th>Básico</th>
+                <th class="compare-highlight header">Pro</th>
+                <th>Master</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">Duración</td>
+                <td>8 semanas</td>
+                <td class="compare-highlight">12 semanas</td>
+                <td>16 semanas</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Clases en vivo</td>
+                <td><span class="compare-check">✓</span></td>
+                <td class="compare-highlight"><span class="compare-check">✓</span></td>
+                <td><span class="compare-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Mentorías 1:1</td>
+                <td><span class="compare-x">✗</span></td>
+                <td class="compare-highlight"><span class="compare-check">✓</span></td>
+                <td><span class="compare-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Acceso al estudio</td>
+                <td><span class="compare-x">✗</span></td>
+                <td class="compare-highlight"><span class="compare-check">✓</span></td>
+                <td><span class="compare-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Feedback de tracks</td>
+                <td>2 tracks</td>
+                <td class="compare-highlight">5 tracks</td>
+                <td>Ilimitado</td>
+              </tr>
+              <tr>
+                <td class="feature-name">Certificación</td>
+                <td><span class="compare-x">✗</span></td>
+                <td class="compare-highlight"><span class="compare-check">✓</span></td>
+                <td><span class="compare-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Precio</td>
+                <td>$299</td>
+                <td class="compare-highlight"><strong>$499</strong></td>
+                <td>$799</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <!-- ─────────────────────────────────────────────────────────────────────
            14. FAQ - PREGUNTAS FRECUENTES
            ───────────────────────────────────────────────────────────────────── -->
@@ -1823,6 +3537,18 @@
     </svg>
   </button>
 
+  <!-- ═══ Live Radio Widget ═══ -->
+  <div class="radio-widget" id="radio-widget" role="region" aria-label="Radio en vivo">
+    <div class="radio-live-dot"></div>
+    <div class="radio-info">
+      <span class="radio-label">EN VIVO</span>
+      <span class="radio-now-playing">KØRA - Neon Genesis</span>
+    </div>
+    <button class="radio-toggle" id="radio-toggle" aria-label="Reproducir radio">
+      <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+    </button>
+  </div>
+
   <!-- ══════════════════════════════════════════════════════════════════════════
        SCRIPTS
        ══════════════════════════════════════════════════════════════════════════ -->
@@ -1934,7 +3660,143 @@
         goToShowcaseSlide(currentShowcaseIndex);
       }, 6000);
 
+      // ═══ COUNTDOWN TIMER ═══
+      function updateCountdown() {
+        const eventDate = new Date('2025-01-31T22:00:00').getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        if (distance > 0) {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
+          document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
+          document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+          document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
+        }
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // ═══ BEAT PAD INTERACTIVO ═══
+      const beatPads = document.querySelectorAll('.beat-pad');
+      const keyMap = {
+        '1': 0, '2': 1, '3': 2, '4': 3,
+        'q': 4, 'w': 5, 'e': 6, 'r': 7,
+        'a': 8, 's': 9, 'd': 10, 'f': 11,
+        'z': 12, 'x': 13, 'c': 14, 'v': 15
+      };
+
+      beatPads.forEach(pad => {
+        pad.addEventListener('mousedown', () => {
+          pad.classList.add('active');
+        });
+        pad.addEventListener('mouseup', () => {
+          setTimeout(() => pad.classList.remove('active'), 150);
+        });
+        pad.addEventListener('mouseleave', () => {
+          pad.classList.remove('active');
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        const key = e.key.toLowerCase();
+        if (keyMap.hasOwnProperty(key)) {
+          const pad = beatPads[keyMap[key]];
+          if (pad) {
+            pad.classList.add('active');
+          }
+        }
+      });
+
+      document.addEventListener('keyup', (e) => {
+        const key = e.key.toLowerCase();
+        if (keyMap.hasOwnProperty(key)) {
+          const pad = beatPads[keyMap[key]];
+          if (pad) {
+            setTimeout(() => pad.classList.remove('active'), 150);
+          }
+        }
+      });
+
+      // ═══ MOOD SELECTOR ═══
+      const moodItems = document.querySelectorAll('.mood-item');
+      const moodCenter = document.querySelector('.mood-center');
+      const moodEmoji = document.querySelector('.mood-emoji');
+      const moodName = document.querySelector('.mood-name');
+
+      moodItems.forEach(item => {
+        item.addEventListener('click', () => {
+          moodItems.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+
+          const emoji = item.querySelector('span').textContent;
+          const name = item.querySelector('small').textContent;
+
+          if (moodEmoji) moodEmoji.textContent = emoji;
+          if (moodName) moodName.textContent = name;
+        });
+      });
+
+      // ═══ RADIO WIDGET ═══
+      const radioToggle = document.getElementById('radio-toggle');
+      let isPlaying = false;
+
+      radioToggle?.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        radioToggle.innerHTML = isPlaying
+          ? '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>'
+          : '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+      });
+
+      // ═══ PLAYLIST CARDS ═══
+      const playlistPlays = document.querySelectorAll('.playlist-play');
+      playlistPlays.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const title = btn.closest('.playlist-card').querySelector('.playlist-title').textContent;
+          console.log(`▶ Reproduciendo: ${title}`);
+        });
+      });
+
+      // ═══ BADGE HOVER EFFECTS ═══
+      const badgeItems = document.querySelectorAll('.badge-item:not(.locked)');
+      badgeItems.forEach(badge => {
+        badge.addEventListener('click', () => {
+          const name = badge.querySelector('.badge-name').textContent;
+          console.log(`🏆 Badge: ${name}`);
+        });
+      });
+
+      // ═══ WEATHER TRACKS ═══
+      const weatherTracks = document.querySelectorAll('.weather-track');
+      weatherTracks.forEach(track => {
+        track.addEventListener('click', () => {
+          weatherTracks.forEach(t => t.style.borderColor = '');
+          track.style.borderColor = 'var(--accent)';
+          const name = track.querySelector('.weather-track-name').textContent;
+          console.log(`🎵 Reproduciendo: ${name}`);
+        });
+      });
+
       console.log('✅ RAGE VENTURE Recopilatorio cargado correctamente');
+      console.log('🎨 Nuevas secciones creativas activas:');
+      console.log('   - Countdown Timer');
+      console.log('   - Audio Visualizer');
+      console.log('   - Beat Pad Interactivo');
+      console.log('   - Mood Selector');
+      console.log('   - Timeline Historia');
+      console.log('   - Roster de Artistas');
+      console.log('   - Playlists Curadas');
+      console.log('   - Badges / Logros');
+      console.log('   - Weather Music Matcher');
+      console.log('   - Behind The Scenes');
+      console.log('   - Comparador de Cursos');
+      console.log('   - Live Radio Widget');
     });
   </script>
 </body>
