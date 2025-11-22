@@ -143,26 +143,34 @@ const rimLight = new THREE.PointLight(0xff0066, 1.5, 100);
 rimLight.position.set(0, 10, -10);
 scene.add(rimLight);
 
-// 📜 SCROLL - Tu modelo gira cuando haces scroll
+// 📜 SCROLL - Tu modelo gira y escala cuando haces scroll
 const scrollContainer = document.querySelector('#content');
 let scrollY = 0;
 
+// Configuración de escala con scroll
+const initialScale = 7;      // Escala inicial (grande)
+const minScale = 2;          // Escala mínima (pequeño)
+const scaleSpeed = 0.003;    // Velocidad de reducción
+
 function onScroll() {
   scrollY = scrollContainer ? scrollContainer.scrollTop : window.scrollY;
-  
+
   if (myModel) {
     // 🔄 ROTACIÓN CON SCROLL - más scroll = más rotación
-    myModel.rotation.y = scrollY * 0.003; // 👈 Velocidad horizontal
-    myModel.rotation.x = scrollY * 0.0008; // 👈 Velocidad vertical
-    
-    // 💫 Opcional: hacer que el modelo suba/baje con scroll
-    // myModel.position.y = -(scrollY * 0.005);
-    
+    myModel.rotation.y = scrollY * 0.003;
+    myModel.rotation.x = scrollY * 0.0008;
+
+    // 📏 ESCALA CON SCROLL - de grande a pequeño
+    const scrollProgress = Math.min(scrollY * scaleSpeed, 1);
+    const currentScale = initialScale - (scrollProgress * (initialScale - minScale));
+    const clampedScale = Math.max(currentScale, minScale);
+    myModel.scale.set(clampedScale, clampedScale, clampedScale);
+
     // 🌈 Cambiar color de luz con scroll
     const hue = (scrollY * 0.1) % 360;
     rimLight.color.setHSL(hue / 360, 1, 0.5);
   }
-  
+
   // Cámara se acerca con scroll
   camera.position.z = 30 - (scrollY * 0.008);
 }

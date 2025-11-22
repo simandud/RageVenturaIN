@@ -9,11 +9,12 @@
   --muted-dark: #6b7496;
   --muted-light: #d7dde8;
 
-  --glass: rgba(20, 30, 60, 0.65);
-  --glass-strong: rgba(25, 40, 75, 0.78);
-  --stroke: rgba(93, 180, 255, 0.4);
-  --stroke-light: rgba(93, 180, 255, 0.2);
-  --shadow: 0 20px 45px rgba(0, 123, 255, 0.25);
+  /* Minimalista: glass más sutil */
+  --glass: rgba(15, 20, 40, 0.5);
+  --glass-strong: rgba(20, 30, 55, 0.6);
+  --stroke: rgba(93, 180, 255, 0.25);
+  --stroke-light: rgba(93, 180, 255, 0.12);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 
   --header-height: 80px;
   --sidebar-width: 0px;
@@ -45,26 +46,16 @@ html, body {
 }
 
 body {
+  /* Minimalista: fondo más limpio con un solo gradiente sutil */
   background:
-    radial-gradient(circle at 15% 15%, rgba(0, 123, 255, 0.28), transparent 55%),
-    radial-gradient(circle at 85% 10%, rgba(93, 180, 255, 0.24), transparent 50%),
-    radial-gradient(circle at 40% 90%, rgba(93, 180, 255, 0.22), transparent 55%),
+    radial-gradient(ellipse at 50% 0%, rgba(0, 123, 255, 0.12), transparent 60%),
     var(--bg);
   display: flex;
   flex-direction: column;
   transition: overflow 0.3s ease;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 55%);
-  opacity: 0.4;
-  mix-blend-mode: screen;
-  z-index: -2;
-}
+/* Minimalista: removido el overlay extra para un look más limpio */
 
 /* Canvas */
 #bg {
@@ -76,18 +67,17 @@ body::before {
   pointer-events: none;
 }
  
-/* ---------- HEADER MEJORADO ---------- */
+/* ---------- HEADER MINIMALISTA ---------- */
 #main-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: var(--header-height);
-  padding: 0 clamp(24px, 6vw, 110px);
-  background: linear-gradient(180deg, rgba(10, 12, 32, 0.92) 0%, rgba(10, 12, 32, 0.65) 100%);
-  backdrop-filter: blur(9px);
-  border-bottom: 1px solid #007BFF;
-  box-shadow: 0 0 0 1px rgba(165, 183, 255, 0.08), var(--shadow);
+  padding: 0 clamp(24px, 6vw, 80px);
+  background: rgba(3, 1, 9, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--stroke-light);
   z-index: 100;
   display: flex;
   align-items: center;
@@ -602,37 +592,16 @@ body::before {
   margin: 0 auto;
 }
 
+/* Section Meta - Minimalista */
 .section-meta {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent-alt);
-  margin-bottom: 24px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 18px;
-  border-radius: 50px;
-  border: 1px solid var(--stroke);
-  background: rgba(8, 10, 28, 0.65);
-  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.15);
-  font-weight: 700;
-}
-
-.section-meta::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(120deg, var(--accent), var(--accent-alt));
-  box-shadow: 0 0 16px rgba(0, 123, 255, 0.85);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: inline-block;
+  font-weight: 600;
 }
 
 .section-header {
@@ -641,18 +610,15 @@ body::before {
   text-align: center;
 }
 
+/* Section Header - Minimalista */
 .section-header h2 {
   font-family: var(--font-heading);
-  font-size: clamp(36px, 5vw, 68px);
-  font-weight: 900;
-  margin: 0 0 18px;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #f00000 0%, #a0d4ff 40%, var(--accent-alt) 70%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 2px 02px rgb(255, 255, 255);
-  line-height: 1.1;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 800;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  line-height: 1.15;
 }
 
 .section-header p {
@@ -675,19 +641,13 @@ body::before {
   position: relative;
 }
 
+/* Hero Logo - Minimalista (sin animación) */
 #hero-logo-main {
-  width: 90%;
-  max-width: 500px;
+  width: 85%;
+  max-width: 450px;
   height: auto;
   display: block;
-  margin: 0 auto 30px;
-  filter: drop-shadow(0 20px 40px rgba(0, 123, 255, 0.2)) brightness(1.05);
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  margin: 0 auto 24px;
 }
 
 .hero-tagline {
@@ -699,51 +659,33 @@ body::before {
   letter-spacing: 0.5px;
 }
 
-/* CTA Buttons */
+/* CTA Buttons - Minimalista */
 .cta {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--bg);
-  background: var(--chrome-btn);
-  border: 2px solid transparent;
-  padding: 16px 42px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.3);
-  position: relative;
-  overflow: hidden;
-  min-height: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-.cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
 }
 
 .cta:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 25px 60px rgba(0, 123, 255, 0.45);
-  letter-spacing: 0.15em;
-}
-
-.cta:hover::before {
-  opacity: 1;
+  background: var(--accent-alt);
+  transform: translateY(-2px);
 }
 
 .cta:active {
-  transform: translateY(-1px) scale(0.98);
+  transform: translateY(0);
 }
 
 /* Marquee */
@@ -790,42 +732,23 @@ body::before {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+/* Minimalista: cards más limpias y simples */
 .card {
   position: relative;
-  border-radius: 24px;
-  padding: 30px;
+  border-radius: 16px;
+  padding: 24px;
   border: 1px solid var(--stroke);
-  background: linear-gradient(145deg, rgba(15, 18, 42, 0.8), rgba(25, 30, 55, 0.5));
-  backdrop-filter: blur(18px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
   cursor: pointer;
   overflow: hidden;
-  z-index: 0;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: -40% 5% 50%;
-  background: radial-gradient(circle at 50% 50%, hsla(var(--hue, 210), 90%, 65%, 0.35), transparent 65%);
-  opacity: 0;
-  transform: translateY(15%);
-  transition: all 0.35s ease;
-  pointer-events: none;
-  z-index: -1;
 }
 
 .card:hover {
-  border-color: hsla(var(--hue, 210), 90%, 70%, 0.8);
-  box-shadow: 0 24px 60px hsla(var(--hue, 210), 70%, 50%, 0.3), inset 0 0 30px rgba(0, 123, 255, 0.1);
-  transform: translateY(-8px);
-  background: linear-gradient(145deg, rgba(20, 25, 50, 0.9), rgba(30, 35, 65, 0.6));
-}
-
-.card:hover::before {
-  opacity: 1;
-  transform: translateY(0);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .card h3 {
@@ -846,30 +769,27 @@ body::before {
   font-weight: 400;
 }
 
-/* Ghost Button */
+/* Ghost Button - Minimalista */
 .ghost {
-  background: rgba(8, 10, 24, 0.7);
-  color: var(--accent-alt);
-  border: 1.5px solid var(--accent-alt);
-  padding: 12px 22px;
-  border-radius: 14px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 10px 20px;
+  border-radius: 6px;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   font-family: var(--font-heading);
-  transition: all 0.3s ease;
-  margin-top: 16px;
+  transition: all 0.2s ease;
+  margin-top: 12px;
   display: inline-block;
 }
 
 .ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(0, 123, 255, 0.15);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.2);
+  background: var(--accent);
+  color: var(--bg);
 }
 
 /* Label Board */
@@ -879,43 +799,26 @@ body::before {
   gap: 30px;
 }
 
+/* Minimalista: label-card simplificada */
 .label-card {
   position: relative;
-  border-radius: 26px;
-  padding: 30px;
+  border-radius: 16px;
+  padding: 24px;
   border: 1px solid var(--stroke);
-  background: linear-gradient(140deg, rgba(14, 17, 38, 0.82), rgba(25, 28, 50, 0.6));
-  backdrop-filter: blur(16px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-  min-height: 200px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.25s ease;
   overflow: hidden;
-  z-index: 0;
-}
-
-.label-card::before {
-  content: "";
-  position: absolute;
-  inset: 35% -35% -40% 40%;
-  background: radial-gradient(circle at 30% 30%, hsla(var(--hue, 210), 80%, 70%, 0.35), transparent 65%);
-  opacity: 0;
-  transform: translateY(20%);
-  transition: all 0.35s ease;
-  z-index: -1;
 }
 
 .label-card:hover {
-  border-color: hsla(var(--hue, 210), 80%, 75%, 0.7);
-  box-shadow: 0 26px 60px hsla(var(--hue, 210), 70%, 60%, 0.25);
-  transform: translateY(-8px);
-}
-
-.label-card:hover::before {
-  opacity: 1;
-  transform: translateY(0);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
 .label-card h3 {
@@ -941,40 +844,24 @@ body::before {
   gap: 30px;
 }
 
+/* Minimalista: rental-card simplificada */
 .rental-card {
   position: relative;
-  border-radius: 28px;
-  padding: 0 0 28px;
+  border-radius: 16px;
+  padding: 0 0 20px;
   border: 1px solid var(--stroke);
-  background: linear-gradient(145deg, rgba(16, 18, 40, 0.82), rgba(20, 23, 46, 0.62));
-  backdrop-filter: blur(18px);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-  z-index: 0;
-}
-
-.rental-card::before {
-  content: "";
-  position: absolute;
-  inset: -45% 20% auto -35%;
-  background: radial-gradient(circle at 50% 50%, hsla(var(--hue, 200), 80%, 60%, 0.3), transparent 65%);
-  opacity: 0;
-  transform: translateY(15%);
-  transition: all 0.35s ease;
-  z-index: -1;
+  transition: all 0.25s ease;
 }
 
 .rental-card:hover {
-  border-color: hsla(var(--hue, 200), 80%, 70%, 0.7);
-  box-shadow: 0 28px 65px hsla(var(--hue, 200), 70%, 55%, 0.25);
-  transform: translateY(-8px);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 
-.rental-card:hover::before {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .media-frame {
   position: relative;
